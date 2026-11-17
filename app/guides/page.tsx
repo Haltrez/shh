@@ -1,0 +1,46 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { guides } from "@/content/guides";
+import type { Guide } from "@/content/types";
+
+export const metadata: Metadata = {
+  title: "Crypto Casino Guides: Buy, Deposit, Withdraw, Privacy",
+  description:
+    "Plain guides to buying crypto, choosing a wallet, depositing and withdrawing at casinos, network fees, KYC and what privacy really means on a blockchain.",
+  alternates: { canonical: "/guides" },
+};
+
+const ORDER: Guide["category"][] = ["Crypto basics", "Casino know-how", "Money", "Privacy"];
+
+export default function Guides() {
+  return (
+    <>
+      <div className="wrap page-head">
+        <div className="crumbs"><Link href="/">Home</Link> / Guides</div>
+        <h1>Guides</h1>
+        <p className="lead dim prose" style={{ fontSize: "1.1rem" }}>
+          How to buy, move and protect crypto for casino play, and what privacy does and doesn&apos;t mean.
+        </p>
+      </div>
+      <div className="wrap" style={{ paddingBottom: 48 }}>
+        {ORDER.map((cat) => {
+          const items = guides.filter((g) => g.category === cat);
+          if (!items.length) return null;
+          return (
+            <section key={cat} style={{ marginBottom: 40 }}>
+              <h2 style={{ marginTop: 0, fontSize: "1.2rem" }} className="mono">{cat.toLowerCase()}</h2>
+              <div className="grid grid-3">
+                {items.map((g) => (
+                  <Link key={g.slug} href={`/guides/${g.slug}`} className="card link-card">
+                    <h3>{g.h1}</h3>
+                    <p>{g.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+    </>
+  );
+}

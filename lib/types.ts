@@ -1,0 +1,62 @@
+export type Coin = "BTC" | "ETH" | "USDT" | "USDC" | "SOL" | "LTC" | "TRX" | "DOGE" | "XRP" | "BNB";
+
+/** "none" = no ID at sign-up or normal withdrawals; "on-request" = can be asked; "full" = ID before play/withdrawal. */
+export type KycLevel = "none" | "on-request" | "full";
+
+/** A fact we only publish once it has been checked against the casino's own T&Cs/FAQ. */
+export type Sourced<T> = {
+  value: T;
+  /** URL of the casino page the fact comes from (T&Cs, FAQ, cashier help). */
+  source: string;
+};
+
+export type Casino = {
+  slug: string;
+  name: string;
+  /** Path under /public, e.g. /logos/koalabet.svg (light version for dark bg). */
+  logo?: string;
+  /** Tracking link from the affiliate program. Empty = /go falls back to the review. */
+  affiliateUrl: string;
+  /** Country rules for outbound links, Scatter Drop style: ["!US", "!GB"] excludes; ["CA"] includes only. */
+  geos: string[];
+  /** ISO date of the last full fact check. null = never checked → page is noindex and shows as pending. */
+  lastChecked: string | null;
+  /** Paid placement. Shown with a "Featured" label; never changes the score. */
+  featured?: boolean;
+
+  licence?: Sourced<string>;
+  kyc?: {
+    level: KycLevel;
+    signup: Sourced<string>;
+    withdrawal: Sourced<string>;
+    /** Things the T&Cs say can trigger a check (thresholds, AML, source of funds). */
+    triggers: Sourced<string[]>;
+  };
+  vpnRule?: Sourced<string>;
+  restrictedCountries?: Sourced<string[]>;
+  coins?: Sourced<Coin[]>;
+  /** Minimum deposit in USD equivalent. */
+  minDepositUsd?: Sourced<number>;
+  withdrawalLimits?: Sourced<string>;
+  /** Only fill from our own verified test withdrawals. Minutes. */
+  payoutMinutes?: { value: number; note: string };
+  offer?: { text: string; code?: string; freeSpins?: boolean; source: string };
+  games?: { summary: string; providers: string[] };
+  responsibleTools?: Sourced<string[]>;
+
+  verdict?: string;
+  kycInPractice?: string[];
+  depositsWithdrawals?: string[];
+  pros?: string[];
+  cons?: string[];
+  faq?: { q: string; a: string }[];
+
+  /** Score inputs, 0–5 each, see /how-we-rate. */
+  scores?: {
+    kycSignup: number;
+    kycTriggers: number;
+    payoutSpeed: number;
+    coinChoice: number;
+    termsClarity: number;
+  };
+};
