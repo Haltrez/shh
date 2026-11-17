@@ -10,7 +10,7 @@ Take the first unchecked topic. Tick it with the publish date when it's live. Ad
 - [ ] stablecoin-gambling-trend — "Why stablecoins are taking over crypto casino deposits" (Trends & news)
 - [ ] crypto-casino-licensing-shift-2026 — "Curaçao's reform one year on: where crypto casinos are licensed now" (Trends & news)
 - [ ] crypto-casino-data-breaches — "Casino data breaches: what leaked, and how to protect your ID" (Trends & news)
-- [ ] crypto-casino-withdrawal-pending — "Why is my crypto casino withdrawal pending?" (Casino know-how)
+- [x] crypto-casino-withdrawal-pending (2026-11-17) — "Why is my crypto casino withdrawal pending?" (Casino know-how)
 - [ ] how-to-buy-usdt-trc20 — "How to buy USDT on TRC20 (Tron), step by step" (Crypto basics)
 - [ ] wagering-requirements-explained — "Wagering requirements explained, with examples" (Casino know-how)
 - [ ] crypto-casino-licences-explained — "Curaçao, Anjouan, Tobique: crypto casino licences explained" (Casino know-how)
