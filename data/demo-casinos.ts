@@ -23,6 +23,7 @@ const demo = (
   licence: { value: "Example licence (demo)", source: src },
   kyc: {
     level,
+    summary: "Demo KYC summary.",
     signup: { value: level === "full" ? "ID before first deposit" : "Email only", source: src },
     withdrawal: { value: level === "none" ? "No ID for normal withdrawals" : "ID may be asked above a threshold", source: src },
     triggers: { value: ["Large or unusual withdrawals", "AML review", "Source-of-funds request"], source: src },

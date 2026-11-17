@@ -62,7 +62,8 @@ export default function Page() {
       </ul>
       <p>
         A badge marked <span className="mono">REPORTED</span> comes from third-party reviews, linked on the card. It
-        hasn&apos;t been confirmed against the casino&apos;s own terms yet.
+        hasn&apos;t been confirmed against the casino&apos;s own terms yet. Where a casino has confirmed its policy to us
+        directly, the card says so instead.
       </p>
 
       <h2>Scores from reported data</h2>

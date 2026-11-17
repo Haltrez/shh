@@ -45,6 +45,8 @@ export function derivedScores(c: Casino): Partial<Record<Key, number>> | null {
 /** Score shown, or null when there isn't enough data. */
 export function privacyScore(c: Casino): number | null {
   const s: Partial<Record<Key, number>> | null = isVerified(c) && c.scores ? c.scores : derivedScores(c);
+  // A score needs at least the KYC factor.
+  if (s && s.kycSignup === undefined) return null;
   if (!s) return null;
   let total = 0;
   let weight = 0;
@@ -69,7 +71,7 @@ export function meterSegments(score: number | null): number {
 /** Verified level if we have it, else the reported one. */
 export const kycLevelOf = (c: Casino) => c.kyc?.level ?? c.reported?.level;
 /** True when the KYC level shown comes from third-party reports, not our own check. */
-export const isReportedOnly = (c: Casino) => !isVerified(c) && Boolean(c.reported);
+export const isReportedOnly = (c: Casino) => !isVerified(c) && Boolean(c.reported) && !c.reported?.confirmed;
 export const coinsOf = (c: Casino) => c.coins?.value ?? c.reported?.coins;
 
 const LEVEL_ORDER = { none: 0, "on-request": 1, "first-withdrawal": 2, full: 3 } as const;

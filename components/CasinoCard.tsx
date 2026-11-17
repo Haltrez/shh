@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, Zap, Wallet, Gift } from "lucide-react";
 import type { Casino } from "@/lib/types";
-import { privacyScore, isReportedOnly, kycLevelOf, coinsOf } from "@/lib/score";
+import { privacyScore, isReportedOnly, isVerified, kycLevelOf, coinsOf } from "@/lib/score";
+import { formatDate } from "@/lib/format";
 import { formatPayout } from "@/lib/format";
 import { Sources } from "./Sources";
 import { PrivacyMeter } from "./PrivacyMeter";
@@ -10,7 +11,8 @@ import { PromoCode } from "./PromoCode";
 
 export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
   const score = privacyScore(c);
-  const reported = isReportedOnly(c) ? c.reported : undefined;
+  const tagReported = isReportedOnly(c);
+  const reported = !isVerified(c) ? c.reported : undefined;
   const coins = coinsOf(c);
 
   return (
@@ -26,7 +28,7 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
             <Link href={`/reviews/${c.slug}`}>{c.name}</Link>
           </h3>
           <PrivacyMeter score={score} />
-          <KycBadge level={kycLevelOf(c)} reported={Boolean(reported)} />
+          <KycBadge level={kycLevelOf(c)} reported={tagReported} />
           {c.featured ? <span className="badge badge-featured">Featured</span> : null}
         </div>
 
@@ -43,12 +45,27 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
           </div>
         ) : null}
 
-        {reported ? (
+        {c.kyc && c.lastChecked ? (
+          <>
+            <p style={{ margin: 0, fontSize: 15.5 }}>{c.kyc.summary}</p>
+            <p className="reported-note">
+              Checked against{" "}
+              <a href={c.kyc.withdrawal.source} rel="nofollow noopener" target="_blank">{c.name}&apos;s terms</a> on{" "}
+              {formatDate(c.lastChecked)}.
+            </p>
+          </>
+        ) : reported ? (
           <>
             <p style={{ margin: 0, fontSize: 15.5 }}>{reported.summary}</p>
             <p className="reported-note">
-              KYC info reported by <Sources sources={reported.sources} />; not yet confirmed against {c.name}&apos;s
-              own terms.
+              {reported.confirmed ? (
+                <>Confirmed directly by {c.name} on {formatDate(reported.asOf)}.</>
+              ) : (
+                <>
+                  KYC info reported by <Sources sources={reported.sources} />; not yet confirmed against {c.name}&apos;s
+                  own terms.
+                </>
+              )}
             </p>
           </>
         ) : !c.kyc ? (

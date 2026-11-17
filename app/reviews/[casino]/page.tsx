@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Check, X } from "lucide-react";
 import { allCasinos, findCasino } from "@/lib/data";
-import { isPublished, privacyScore, isReportedOnly, kycLevelOf } from "@/lib/score";
+import { isPublished, privacyScore, isReportedOnly, isVerified, kycLevelOf } from "@/lib/score";
 import { Sources } from "@/components/Sources";
 import { lists } from "@/data/lists";
 import { formatDate } from "@/lib/format";
@@ -51,7 +51,8 @@ export default async function Review({ params }: Props) {
   const published = isPublished(c);
   const score = privacyScore(c);
   const updated = c.lastChecked ?? (published ? c.reported?.asOf : undefined);
-  const reported = isReportedOnly(c) ? c.reported : undefined;
+  const tagReported = isReportedOnly(c);
+  const reported = !isVerified(c) ? c.reported : undefined;
   const coinLists = lists.filter((l) => l.filter(c)).map((l) => l.slug);
 
   return (
@@ -63,7 +64,7 @@ export default async function Review({ params }: Props) {
         <h1>{c.name} review: KYC, payouts and bonus</h1>
         <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
           <PrivacyMeter score={score} />
-          <KycBadge level={kycLevelOf(c)} reported={Boolean(reported)} />
+          <KycBadge level={kycLevelOf(c)} reported={tagReported} />
           {c.featured ? <span className="badge badge-featured">Featured</span> : null}
           <span className="mono">{c.lastChecked ? `last checked ${formatDate(c.lastChecked)}` : updated ? `updated ${formatDate(updated)}` : "not yet checked"}</span>
         </div>
@@ -84,7 +85,8 @@ export default async function Review({ params }: Props) {
           {reported ? (
             <section className="card" style={{ marginTop: 20 }} aria-labelledby="reported-h">
               <h3 id="reported-h" style={{ fontSize: "1.05rem", display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-                What reviews report <KycBadge level={reported.level} reported />
+                {reported.confirmed ? `What ${c.name} told us` : "What reviews report"}{" "}
+                <KycBadge level={reported.level} reported={!reported.confirmed} />
               </h3>
               <p>{reported.summary}</p>
               {reported.detail?.length ? (
@@ -94,8 +96,14 @@ export default async function Review({ params }: Props) {
                 <Caveat text="Heads-up: sources disagree on when ID is asked. Plan as if you may need to verify before withdrawing." />
               ) : null}
               <p className="reported-note">
-                Sources: <Sources sources={reported.sources} /> (collected {formatDate(reported.asOf)}). Third-party
-                reports, not yet confirmed against {c.name}&apos;s own terms.
+                {reported.confirmed ? (
+                  <>Confirmed directly by {c.name} on {formatDate(reported.asOf)}.</>
+                ) : (
+                  <>
+                    Sources: <Sources sources={reported.sources} /> (collected {formatDate(reported.asOf)}). Third-party
+                    reports, not yet confirmed against {c.name}&apos;s own terms.
+                  </>
+                )}
               </p>
             </section>
           ) : null}

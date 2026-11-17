@@ -21,6 +21,8 @@ export type Report = {
   coins?: Coin[];
   /** True when sources disagree. */
   conflicting?: boolean;
+  /** True when the casino confirmed it directly and we've checked it (no "reported" tag). */
+  confirmed?: boolean;
   sources: { name: string; url?: string }[];
   /** ISO date the reports were collected. */
   asOf: string;
@@ -50,6 +52,8 @@ export type Casino = {
   licence?: Sourced<string>;
   kyc?: {
     level: KycLevel;
+    /** One line for cards. */
+    summary: string;
     signup: Sourced<string>;
     withdrawal: Sourced<string>;
     /** Things the T&Cs say can trigger a check (thresholds, AML, source of funds). */
@@ -76,11 +80,11 @@ export type Casino = {
   faq?: { q: string; a: string }[];
 
   /** Score inputs, 0–5 each, see /how-we-rate. */
-  scores?: {
+  scores?: Partial<{
     kycSignup: number;
     kycTriggers: number;
     payoutSpeed: number;
     coinChoice: number;
     termsClarity: number;
-  };
+  }>;
 };

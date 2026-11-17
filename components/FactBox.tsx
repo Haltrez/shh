@@ -29,7 +29,7 @@ const mono = (t: string) => <span className="mono">{t}</span>;
 export function FactBox({ c }: { c: Casino }) {
   const rows: [string, ReactNode][] = [
     ["Licence", fact(c.licence, (v) => v)],
-    ["KYC level", c.kyc ? kycLabel(c.kyc.level) : c.reported ? <>{kycLabel(c.reported.level)} <span className="faint">(reported, unconfirmed)</span></> : PENDING],
+    ["KYC level", c.kyc ? kycLabel(c.kyc.level) : c.reported ? <>{kycLabel(c.reported.level)} <span className="faint">{c.reported.confirmed ? "(confirmed by the casino)" : "(reported, unconfirmed)"}</span></> : PENDING],
     ["At sign-up", fact(c.kyc?.signup, (v) => v)],
     ["At withdrawal", fact(c.kyc?.withdrawal, (v) => v)],
     ["Check triggers", fact(c.kyc?.triggers, (v) => v.join("; "))],
@@ -58,7 +58,7 @@ export function FactBox({ c }: { c: Casino }) {
           </div>
         ))}
       </dl>
-      {hidden && shown.length ? (
+      {hidden && shown.length && !c.lastChecked ? (
         <p className="reported-note" style={{ padding: "12px 20px", borderTop: "1px solid var(--line)" }}>
           Licence, VPN and country rules, limits and minimums get added once we&apos;ve read {c.name}&apos;s terms.
         </p>

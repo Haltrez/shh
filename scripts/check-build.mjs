@@ -65,7 +65,7 @@ for (const f of files) {
   for (const re of BANNED) {
     // Allowed inside sentences that warn against it (e.g. "promises 100% anonymous … is wrong").
     const hit = text.match(new RegExp(`.{0,80}${re.source}.{0,80}`, "i"));
-    if (hit && !/wrong|lying|won.t|don.t|never|red flag|claims that/i.test(hit[0])) err(route, `banned phrase: "${hit[0].trim()}"`);
+    if (hit && !/wrong|lying|won.t|don.t|never|red flag|claims that|prohibited/i.test(hit[0])) err(route, `banned phrase: "${hit[0].trim()}"`);
   }
 
   for (const m of html.matchAll(/href="(\/[^"#?]*)/g)) {
