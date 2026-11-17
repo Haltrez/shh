@@ -1,5 +1,5 @@
 import type { Casino } from "@/lib/types";
-import { privacyScore } from "@/lib/score";
+import { privacyScore, kycLevelOf, isReportedOnly, coinsOf } from "@/lib/score";
 import { formatPayout } from "@/lib/format";
 import { kycLabel } from "./KycBadge";
 import { CasinoCard } from "./CasinoCard";
@@ -11,11 +11,11 @@ export function ComparisonTable({ casinos }: { casinos: Casino[] }) {
     slug: c.slug,
     name: c.name,
     score: privacyScore(c),
-    kyc: kycLabel(c.kyc?.level),
+    kyc: kycLabel(kycLevelOf(c)) + (isReportedOnly(c) ? " (reported)" : ""),
     payout: c.payoutMinutes?.value ?? null,
     payoutLabel: formatPayout(c),
     minDeposit: c.minDepositUsd?.value ?? null,
-    coins: c.coins?.value.join(" ") ?? "–",
+    coins: coinsOf(c)?.join(" ") || "–",
     geos: c.geos,
   }));
   return (

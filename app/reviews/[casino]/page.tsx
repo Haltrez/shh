@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Check, X } from "lucide-react";
 import { allCasinos, findCasino } from "@/lib/data";
-import { isVerified, privacyScore } from "@/lib/score";
+import { isVerified, privacyScore, isReportedOnly, kycLevelOf } from "@/lib/score";
+import { Sources } from "@/components/Sources";
 import { lists } from "@/data/lists";
 import { formatDate } from "@/lib/format";
 import { PrivacyMeter } from "@/components/PrivacyMeter";
@@ -49,6 +50,7 @@ export default async function Review({ params }: Props) {
   if (!c) notFound();
   const verified = isVerified(c);
   const score = privacyScore(c);
+  const reported = isReportedOnly(c) ? c.reported : undefined;
   const coinLists = lists.filter((l) => l.filter(c)).map((l) => l.slug);
 
   return (
@@ -60,7 +62,7 @@ export default async function Review({ params }: Props) {
         <h1>{c.name} review: KYC, payouts and bonus</h1>
         <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
           <PrivacyMeter score={score} />
-          <KycBadge level={c.kyc?.level} />
+          <KycBadge level={kycLevelOf(c)} reported={Boolean(reported)} />
           {c.featured ? <span className="badge badge-featured">Featured</span> : null}
           <span className="mono">{c.lastChecked ? `last checked ${formatDate(c.lastChecked)}` : "not yet checked"}</span>
         </div>
@@ -74,12 +76,31 @@ export default async function Review({ params }: Props) {
             <p style={{ fontSize: "1.1rem" }}>{c.verdict}</p>
           ) : (
             <div className="notice">
-              We&apos;re still checking {c.name}&apos;s terms, cashier and withdrawal process. This page shows no
-              scores or claims until every fact below is sourced and dated.
+              We&apos;re still checking {c.name}&apos;s terms, cashier and withdrawal process. There&apos;s no score
+              until every fact below is sourced from the casino and dated.
             </div>
           )}
 
-          {verified && c.affiliateUrl ? (
+          {reported ? (
+            <section className="card" style={{ marginTop: 20 }} aria-labelledby="reported-h">
+              <h3 id="reported-h" style={{ fontSize: "1.05rem", display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+                What reviews report <KycBadge level={reported.level} reported />
+              </h3>
+              <p>{reported.summary}</p>
+              {reported.detail?.length ? (
+                <ul>{reported.detail.map((d) => <li key={d}>{d}</li>)}</ul>
+              ) : null}
+              {reported.conflicting ? (
+                <Caveat text="Heads-up: sources disagree on when ID is asked. Plan as if you may need to verify before withdrawing." />
+              ) : null}
+              <p className="reported-note">
+                Sources: <Sources sources={reported.sources} /> (collected {formatDate(reported.asOf)}). Third-party
+                reports, not yet confirmed against {c.name}&apos;s own terms.
+              </p>
+            </section>
+          ) : null}
+
+          {c.affiliateUrl ? (
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center", margin: "20px 0" }}>
               {c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
               <a className="btn btn-primary" href={`/go/${c.slug}`} rel="sponsored nofollow noopener" target="_blank" data-geos={JSON.stringify(c.geos)}>

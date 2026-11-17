@@ -79,14 +79,15 @@ export const privacyGuides: Guide[] = [
         type: "p",
         text: "KYC (Know Your Customer) is the process of proving who you are: ID, a selfie, sometimes proof of address. A \"no-KYC\" casino lets you sign up and play without it, but nearly all of them keep the right to ask later.",
       },
-      { type: "h2", text: "The three levels we use" },
+      { type: "h2", text: "The four levels we use" },
       {
         type: "table",
         head: ["Badge", "Means"],
         rows: [
           ["No KYC", "No ID at sign-up and none for normal withdrawals. The terms still allow checks in specific cases, which we list."],
           ["KYC on request", "No ID at sign-up, but the terms set thresholds or triggers where ID is routinely requested."],
-          ["Full KYC", "ID required before you can play or withdraw."],
+          ["KYC at first withdrawal", "No ID to sign up or deposit, but ID before your first cash-out."],
+          ["Full KYC", "ID required before you can play."],
         ],
       },
       { type: "h2", text: "Common triggers" },

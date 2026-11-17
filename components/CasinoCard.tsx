@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, Zap, Wallet } from "lucide-react";
 import type { Casino } from "@/lib/types";
-import { privacyScore, isVerified } from "@/lib/score";
+import { privacyScore, isVerified, isReportedOnly, kycLevelOf } from "@/lib/score";
+import { Sources } from "./Sources";
 import { formatPayout } from "@/lib/format";
 import { PrivacyMeter } from "./PrivacyMeter";
 import { KycBadge } from "./KycBadge";
@@ -10,6 +11,7 @@ import { PromoCode } from "./PromoCode";
 export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
   const verified = isVerified(c);
   const score = privacyScore(c);
+  const reported = isReportedOnly(c) ? c.reported : undefined;
   return (
     <article className={`card casino-card${verified ? "" : " pending"}`} data-geos={JSON.stringify(c.geos)}>
       <div className="rank" aria-hidden>{rank !== undefined ? String(rank).padStart(2, "0") : ""}</div>
@@ -23,7 +25,7 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
             <Link href={`/reviews/${c.slug}`}>{c.name}</Link>
           </h3>
           <PrivacyMeter score={score} />
-          <KycBadge level={c.kyc?.level} />
+          <KycBadge level={kycLevelOf(c)} reported={Boolean(reported)} />
           {c.featured ? <span className="badge badge-featured">Featured</span> : null}
         </div>
 
@@ -38,6 +40,19 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
             </div>
             {c.offer ? <div className="offer">{c.offer.text}</div> : null}
           </>
+        ) : reported ? (
+          <>
+            {reported.coins?.length ? (
+              <div className="chips" aria-label="Coins reported">
+                {reported.coins.map((coin) => <span className="chip" key={coin}>{coin}</span>)}
+              </div>
+            ) : null}
+            <p style={{ margin: 0, fontSize: 15.5 }}>{reported.summary}</p>
+            <p className="reported-note">
+              Reported by <Sources sources={reported.sources} />. Not yet confirmed against {c.name}&apos;s own
+              terms, so no score yet.
+            </p>
+          </>
         ) : (
           <p className="dim" style={{ margin: 0, fontSize: 15 }}>
             We&apos;re checking {c.name}&apos;s terms before we score it. No numbers until they&apos;re verified.
@@ -46,7 +61,7 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
 
         <div className="actions">
           {verified && c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
-          {verified && c.affiliateUrl ? (
+          {c.affiliateUrl ? (
             <a className="btn btn-primary" href={`/go/${c.slug}${rank !== undefined ? `?pos=${rank}` : ""}`} rel="sponsored nofollow noopener" target="_blank">
               Visit {c.name} <ArrowUpRight size={16} aria-hidden />
             </a>

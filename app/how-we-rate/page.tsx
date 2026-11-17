@@ -57,8 +57,13 @@ export default function Page() {
       <ul>
         <li><b style={{ color: "var(--accent)" }}>No KYC</b>: no ID at sign-up or for normal withdrawals.</li>
         <li><b style={{ color: "var(--warn)" }}>KYC on request</b>: no ID at sign-up; routine thresholds or triggers.</li>
-        <li><b style={{ color: "var(--danger)" }}>Full KYC</b>: ID before play or withdrawal.</li>
+        <li><b style={{ color: "#ffa86b" }}>KYC at first withdrawal</b>: no ID to sign up or deposit; ID before your first cash-out.</li>
+        <li><b style={{ color: "var(--danger)" }}>Full KYC</b>: ID before you can play.</li>
       </ul>
+      <p>
+        A badge marked <span className="mono">REPORTED</span> comes from third-party reviews, linked on the card. It
+        hasn&apos;t been confirmed against the casino&apos;s own terms yet, and it never comes with a score.
+      </p>
 
       <h2>Re-checks</h2>
       <p>

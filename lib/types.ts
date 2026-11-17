@@ -1,7 +1,30 @@
 export type Coin = "BTC" | "ETH" | "USDT" | "USDC" | "SOL" | "LTC" | "TRX" | "DOGE" | "XRP" | "BNB";
 
-/** "none" = no ID at sign-up or normal withdrawals; "on-request" = can be asked; "full" = ID before play/withdrawal. */
-export type KycLevel = "none" | "on-request" | "full";
+/**
+ * "none"             = no ID at sign-up or for normal withdrawals
+ * "on-request"       = no ID at sign-up; routine thresholds/triggers where ID is asked
+ * "first-withdrawal" = no ID to sign up or deposit; ID before the first withdrawal
+ * "full"             = ID before you can play
+ */
+export type KycLevel = "none" | "on-request" | "first-withdrawal" | "full";
+
+/**
+ * What third-party reviews say, before we've confirmed it against the casino's own terms.
+ * Shown with a "reported" label and its sources. Never produces a score.
+ */
+export type Report = {
+  level: KycLevel;
+  /** One or two sentences, shown on cards. */
+  summary: string;
+  /** Longer notes for the review page. */
+  detail?: string[];
+  coins?: Coin[];
+  /** True when sources disagree. */
+  conflicting?: boolean;
+  sources: { name: string; url?: string }[];
+  /** ISO date the reports were collected. */
+  asOf: string;
+};
 
 /** A fact we only publish once it has been checked against the casino's own T&Cs/FAQ. */
 export type Sourced<T> = {
@@ -21,6 +44,8 @@ export type Casino = {
   geos: string[];
   /** ISO date of the last full fact check. null = never checked → page is noindex and shows as pending. */
   lastChecked: string | null;
+  /** Third-party reports, used until the fact box is verified. */
+  reported?: Report;
   /** Paid placement. Shown with a "Featured" label; never changes the score. */
   featured?: boolean;
 

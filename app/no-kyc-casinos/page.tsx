@@ -49,12 +49,13 @@ export default function Page() {
           <h2 style={{ marginTop: 0 }}>What &ldquo;no KYC&rdquo; means here</h2>
           <p>
             KYC (Know Your Customer) is the ID check: a passport or licence, a selfie, sometimes proof of address. We
-            give every casino one of three badges, based on its own terms:
+            give every casino one of four badges. A badge marked “reported” comes from third-party reviews and isn’t confirmed against the casino’s terms yet:
           </p>
           <ul>
             <li><b style={{ color: "var(--accent)" }}>No KYC</b>: no ID at sign-up or for normal withdrawals; checks only in narrow, stated cases.</li>
             <li><b style={{ color: "var(--warn)" }}>KYC on request</b>: no ID at sign-up, but routine thresholds or triggers where ID is commonly asked.</li>
-            <li><b style={{ color: "var(--danger)" }}>Full KYC</b>: ID before you can play or withdraw.</li>
+            <li><b style={{ color: "#ffa86b" }}>KYC at first withdrawal</b>: no ID to sign up or deposit, but ID before your first cash-out.</li>
+            <li><b style={{ color: "var(--danger)" }}>Full KYC</b>: ID before you can play.</li>
           </ul>
           <Caveat text="Heads-up: if a casino asks for ID and you won't provide it, it can usually hold the withdrawal under its terms. Decide before you deposit whether you'd be willing to verify." />
 

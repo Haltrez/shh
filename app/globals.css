@@ -271,6 +271,20 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 .badge-none { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .badge-on-request { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 35%, transparent); background: color-mix(in srgb, var(--warn) 8%, transparent); }
 .badge-full { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 35%, transparent); background: color-mix(in srgb, var(--danger) 8%, transparent); }
+.badge-first-withdrawal { color: #ffa86b; border-color: rgba(255, 168, 107, .35); background: rgba(255, 168, 107, .08); }
+.badge-reported { border-style: dashed; }
+.badge-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-faint);
+  border-left: 1px solid var(--line);
+  padding-left: 6px;
+  margin-left: 2px;
+}
+.reported-note { font-size: 13.5px; color: var(--text-faint); margin: 0; }
+.reported-note a { color: var(--text-dim); }
 .badge-pending { color: var(--text-dim); border-color: var(--line); background: var(--surface-2); }
 .badge-featured { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 35%, transparent); }
 

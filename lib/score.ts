@@ -37,7 +37,24 @@ export function meterSegments(score: number | null): number {
   return Math.max(0, Math.min(5, Math.round(score / 20)));
 }
 
-/** Score-ranked, verified first. Featured status never affects order. */
+/** Verified level if we have it, else the reported one. */
+export const kycLevelOf = (c: Casino) => c.kyc?.level ?? c.reported?.level;
+/** True when the KYC level shown comes from third-party reports, not our own check. */
+export const isReportedOnly = (c: Casino) => !isVerified(c) && Boolean(c.reported);
+export const coinsOf = (c: Casino) => c.coins?.value ?? c.reported?.coins;
+
+const LEVEL_ORDER = { none: 0, "on-request": 1, "first-withdrawal": 2, full: 3 } as const;
+
+/**
+ * Verified casinos by score first. Unverified ones follow, ordered by reported KYC level
+ * (lightest first), then casinos with nothing reported. Featured status never affects order.
+ */
 export function rank(casinos: Casino[]): Casino[] {
-  return [...casinos].sort((a, b) => (privacyScore(b) ?? -1) - (privacyScore(a) ?? -1));
+  const lvl = (c: Casino) => {
+    const l = kycLevelOf(c);
+    return l ? LEVEL_ORDER[l] : 9;
+  };
+  return [...casinos].sort(
+    (a, b) => (privacyScore(b) ?? -1) - (privacyScore(a) ?? -1) || lvl(a) - lvl(b),
+  );
 }

@@ -1,7 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { findCasino } from "@/lib/data";
 import { geoAllowed } from "@/lib/geo";
-import { isVerified } from "@/lib/score";
 
 /**
  * Outbound affiliate redirect: /go/koalabet?pos=1
@@ -34,7 +33,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ casi
   const allowed = geoAllowed(c.geos, country);
   log({ casino: c.slug, from, pos: base.searchParams.get("pos"), country, allowed });
 
-  if (!allowed || !c.affiliateUrl || !isVerified(c)) {
+  if (!allowed || !c.affiliateUrl) {
     const back = new URL(`/reviews/${c.slug}`, base);
     if (!allowed) back.searchParams.set("unavailable", "1");
     return NextResponse.redirect(back, { status: 302, headers });
