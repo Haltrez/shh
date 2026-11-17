@@ -8,6 +8,7 @@ import { Sources } from "./Sources";
 import { PrivacyMeter } from "./PrivacyMeter";
 import { KycBadge } from "./KycBadge";
 import { PromoCode } from "./PromoCode";
+import { CasinoLogo } from "./CasinoLogo";
 
 export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
   const score = privacyScore(c);
@@ -20,12 +21,8 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
       <div className="rank" aria-hidden>{rank !== undefined ? String(rank).padStart(2, "0") : ""}</div>
       <div className="body">
         <div className="top">
-          {c.logo ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img className="casino-logo" src={c.logo} alt={c.name} height={28} />
-          ) : null}
           <h3>
-            <Link href={`/reviews/${c.slug}`}>{c.name}</Link>
+            <Link href={`/reviews/${c.slug}`}><CasinoLogo c={c} /></Link>
           </h3>
           <PrivacyMeter score={score} />
           <KycBadge level={kycLevelOf(c)} reported={tagReported} />

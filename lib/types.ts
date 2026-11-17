@@ -40,6 +40,8 @@ export type Casino = {
   name: string;
   /** Path under /public, e.g. /logos/koalabet.svg (light version for dark bg). */
   logo?: string;
+  /** True when the logo is an icon only (no wordmark), so the name is shown next to it. */
+  logoIsMark?: boolean;
   /** Tracking link from the affiliate program. Empty = /go falls back to the review. */
   affiliateUrl: string;
   /** ISO date of the last full fact check. null = never checked → page is noindex and shows as pending. */

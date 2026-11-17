@@ -5,6 +5,7 @@ import { ArrowUpRight, Check, X } from "lucide-react";
 import { allCasinos, findCasino } from "@/lib/data";
 import { isPublished, privacyScore, isReportedOnly, isVerified, kycLevelOf } from "@/lib/score";
 import { Sources } from "@/components/Sources";
+import { CasinoLogo } from "@/components/CasinoLogo";
 import { lists } from "@/data/lists";
 import { formatDate } from "@/lib/format";
 import { PrivacyMeter } from "@/components/PrivacyMeter";
@@ -61,6 +62,11 @@ export default async function Review({ params }: Props) {
         <div className="crumbs">
           <Link href="/">Home</Link> / <Link href="/no-kyc-casinos">Reviews</Link> / {c.name}
         </div>
+        {c.logo ? (
+          <div className="review-logo" aria-hidden>
+            <CasinoLogo c={c} size={44} />
+          </div>
+        ) : null}
         <h1>{c.name} review: KYC, payouts and bonus</h1>
         <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
           <PrivacyMeter score={score} />

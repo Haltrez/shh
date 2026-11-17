@@ -24,6 +24,8 @@ export const casinos: Casino[] = [
   {
     slug: "koalabet",
     name: "KoalaBet",
+    logo: "/logos/koalabet.svg",
+    logoIsMark: true,
     affiliateUrl: "https://click.koalabetaffiliates.com/redirect.aspx?pid=2408&lpid=8&bid=1479",
     lastChecked: null,
     payoutMinutes: PAYOUT,
@@ -56,6 +58,7 @@ export const casinos: Casino[] = [
   {
     slug: "7bit",
     name: "7Bit Casino",
+    logo: "/logos/7bit.svg",
     affiliateUrl: "https://7bit.partners/piymfrjsr",
     lastChecked: CHECKED,
     payoutMinutes: PAYOUT,
@@ -117,6 +120,7 @@ export const casinos: Casino[] = [
   {
     slug: "cashy",
     name: "Cashy",
+    logo: "/logos/cashy.svg",
     affiliateUrl: "https://gocashy.com/beixdsb7w",
     lastChecked: CHECKED,
     payoutMinutes: PAYOUT,
@@ -181,6 +185,7 @@ export const casinos: Casino[] = [
   {
     slug: "mirax",
     name: "Mirax Casino",
+    logo: "/logos/mirax.svg",
     affiliateUrl: "https://mirax.partners/po7jctlhu",
     lastChecked: CHECKED,
     payoutMinutes: PAYOUT,
@@ -238,6 +243,7 @@ export const casinos: Casino[] = [
   {
     slug: "bitstarz",
     name: "BitStarz",
+    logo: "/logos/bitstarz.svg",
     affiliateUrl: "https://bzstarz2.com/bigtntdfo",
     lastChecked: CHECKED,
     payoutMinutes: PAYOUT,
