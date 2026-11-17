@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Lock, EyeOff, Zap } from "lucide-react";
 import { allCasinos } from "@/lib/data";
-import { rank, isVerified } from "@/lib/score";
+import { rank, isPublished } from "@/lib/score";
 import { lists } from "@/data/lists";
 import { guides } from "@/content/guides";
 import { CasinoCard } from "@/components/CasinoCard";
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      <JsonLd data={[faqPage(FAQ), itemList("Best no-KYC crypto casinos", ranked.filter(isVerified))]} />
+      <JsonLd data={[faqPage(FAQ), itemList("Best no-KYC crypto casinos", ranked.filter(isPublished))]} />
     </>
   );
 }

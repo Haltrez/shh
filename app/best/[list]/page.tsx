@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { allCasinos } from "@/lib/data";
-import { rank, isVerified } from "@/lib/score";
+import { rank, isPublished } from "@/lib/score";
 import { lists, getList, withYear } from "@/data/lists";
 import { CasinoCard } from "@/components/CasinoCard";
 import { ComparisonTable } from "@/components/ComparisonTable";
@@ -21,7 +21,7 @@ export function generateStaticParams() {
 
 const matches = (slug: string) => {
   const l = getList(slug);
-  return l ? rank(allCasinos.filter((c) => isVerified(c) && l.filter(c))) : [];
+  return l ? rank(allCasinos.filter((c) => isPublished(c) && l.filter(c))) : [];
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -43,7 +43,8 @@ export default async function ListPage({ params }: Props) {
   if (!l) notFound();
   const ranked = matches(list);
   const lastChecked = ranked
-    .map((c) => c.lastChecked!)
+    .map((c) => c.lastChecked ?? c.reported?.asOf)
+    .filter((d): d is string => Boolean(d))
     .sort()
     .at(0);
 
@@ -55,7 +56,7 @@ export default async function ListPage({ params }: Props) {
         <p className="lead dim prose" style={{ fontSize: "1.1rem" }}>{l.intro}</p>
         <p className="meta-strip">
           <span>Criteria: {l.criteria}</span>
-          <span>{lastChecked ? `oldest check ${formatDate(lastChecked)}` : "not yet checked"}</span>
+          <span>{lastChecked ? `oldest update ${formatDate(lastChecked)}` : "not yet checked"}</span>
         </p>
       </div>
 

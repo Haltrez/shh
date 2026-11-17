@@ -14,7 +14,7 @@ export type List = {
   faq: { q: string; a: string }[];
 };
 
-const takes = (coin: Coin) => (c: Casino) => Boolean(c.coins?.value.includes(coin));
+const takes = (coin: Coin) => (c: Casino) => Boolean((c.coins?.value ?? c.reported?.coins)?.includes(coin));
 
 const coinList = (
   coin: Coin,

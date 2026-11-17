@@ -2,7 +2,7 @@ import Link from "next/link";
 import { guides } from "@/content/guides";
 import { lists } from "@/data/lists";
 import { allCasinos } from "@/lib/data";
-import { isVerified } from "@/lib/score";
+import { isPublished } from "@/lib/score";
 
 export function RelatedGuides({ slugs, title = "Guides" }: { slugs: string[]; title?: string }) {
   const items = slugs.map((s) => guides.find((g) => g.slug === s)).filter((g) => g !== undefined);
@@ -37,7 +37,7 @@ export function RelatedLists({ slugs }: { slugs: string[] }) {
 
 /** Up to n verified reviews, preferring the given slugs. */
 export function RelatedReviews({ prefer = [], n = 3 }: { prefer?: string[]; n?: number }) {
-  const verified = allCasinos.filter(isVerified);
+  const verified = allCasinos.filter(isPublished);
   const picked = [
     ...prefer.map((s) => verified.find((c) => c.slug === s)).filter((c) => c !== undefined),
     ...verified,

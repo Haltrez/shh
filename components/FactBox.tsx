@@ -35,26 +35,34 @@ export function FactBox({ c }: { c: Casino }) {
     ["Check triggers", fact(c.kyc?.triggers, (v) => v.join("; "))],
     ["VPN rule (per T&Cs)", fact(c.vpnRule, (v) => v)],
     ["Restricted countries", fact(c.restrictedCountries, (v) => mono(v.join(" ")))],
-    ["Coins", fact(c.coins, (v) => mono(v.join(" ")))],
+    ["Coins", c.coins ? fact(c.coins, (v) => mono(v.join(" "))) : c.reported?.coins ? <>{mono(c.reported.coins.join(" "))} <span className="faint">(reported)</span></> : PENDING],
     ["Min deposit", fact(c.minDepositUsd, (v) => mono(`$${v}`))],
     ["Withdrawal limits", fact(c.withdrawalLimits, (v) => v)],
+    ["Payout (our tests)", c.payoutMinutes ? mono(c.payoutMinutes.label ?? `~${c.payoutMinutes.value} min`) : PENDING],
   ];
+  const shown = rows.filter(([, v]) => v !== PENDING);
+  const hidden = rows.length - shown.length;
   return (
     <section className="card factbox" aria-labelledby="facts-h">
       <h2 id="facts-h">
         Fact box
         <span className="mono" style={{ fontWeight: 500 }}>
-          {c.lastChecked ? `checked ${formatDate(c.lastChecked)}` : "not yet checked"}
+          {c.lastChecked ? `checked ${formatDate(c.lastChecked)}` : c.reported ? `updated ${formatDate(c.reported.asOf)}` : "not yet checked"}
         </span>
       </h2>
       <dl>
-        {rows.map(([k, v]) => (
+        {(shown.length ? shown : rows).map(([k, v]) => (
           <div key={k} style={{ display: "contents" }}>
             <dt>{k}</dt>
             <dd>{v}</dd>
           </div>
         ))}
       </dl>
+      {hidden && shown.length ? (
+        <p className="reported-note" style={{ padding: "12px 20px", borderTop: "1px solid var(--line)" }}>
+          Licence, VPN and country rules, limits and minimums get added once we&apos;ve read {c.name}&apos;s terms.
+        </p>
+      ) : null}
     </section>
   );
 }

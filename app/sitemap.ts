@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absolute } from "@/lib/site";
 import { allCasinos } from "@/lib/data";
-import { isVerified, rank } from "@/lib/score";
+import { isPublished, rank } from "@/lib/score";
 import { lists } from "@/data/lists";
 import { guides } from "@/content/guides";
 
@@ -14,7 +14,7 @@ const today = new Date().toISOString().slice(0, 10);
 
 export default async function sitemap({ id }: { id: Promise<string> }): Promise<MetadataRoute.Sitemap> {
   const which = await id;
-  const verified = allCasinos.filter(isVerified);
+  const verified = allCasinos.filter(isPublished);
   // Pages with noindex are left out.
   switch (which) {
     case "pages":
@@ -22,14 +22,14 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
         (p) => ({ url: absolute(p), lastModified: today }),
       );
     case "reviews":
-      return verified.map((c) => ({ url: absolute(`/reviews/${c.slug}`), lastModified: c.lastChecked! }));
+      return verified.map((c) => ({ url: absolute(`/reviews/${c.slug}`), lastModified: c.lastChecked ?? c.reported?.asOf ?? today }));
     case "lists":
       return lists
         .map((l) => ({ l, items: rank(verified.filter(l.filter)) }))
         .filter(({ items }) => items.length > 0)
         .map(({ l, items }) => ({
           url: absolute(`/best/${l.slug}`),
-          lastModified: items.map((c) => c.lastChecked!).sort().at(-1),
+          lastModified: items.map((c) => c.lastChecked ?? c.reported?.asOf ?? today).sort().at(-1),
         }));
     case "guides":
       return guides.map((g) => ({ url: absolute(`/guides/${g.slug}`), lastModified: g.updated }));

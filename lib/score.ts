@@ -21,15 +21,44 @@ export function isVerified(c: Casino): boolean {
   return Boolean(c.lastChecked && c.scores && c.kyc);
 }
 
-/** 0–100, or null when the casino hasn't been checked yet. */
-export function privacyScore(c: Casino): number | null {
-  if (!isVerified(c) || !c.scores) return null;
-  let total = 0;
-  for (const key of Object.keys(WEIGHTS) as (keyof typeof WEIGHTS)[]) {
-    total += (c.scores[key] / 5) * WEIGHTS[key];
-  }
-  return Math.round(total * 100);
+type Key = keyof typeof WEIGHTS;
+
+/**
+ * Factor scores (0–5) derived from reported data, for casinos without a full terms check.
+ * Factors we have no data for are left out and the remaining weights are rescaled.
+ * Terms clarity is never derived: it needs our own read of the terms.
+ */
+export function derivedScores(c: Casino): Partial<Record<Key, number>> | null {
+  const r = c.reported;
+  if (!r || !c.payoutMinutes) return null;
+  const out: Partial<Record<Key, number>> = {};
+  out.kycSignup = r.level === "full" ? 0 : 5;
+  const triggers = { none: 4, "on-request": 2, "first-withdrawal": 1, full: 0 }[r.level];
+  out.kycTriggers = Math.max(0, triggers - (r.conflicting ? 1 : 0));
+  const m = c.payoutMinutes.value;
+  out.payoutSpeed = m <= 10 ? 5 : m <= 30 ? 4 : m <= 60 ? 3 : m <= 240 ? 2 : 1;
+  const coins = coinsOf(c)?.length;
+  if (coins) out.coinChoice = coins >= 8 ? 5 : coins >= 5 ? 4 : coins >= 3 ? 3 : 2;
+  return out;
 }
+
+/** Score shown, or null when there isn't enough data. */
+export function privacyScore(c: Casino): number | null {
+  const s: Partial<Record<Key, number>> | null = isVerified(c) && c.scores ? c.scores : derivedScores(c);
+  if (!s) return null;
+  let total = 0;
+  let weight = 0;
+  for (const key of Object.keys(WEIGHTS) as Key[]) {
+    const v = s[key];
+    if (v === undefined) continue;
+    total += (v / 5) * WEIGHTS[key];
+    weight += WEIGHTS[key];
+  }
+  return weight ? Math.round((total / weight) * 100) : null;
+}
+
+/** Has enough to be scored, listed and indexed (fully checked, or reported KYC + our payout test). */
+export const isPublished = (c: Casino) => privacyScore(c) !== null;
 
 /** 0–5 filled segments for the privacy meter. */
 export function meterSegments(score: number | null): number {

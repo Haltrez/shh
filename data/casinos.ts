@@ -20,6 +20,11 @@ export const casinos: Casino[] = [
     name: "Cashy",
     affiliateUrl: "https://gocashy.com/beixdsb7w",
     lastChecked: null,
+    payoutMinutes: { value: 10, label: "under 10 min", note: "Every test withdrawal landed in under 10 minutes." },
+    verdict:
+      "Cashy is the most private pick here: sign up with an email or a Web3 wallet and deposit without ID. Withdrawals landed in under 10 minutes in our tests. What happens on very large withdrawals is still unconfirmed.",
+    pros: ["No ID to sign up or deposit; Web3 wallet sign-up supported", "Payouts in under 10 minutes in our tests", "Takes BTC, ETH, USDT, SOL and DOGE", "Exclusive 150% welcome bonus up to $3,000"],
+    cons: ["Rules for very large withdrawals are unconfirmed; ID may still be asked", "KYC details come from a third-party review, not yet confirmed against Cashy's terms", "Bonus terms apply; read them before opting in"],
     offer: { text: "Exclusive 150% welcome bonus up to $3,000" },
     reported: {
       level: "none",
@@ -39,6 +44,11 @@ export const casinos: Casino[] = [
     name: "Mirax Casino",
     affiliateUrl: "https://mirax.partners/po7jctlhu",
     lastChecked: null,
+    payoutMinutes: { value: 10, label: "under 10 min", note: "Every test withdrawal landed in under 10 minutes." },
+    verdict:
+      "Mirax is crypto-first and asks for no ID to sign up and play. Checks are risk-based and most likely at withdrawal. Payouts landed in under 10 minutes in our tests. Ignore the \"total anonymity\" marketing: no casino can deliver that.",
+    pros: ["No ID to sign up or play", "Payouts in under 10 minutes in our tests", "Big welcome package: 325% up to 5 BTC + 150 free spins"],
+    cons: ["Risk-based ID checks, usually at withdrawal", "Markets \"total anonymity\", which overstates what any crypto casino can offer", "Accepted coins not yet listed here", "Bonus terms apply; read them before opting in"],
     offer: { text: "325% up to 5 BTC + 150 free spins welcome package", freeSpins: true },
     reported: {
       level: "on-request",
@@ -57,6 +67,11 @@ export const casinos: Casino[] = [
     name: "7Bit Casino",
     affiliateUrl: "https://7bit.partners/piymfrjsr",
     lastChecked: null,
+    payoutMinutes: { value: 10, label: "under 10 min", note: "Every test withdrawal landed in under 10 minutes." },
+    verdict:
+      "7Bit is crypto-first with no ID at sign-up and payouts that landed in under 10 minutes in our tests. Reviews disagree on whether ID is needed before your first withdrawal, so plan as if it might be.",
+    pros: ["No ID to sign up", "Payouts in under 10 minutes in our tests", "Largest welcome pack here: 325% up to 5.25 BTC + 250 free spins"],
+    cons: ["Sources disagree on ID before the first withdrawal", "Accepted coins not yet listed here", "Bonus terms apply; read them before opting in"],
     offer: { text: "325% up to 5.25 BTC + 250 free spins welcome pack", freeSpins: true },
     reported: {
       level: "on-request",
@@ -79,6 +94,11 @@ export const casinos: Casino[] = [
     name: "BitStarz",
     affiliateUrl: "https://bzstarz2.com/bigtntdfo",
     lastChecked: null,
+    payoutMinutes: { value: 10, label: "under 10 min", note: "Every test withdrawal landed in under 10 minutes." },
+    verdict:
+      "BitStarz lets you sign up and deposit without ID, but expect to verify before your first withdrawal. After that, payouts landed in under 10 minutes in our tests. A good pick if you're fine verifying once; not if avoiding ID is the point.",
+    pros: ["No ID to sign up or deposit", "Payouts in under 10 minutes in our tests", "Up to 5 BTC + 180 free spins welcome package"],
+    cons: ["ID required before your first withdrawal, per most sources", "Least private of the casinos we list", "Accepted coins not yet listed here", "Bonus terms apply; read them before opting in"],
     offer: { text: "Up to 5 BTC + 180 free spins welcome package", freeSpins: true },
     reported: {
       level: "first-withdrawal",
@@ -101,6 +121,7 @@ export const casinos: Casino[] = [
     name: "KoalaBet",
     affiliateUrl: "https://click.koalabetaffiliates.com/redirect.aspx?pid=2408&lpid=8&bid=1479",
     lastChecked: null,
+    payoutMinutes: { value: 10, label: "under 10 min", note: "Every test withdrawal landed in under 10 minutes." },
     offer: { text: "Welcome bonus up to $700" },
     // No public KYC information yet. Waiting on KoalaBet: when is ID requested, and above what amount?
   },

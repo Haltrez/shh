@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { allCasinos } from "@/lib/data";
-import { rank, isVerified } from "@/lib/score";
+import { rank, isPublished } from "@/lib/score";
 import { CasinoCard } from "@/components/CasinoCard";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { Faq } from "@/components/Faq";
@@ -77,7 +77,7 @@ export default function Page() {
 
       <JsonLd
         data={[
-          itemList("No-KYC crypto casinos", ranked.filter(isVerified)),
+          itemList("No-KYC crypto casinos", ranked.filter(isPublished)),
           faqPage(FAQ),
           breadcrumbs([["Home", "/"], ["No-KYC casinos", "/no-kyc-casinos"]]),
         ]}

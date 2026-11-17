@@ -62,13 +62,21 @@ export default function Page() {
       </ul>
       <p>
         A badge marked <span className="mono">REPORTED</span> comes from third-party reviews, linked on the card. It
-        hasn&apos;t been confirmed against the casino&apos;s own terms yet, and it never comes with a score.
+        hasn&apos;t been confirmed against the casino&apos;s own terms yet.
+      </p>
+
+      <h2>Scores from reported data</h2>
+      <p>
+        Until we&apos;ve read a casino&apos;s terms ourselves, its score uses only what we know: the reported KYC level,
+        our own payout tests, and the coins it takes where those are known. Licence and terms clarity is left out, and
+        the other weights are scaled up to fill the gap. When sources disagree about ID checks, we score the casino a
+        notch lower. A casino with no KYC information at all gets no score.
       </p>
 
       <h2>Re-checks</h2>
       <p>
         We re-check every casino monthly and whenever its terms change. The &ldquo;last checked&rdquo; date on each
-        review and list is the date of the most recent full check. A casino we haven&apos;t checked yet shows no score
+        review and list is the date of the most recent full check. A casino with no KYC information shows no score
         at all.
       </p>
 
