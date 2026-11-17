@@ -60,7 +60,11 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
 
         {c.offer ? (
           <div className="offer">
-            <Gift size={15} aria-hidden color="var(--accent)" /> {c.offer.text}
+            <Gift size={15} aria-hidden color="var(--accent)" />
+            <span>
+              {c.offer.text}
+              {!c.offer.code && c.affiliateUrl ? <span className="offer-note">No code needed: the bonus applies when you sign up through our link.</span> : null}
+            </span>
           </div>
         ) : null}
 

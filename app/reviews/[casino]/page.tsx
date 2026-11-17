@@ -142,7 +142,7 @@ export default async function Review({ params }: Props) {
           {c.offer ? (
             <p>
               {c.offer.text}
-              {c.offer.code ? <> Code: <span className="mono">{c.offer.code}</span>.</> : null}{" "}
+              {c.offer.code ? <> Code: <span className="mono">{c.offer.code}</span>.</> : c.affiliateUrl ? <> No code needed: the bonus applies when you sign up through our link.</> : null}{" "}
               {c.offer.source ? <><a href={c.offer.source} rel="nofollow noopener" target="_blank">Full terms on {c.name}</a>. </> : <>Read the full bonus terms on {c.name} before you opt in. </>}18+, T&amp;Cs apply.
             </p>
           ) : (

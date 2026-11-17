@@ -148,7 +148,7 @@ export const lists: List[] = [
     relatedGuides: ["what-is-kyc-at-casinos", "how-to-deposit-crypto", "provably-fair-explained"],
     faq: [
       { q: "Are free spins really free?", a: "They cost nothing to use, but winnings usually come with conditions before you can withdraw. The casino's bonus terms are the only source that counts." },
-      { q: "Do I need a promo code?", a: "Some offers need one. Where a code applies, it's shown on the casino card." },
+      { q: "Do I need a promo code?", a: "Not for the offers listed here. The bonus applies when you sign up through our link. If an offer ever needs a code, it's shown on the casino card." },
       { q: "Can I turn a bonus down?", a: "Usually, yes. Many players skip bonuses to avoid withdrawal conditions." },
       { q: "Do free spins affect KYC?", a: "Bonus terms sometimes trigger extra checks on withdrawal. Each review notes this where the terms say so." },
     ],
