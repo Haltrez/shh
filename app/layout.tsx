@@ -17,8 +17,9 @@ export const metadata: Metadata = {
   title: { default: `No-KYC Crypto Casinos: Straight Answers on Privacy | ${site.name}`, template: `%s | ${site.name}` },
   description: site.description,
   openGraph: { siteName: site.name, type: "website", locale: "en" },
-  twitter: { card: "summary" },
-  robots: { index: true, follow: true },
+  twitter: { card: "summary_large_image" },
+  // Vercel preview deploys must never be indexed.
+  robots: process.env.VERCEL_ENV === "preview" ? { index: false, follow: false } : { index: true, follow: true },
 };
 
 export const viewport: Viewport = {

@@ -35,10 +35,18 @@ To publish one, fill in `data/casinos.ts`:
 
 `SHH_DEMO=1` is ignored when `VERCEL_ENV=production`.
 
-## Environment (Vercel)
+## Deploy on Vercel
 
-- `NEXT_PUBLIC_SITE_URL`: e.g. `https://shhcasinos.com`
-- `INDEXNOW_KEY`: served at `/indexnow.txt`
+1. vercel.com → **Add New… → Project** → import `haltrez/shh`. Framework is detected as Next.js; keep the default build settings.
+2. Production branch: `main` (Project → Settings → Git).
+3. Environment variables (Project → Settings → Environment Variables), all optional at first:
+   - `NEXT_PUBLIC_SITE_URL`: e.g. `https://shhcasinos.com`, once the domain is connected. Until then the site uses Vercel's production URL.
+   - `NEXT_PUBLIC_CONTACT_EMAIL`: shown on /contact and /privacy.
+   - `INDEXNOW_KEY`: any 32+ char hex string; served at `/indexnow.txt`.
+4. Domains → add your domain and follow the DNS instructions.
+5. After launch: Search Console → submit `/sitemap/pages.xml`, `/sitemap/reviews.xml`, `/sitemap/lists.xml`, `/sitemap/guides.xml`; then `SITE_URL=https://yourdomain INDEXNOW_KEY=… npm run indexnow`.
+
+Preview deployments are automatically `noindex` and disallowed in robots.txt. Click logs from `/go/` appear in Vercel → Logs (search `outbound_click`).
 
 ## Content rules (plan §2)
 
@@ -49,4 +57,4 @@ Don't add VPN-bypass guides, "not on GamStop" pages, "100% anonymous" claims, fa
 - Fact-check and fill all 7 casinos (+ logos in `public/logos/`, light versions, SVG/WebP)
 - Real author bio on `/about`; legal review of `/privacy`
 - `/guides/best-vpn-for-privacy` (needs verified VPN facts + referral links)
-- OG image, favicon, IndexNow submit script, Search Console
+- Search Console verification
