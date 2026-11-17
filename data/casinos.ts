@@ -123,7 +123,28 @@ export const casinos: Casino[] = [
     lastChecked: null,
     payoutMinutes: { value: 10, label: "under 10 min", note: "Every test withdrawal landed in under 10 minutes." },
     offer: { text: "Welcome bonus up to $700" },
-    // No public KYC information yet. Waiting on KoalaBet: when is ID requested, and above what amount?
+    verdict:
+      "KoalaBet told us it needs no KYC: no ID to sign up, deposit or withdraw. Withdrawals landed in under 10 minutes in our tests. Like any casino, it can still run anti-money-laundering checks in unusual cases.",
+    pros: [
+      "No ID to sign up, deposit or withdraw, per KoalaBet",
+      "Payouts in under 10 minutes in our tests",
+      "Welcome bonus up to $700",
+    ],
+    cons: [
+      "No-KYC policy confirmed by KoalaBet directly; not yet checked against its published terms",
+      "Accepted coins not yet listed here",
+      "Bonus terms apply; read them before opting in",
+    ],
+    reported: {
+      level: "none",
+      summary: "No ID to sign up, deposit or withdraw.",
+      detail: [
+        "Confirmed to us directly by KoalaBet.",
+        "As with any licensed casino, anti-money-laundering checks can still happen in unusual cases.",
+      ],
+      sources: [{ name: "KoalaBet (direct confirmation)" }],
+      asOf: "2026-11-17",
+    },
   },
   // { slug: "cosmobet", name: "CosmoBet", affiliateUrl: "", lastChecked: null }, // once signed
 ];
