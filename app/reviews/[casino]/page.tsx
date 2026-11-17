@@ -103,8 +103,8 @@ export default async function Review({ params }: Props) {
           {c.affiliateUrl ? (
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center", margin: "20px 0" }}>
               {c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
-              <a className="btn btn-primary" href={`/go/${c.slug}`} rel="sponsored nofollow noopener" target="_blank">
-                Visit {c.name} <ArrowUpRight size={16} aria-hidden />
+              <a className="btn btn-primary" href={`/go/${c.slug}`} rel="sponsored nofollow noopener" target="_blank" aria-label={c.offer ? `Claim ${c.name} bonus` : `Visit ${c.name}`}>
+                {c.offer ? "Claim bonus" : `Visit ${c.name}`} <ArrowUpRight size={16} aria-hidden />
               </a>
               <span className="faint" style={{ fontSize: 13 }}>18+ · T&amp;Cs apply</span>
             </div>
@@ -142,10 +142,18 @@ export default async function Review({ params }: Props) {
           {c.offer ? (
             <p>
               {c.offer.text}
-              {c.offer.code ? <> Code: <span className="mono">{c.offer.code}</span>.</> : c.affiliateUrl ? <> No code needed: the bonus applies when you sign up through our link.</> : null}{" "}
+              {c.offer.code ? <> Code: <span className="mono">{c.offer.code}</span>.</> : c.affiliateUrl ? <> No code needed: the bonus applies when you sign up through the Claim bonus button.</> : null}{" "}
               {c.offer.source ? <><a href={c.offer.source} rel="nofollow noopener" target="_blank">Full terms on {c.name}</a>. </> : <>Read the full bonus terms on {c.name} before you opt in. </>}18+, T&amp;Cs apply.
             </p>
-          ) : (
+          ) : null}
+          {c.offer && c.affiliateUrl ? (
+            <p>
+              <a className="btn btn-primary" href={`/go/${c.slug}?pos=bonus`} rel="sponsored nofollow noopener" target="_blank" aria-label={`Claim ${c.name} bonus`}>
+                Claim bonus <ArrowUpRight size={16} aria-hidden />
+              </a>
+            </p>
+          ) : null}
+          {c.offer ? null : (
             <p className="faint">Being checked.</p>
           )}
 

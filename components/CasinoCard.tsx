@@ -63,7 +63,7 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
             <Gift size={15} aria-hidden color="var(--accent)" />
             <span>
               {c.offer.text}
-              {!c.offer.code && c.affiliateUrl ? <span className="offer-note">No code needed: the bonus applies when you sign up through our link.</span> : null}
+              {!c.offer.code && c.affiliateUrl ? <span className="offer-note">No code needed: the bonus applies when you sign up through the Claim bonus button.</span> : null}
             </span>
           </div>
         ) : null}
@@ -71,8 +71,8 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
         <div className="actions">
           {c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
           {c.affiliateUrl ? (
-            <a className="btn btn-primary" href={`/go/${c.slug}${rank !== undefined ? `?pos=${rank}` : ""}`} rel="sponsored nofollow noopener" target="_blank">
-              Visit {c.name} <ArrowUpRight size={16} aria-hidden />
+            <a className="btn btn-primary" href={`/go/${c.slug}${rank !== undefined ? `?pos=${rank}` : ""}`} rel="sponsored nofollow noopener" target="_blank" aria-label={c.offer ? `Claim ${c.name} bonus` : `Visit ${c.name}`}>
+              {c.offer ? "Claim bonus" : `Visit ${c.name}`} <ArrowUpRight size={16} aria-hidden />
             </a>
           ) : null}
           <Link className="btn btn-ghost" href={`/reviews/${c.slug}`}>Read review</Link>
