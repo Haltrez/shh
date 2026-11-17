@@ -48,6 +48,10 @@ To publish one, fill in `data/casinos.ts`:
 
 Preview deployments are automatically `noindex` and disallowed in robots.txt. Click logs from `/go/` appear in Vercel → Logs (search `outbound_click`).
 
+## Weekly articles
+
+Two guides a week, written by a scheduled Claude task. It reads `docs/CONTENT.md` (rules), takes the next topic from `docs/BACKLOG.md`, writes `content/weekly/<slug>.ts`, runs `npm run build && npm run check`, and pushes to `main`. Reorder or add topics in the backlog to steer it.
+
 ## Content rules (plan §2)
 
 Don't add VPN-bypass guides, "not on GamStop" pages, "100% anonymous" claims, fake reviews or invented bonus terms. `npm run check` catches the obvious phrases.
