@@ -58,7 +58,7 @@ export function FactBox({ c }: { c: Casino }) {
           </div>
         ))}
       </dl>
-      {hidden && shown.length && !c.lastChecked ? (
+      {hidden > 0 && shown.length > 0 && !c.lastChecked ? (
         <p className="reported-note" style={{ padding: "12px 20px", borderTop: "1px solid var(--line)" }}>
           Licence, VPN and country rules, limits and minimums get added once we&apos;ve read {c.name}&apos;s terms.
         </p>
