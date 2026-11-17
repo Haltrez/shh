@@ -4,7 +4,7 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import { sitewide } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
-import { Disclosure, Header, Footer } from "@/components/Chrome";
+import { Header, Footer } from "@/components/Chrome";
 import { AgeBanner } from "@/components/AgeBanner";
 import { GeoFilter } from "@/components/GeoFilter";
 
@@ -34,7 +34,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${grotesk.variable} ${mono.variable}`}>
       <body>
         <a href="#main" className="sr-only">Skip to content</a>
-        <Disclosure />
         <Header />
         <main id="main">{children}</main>
         <Footer />

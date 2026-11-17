@@ -1,11 +1,12 @@
 :root {
   --bg: #07080b;
-  --surface: #0e1015;
-  --surface-2: #151821;
-  --line: #1f2330;
-  --text: #e7e9ee;
-  --text-dim: #9aa1b2;
-  --text-faint: #7a8193; /* spec said #5F6676 (~3.4:1); lifted to clear 4.5:1 on --bg and --surface */
+  --surface: #12151c;   /* cards: clearly lifted off the page */
+  --surface-2: #1b1f2a; /* hover / raised */
+  --line: #2a3040;      /* borders you can actually see */
+  --heading: #ffffff;
+  --text: #eef0f4;      /* body copy */
+  --text-dim: #b9bfcc;  /* secondary copy: ~10:1 on --bg */
+  --text-faint: #8d94a5; /* labels, meta: ~6:1 on --bg */
   --accent: #7cf5c8;
   --accent-ink: #04140e;
   --warn: #f5c46b;
@@ -46,13 +47,15 @@ h3,
 h4 {
   font-family: var(--font-grotesk), system-ui, sans-serif;
   font-weight: 600;
+  color: var(--heading);
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0 0 0.5em;
   text-wrap: balance;
 }
 h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
-h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); margin-top: 2em; }
+h2 { font-size: clamp(1.55rem, 3.2vw, 2rem); margin-top: 2.2em; }
+h3 { color: var(--heading); }
 h3 { font-size: 1.2rem; }
 
 p { margin: 0 0 1em; }
@@ -74,7 +77,7 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 .mono {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-weight: 500;
-  font-size: 0.86em;
+  font-size: 0.9em;
   color: var(--text-dim);
 }
 
@@ -97,16 +100,7 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
-/* ---------- Disclosure + header ---------- */
-.disclosure {
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-  font-size: 13px;
-  color: var(--text-dim);
-  text-align: center;
-  padding: 6px 16px;
-}
-.disclosure a { color: var(--text-dim); }
+/* ---------- Header ---------- */
 
 .header {
   position: sticky;
@@ -218,7 +212,7 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 
 .meta-strip {
   font-family: var(--font-mono);
-  font-size: 13.5px;
+  font-size: 14px;
   color: var(--text-dim);
   display: flex;
   flex-wrap: wrap;
@@ -253,9 +247,9 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 .chip {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 500;
-  color: var(--text-dim);
+  color: var(--text);
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -319,11 +313,11 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 .casino-card h3 a { color: var(--text); text-decoration: none; }
 .casino-card h3 a:hover { color: var(--accent); }
 .casino-logo { height: 28px; width: auto; }
-.casino-card .facts { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; color: var(--text-dim); }
+.casino-card .facts { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 15px; color: var(--text-dim); }
 .casino-card .facts b { color: var(--text); font-weight: 500; }
 .casino-card .offer { font-size: 15px; }
 .casino-card .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.casino-card .tc { font-size: 12px; color: var(--text-faint); }
+.casino-card .tc { font-size: 13px; color: var(--text-faint); }
 .casino-card.pending { opacity: 0.85; }
 @media (max-width: 520px) {
   .casino-card { grid-template-columns: 1fr; }
@@ -358,7 +352,7 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 table.cmp { width: 100%; border-collapse: collapse; font-size: 15px; }
 table.cmp th, table.cmp td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
 table.cmp tbody tr:last-child td { border-bottom: 0; }
-table.cmp th { font-weight: 500; color: var(--text-dim); font-size: 13px; background: var(--surface); }
+table.cmp th { font-weight: 500; color: var(--text-faint); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; background: var(--surface); }
 table.cmp th button {
   all: unset; cursor: pointer; display: inline-flex; gap: 4px; align-items: center;
 }
@@ -380,7 +374,7 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
 /* ---------- Generic data tables in prose ---------- */
 .data-table { width: 100%; border-collapse: collapse; font-size: 15px; }
 .data-table th, .data-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
-.data-table th { color: var(--text-dim); font-weight: 500; font-size: 13px; }
+.data-table th { color: var(--text-faint); font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
 .data-table td:first-child { font-family: var(--font-mono); font-size: 14px; color: var(--text); }
 .table-note { font-size: 14px; color: var(--text-faint); margin-top: 8px; }
 
@@ -389,7 +383,7 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
 .factbox h2 { font-size: 1rem; margin: 0; padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; align-items: center; }
 .factbox dl { margin: 0; display: grid; grid-template-columns: minmax(120px, 34%) 1fr; }
 .factbox dt, .factbox dd { margin: 0; padding: 12px 20px; border-bottom: 1px solid var(--line); font-size: 15px; }
-.factbox dt { color: var(--text-dim); }
+.factbox dt { color: var(--text-faint); }
 .factbox dd .src { font-size: 12px; margin-left: 6px; color: var(--text-faint); }
 .factbox dl > :nth-last-child(-n + 2) { border-bottom: 0; }
 @media (max-width: 520px) {
@@ -416,8 +410,8 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
   font-size: 14px;
 }
 .steps h3 { margin: 0 0 4px; font-size: 1.1rem; }
-.steps .need { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); margin-bottom: 8px; }
-.steps p { margin: 0; color: var(--text-dim); }
+.steps .need { font-family: var(--font-mono); font-size: 13px; color: var(--accent); opacity: .85; margin-bottom: 8px; }
+.steps p { margin: 0; color: var(--text); }
 
 /* ---------- Callouts ---------- */
 .caveat {
@@ -449,7 +443,7 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--text-faint); }
 .faq details[open] summary::after { content: "–"; }
-.faq details > div { padding: 0 20px 16px; color: var(--text-dim); }
+.faq details > div { padding: 0 20px 18px; color: var(--text); }
 
 /* ---------- Pros / cons ---------- */
 .proscons ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
@@ -457,16 +451,27 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
 .proscons h3 { font-size: 1rem; display: flex; gap: 8px; align-items: center; }
 
 /* ---------- Sections ---------- */
-.section { padding: 48px 0; }
+.section { padding: 56px 0; }
+.section.band { background: #0b0d12; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
 .section-head h2 { margin: 0; }
+.section-head h2::before,
+.prose > h2::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin-bottom: 14px;
+}
 .layout-article { display: grid; gap: 40px; padding-bottom: 64px; }
 @media (min-width: 980px) { .layout-article { grid-template-columns: minmax(0, 1fr) 320px; } .layout-article aside { position: sticky; top: 84px; align-self: start; } }
 
 .link-card { display: block; text-decoration: none; color: var(--text); transition: background 0.15s; }
 .link-card:hover { background: var(--surface-2); color: var(--text); }
-.link-card h3 { margin: 0 0 6px; font-size: 1.05rem; }
-.link-card p { margin: 0; color: var(--text-dim); font-size: 15px; }
+.link-card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+.link-card p { margin: 0; color: var(--text-dim); font-size: 15.5px; line-height: 1.55; }
 .link-card .cat { font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 8px; display: block; }
 
 .notice {
@@ -483,7 +488,7 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
 .footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
 .footer a { color: var(--text-dim); text-decoration: none; }
 .footer a:hover { color: var(--text); }
-.footer .rg { border-top: 1px solid var(--line); padding-top: 20px; color: var(--text-faint); }
+.footer .rg { border-top: 1px solid var(--line); padding-top: 20px; color: var(--text-dim); }
 
 .age-banner {
   position: fixed;

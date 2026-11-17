@@ -3,15 +3,6 @@ import { site } from "@/lib/site";
 import { lists } from "@/data/lists";
 import { guides } from "@/content/guides";
 
-export function Disclosure() {
-  return (
-    <div className="disclosure">
-      We earn commission from some casinos. It never changes our scores.{" "}
-      <Link href="/affiliate-disclosure">How this works</Link>
-    </div>
-  );
-}
-
 export function Header() {
   return (
     <header className="header">
@@ -70,6 +61,10 @@ export function Footer() {
           <p>
             18+ only. Gambling can be addictive. Set limits before you play, and only play where online gambling is
             legal for you. If it stops being fun, stop. <Link href="/responsible-gambling">Get help</Link>.
+          </p>
+          <p>
+            We earn commission from some casinos. It never changes our scores.{" "}
+            <Link href="/affiliate-disclosure">How this works</Link>.
           </p>
           <p>
             © {site.year} {site.name}. Independent guide; we don&apos;t operate any casino. Facts are checked against

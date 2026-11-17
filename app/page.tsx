@@ -100,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section band">
         <div className="wrap">
           <div className="grid grid-3">
             <div className="card">
@@ -131,7 +131,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section">
         <div className="wrap">
           <div className="section-head"><h2>By coin and feature</h2></div>
           <div className="grid grid-3">
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section band">
         <div className="wrap">
           <div className="section-head">
             <h2>Crypto guides</h2>
@@ -163,7 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section">
         <div className="wrap prose">
           <h2 style={{ marginTop: 0 }}>Questions</h2>
           <Faq items={FAQ} />
