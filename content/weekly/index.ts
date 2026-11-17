@@ -7,6 +7,7 @@ import { guide as cryptoGamblingMarket2026 } from "./crypto-gambling-market-2026
 import { guide as cryptoPrivacyRegulation2026 } from "./crypto-privacy-regulation-2026";
 import { guide as cryptoNewsNovember2026 } from "./crypto-news-november-2026";
 import { guide as cryptoCasinoWithdrawalPending } from "./crypto-casino-withdrawal-pending";
+import { guide as stablecoinGamblingTrend } from "./stablecoin-gambling-trend";
 
 export const weeklyGuides: Guide[] = [
   sentCryptoWrongNetwork,
@@ -15,4 +16,5 @@ export const weeklyGuides: Guide[] = [
   cryptoPrivacyRegulation2026,
   cryptoNewsNovember2026,
   cryptoCasinoWithdrawalPending,
+  stablecoinGamblingTrend,
 ];
