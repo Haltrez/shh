@@ -5,6 +5,7 @@ Two new guides a week. Every article follows these rules. The scheduled task rea
 ## Pick the topic
 
 1. Open `docs/BACKLOG.md` and take the **first unchecked** topic.
+   Exception: in the **first week of each month**, if no `crypto-news-<month>-<year>` guide exists for the previous month, write that roundup instead.
 2. Check `content/` for an existing guide with the same slug or intent (`grep -rn "slug:" content/`). If one exists, skip that topic, tick it with a note, and take the next.
 3. If the backlog is empty, pick a long-tail question a crypto-casino reader would search, in one of the four categories, that no existing guide answers. Add it to the backlog first.
 
@@ -35,6 +36,17 @@ Body blocks: `p`, `h2`, `list` (optionally `ordered`), `steps` (`name`, `need`, 
 **Shape:** first paragraph answers the question in 1–3 sentences. Then 3–6 `h2` sections. Aim for 900–1,500 words. Use a `steps` block for any how-to, a `table` for comparisons, and at least one `caveat` with an honest warning.
 
 **Voice:** calm, technical, direct. Short sentences. "You", not "players". No hype, no emoji, no "🔥", no countdowns, no exclamation marks.
+
+## Trends & news articles
+
+Use `category: "Trends & news"` for market, trend, regulation and monthly news pieces.
+
+- Research with web search **on the day you write**. Every number, date and claim needs a source.
+- Add a `sources` array (`{ name, url }`), at least 3 sources, preferring primary or established outlets over affiliate review sites.
+- Attribute uncertain figures in the text ("one on-chain tracker reported…", "according to Juniper Research…"). When sources disagree, say so and give the range.
+- State the reporting window for prices ("as of 17 November 2026"). Never present a price as current without a date.
+- Always end with a "What this means for casino players" section that is practical and responsible.
+- Monthly roundup slug format: `crypto-news-<month>-<year>`, e.g. `crypto-news-december-2026`.
 
 ## Hard rules
 

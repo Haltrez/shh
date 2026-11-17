@@ -12,7 +12,7 @@ export type Guide = {
   h1: string;
   description: string; // ≤ 155
   updated: string; // ISO date
-  category: "Crypto basics" | "Privacy" | "Casino know-how" | "Money";
+  category: "Crypto basics" | "Privacy" | "Casino know-how" | "Money" | "Trends & news";
   /** Renders HowTo schema from the first steps block. */
   howTo?: boolean;
   /** Casino review slugs to recommend at the end (only verified ones render). */
@@ -20,4 +20,6 @@ export type Guide = {
   relatedGuides: string[];
   body: Block[];
   faq?: { q: string; a: string }[];
+  /** External sources cited in the article. Required for trends & news pieces. */
+  sources?: { name: string; url: string }[];
 };

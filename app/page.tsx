@@ -13,6 +13,7 @@ import { Caveat } from "@/components/Caveat";
 import { VpnBox } from "@/components/VpnBox";
 import { faqPage, itemList } from "@/lib/schema";
 import { seo } from "@/lib/seo";
+import { formatDate } from "@/lib/format";
 
 const year = new Date().getFullYear();
 
@@ -45,10 +46,16 @@ const FAQ = [
   },
 ];
 
+const FEATURED = ["is-crypto-gambling-anonymous", "how-to-buy-crypto", "how-to-deposit-crypto", "cheapest-coin-to-deposit", "what-is-kyc-at-casinos", "usdt-trc20-vs-erc20"];
+
 export default function Home() {
   const ranked = rank(allCasinos);
+  const latest = [...guides]
+    .filter((g) => !FEATURED.includes(g.slug))
+    .sort((a, b) => b.updated.localeCompare(a.updated) || guides.indexOf(b) - guides.indexOf(a))
+    .slice(0, 3);
   const top = ranked.slice(0, 5);
-  const featuredGuides = ["is-crypto-gambling-anonymous", "how-to-buy-crypto", "how-to-deposit-crypto", "cheapest-coin-to-deposit", "what-is-kyc-at-casinos", "usdt-trc20-vs-erc20"]
+  const featuredGuides = FEATURED
     .map((s) => guides.find((g) => g.slug === s)!)
     .filter(Boolean);
 
@@ -144,6 +151,24 @@ export default function Home() {
               <Link key={l.slug} href={`/best/${l.slug}`} className="card link-card">
                 <h3>{l.short}</h3>
                 <p>{l.criteria}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <div className="section-head">
+            <h2>Latest</h2>
+            <Link href="/guides" className="mono">all articles →</Link>
+          </div>
+          <div className="grid grid-3">
+            {latest.map((g) => (
+              <Link key={g.slug} href={`/guides/${g.slug}`} className="card link-card">
+                <span className="cat">{g.category} · {formatDate(g.updated)}</span>
+                <h3>{g.h1}</h3>
+                <p>{g.description}</p>
               </Link>
             ))}
           </div>

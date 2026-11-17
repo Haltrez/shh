@@ -11,7 +11,7 @@ export const metadata: Metadata = seo({
   path: "/guides",
 });
 
-const ORDER: Guide["category"][] = ["Crypto basics", "Casino know-how", "Money", "Privacy"];
+const ORDER: Guide["category"][] = ["Trends & news", "Crypto basics", "Casino know-how", "Money", "Privacy"];
 
 export default function Guides() {
   return (

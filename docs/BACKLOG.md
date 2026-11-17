@@ -2,7 +2,14 @@
 
 Take the first unchecked topic. Tick it with the publish date when it's live. Add new ideas at the bottom.
 
-- [x] sent-crypto-wrong-network (2026-11-17) — "Sent crypto on the wrong network? What to do next" (Casino know-how)
+- [x] sent-crypto-wrong-network (2026-11-17)
+- [x] no-kyc-casino-trends-2026 (2026-11-17)
+- [x] crypto-gambling-market-2026 (2026-11-17)
+- [x] crypto-privacy-regulation-2026 (2026-11-17)
+- [x] crypto-news-november-2026 (2026-11-17) — "Sent crypto on the wrong network? What to do next" (Casino know-how)
+- [ ] stablecoin-gambling-trend — "Why stablecoins are taking over crypto casino deposits" (Trends & news)
+- [ ] crypto-casino-licensing-shift-2026 — "Curaçao's reform one year on: where crypto casinos are licensed now" (Trends & news)
+- [ ] crypto-casino-data-breaches — "Casino data breaches: what leaked, and how to protect your ID" (Trends & news)
 - [ ] crypto-casino-withdrawal-pending — "Why is my crypto casino withdrawal pending?" (Casino know-how)
 - [ ] how-to-buy-usdt-trc20 — "How to buy USDT on TRC20 (Tron), step by step" (Crypto basics)
 - [ ] wagering-requirements-explained — "Wagering requirements explained, with examples" (Casino know-how)
@@ -22,3 +29,7 @@ Take the first unchecked topic. Tick it with the publish date when it's live. Ad
 - [ ] public-wifi-crypto-safety — "Using crypto on public Wi-Fi safely" (Privacy)
 - [ ] lightning-network-explained — "Bitcoin Lightning Network explained for casino players" (Crypto basics)
 - [ ] deposit-limits-and-cool-offs — "Deposit limits and cool-offs at crypto casinos: how to use them" (Money)
+- [ ] crypto-gambling-statistics-2027 — "Crypto gambling statistics: the numbers worth trusting" (Trends & news, early January)
+- [ ] privacy-coins-2027-eu-ban — "The 2027 EU privacy coin ban: what changes for crypto users" (Trends & news)
+- [ ] us-crypto-regulation-after-midterms — "US crypto regulation after the 2026 midterms" (Trends & news)
+- [ ] ai-and-crypto-casinos — "How AI is changing crypto casinos: risk checks, support, fraud" (Trends & news)

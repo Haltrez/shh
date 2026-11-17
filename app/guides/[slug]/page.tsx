@@ -62,6 +62,18 @@ export default async function GuidePage({ params }: Props) {
               <Faq items={g.faq} />
             </>
           ) : null}
+          {g.sources?.length ? (
+            <>
+              <h2 id="sources">Sources</h2>
+              <ul className="sources">
+                {g.sources.map((s) => (
+                  <li key={s.url}>
+                    <a href={s.url} rel="nofollow noopener" target="_blank">{s.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
           <p className="faint" style={{ fontSize: 14 }}>
             18+. This guide is general information, not financial, legal or tax advice. Only gamble where it&apos;s
             legal for you. <Link href="/responsible-gambling">Responsible gambling</Link>.
