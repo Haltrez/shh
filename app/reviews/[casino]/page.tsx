@@ -103,7 +103,7 @@ export default async function Review({ params }: Props) {
           {c.affiliateUrl ? (
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center", margin: "20px 0" }}>
               {c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
-              <a className="btn btn-primary" href={`/go/${c.slug}`} rel="sponsored nofollow noopener" target="_blank" data-geos={JSON.stringify(c.geos)}>
+              <a className="btn btn-primary" href={`/go/${c.slug}`} rel="sponsored nofollow noopener" target="_blank">
                 Visit {c.name} <ArrowUpRight size={16} aria-hidden />
               </a>
               <span className="faint" style={{ fontSize: 13 }}>18+ · T&amp;Cs apply</span>

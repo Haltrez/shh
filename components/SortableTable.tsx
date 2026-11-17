@@ -11,7 +11,6 @@ export type Row = {
   payoutLabel: string;
   minDeposit: number | null;
   coins: string;
-  geos: string[];
 };
 
 type Key = "score" | "payout" | "minDeposit";
@@ -52,7 +51,7 @@ export function SortableTable({ rows }: { rows: Row[] }) {
       </thead>
       <tbody>
         {sorted.map((r) => (
-          <tr key={r.slug} data-geos={JSON.stringify(r.geos)}>
+          <tr key={r.slug}>
             <td>
               <a href={`/reviews/${r.slug}`}>{r.name}</a>
             </td>

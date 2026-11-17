@@ -40,8 +40,6 @@ export type Casino = {
   logo?: string;
   /** Tracking link from the affiliate program. Empty = /go falls back to the review. */
   affiliateUrl: string;
-  /** Country rules for outbound links, Scatter Drop style: ["!US", "!GB"] excludes; ["CA"] includes only. */
-  geos: string[];
   /** ISO date of the last full fact check. null = never checked → page is noindex and shows as pending. */
   lastChecked: string | null;
   /** Third-party reports, used until the fact box is verified. */

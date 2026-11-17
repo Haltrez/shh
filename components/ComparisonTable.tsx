@@ -16,7 +16,6 @@ export function ComparisonTable({ casinos }: { casinos: Casino[] }) {
     payoutLabel: formatPayout(c),
     minDeposit: c.minDepositUsd?.value ?? null,
     coins: coinsOf(c)?.join(" ") || "–",
-    geos: c.geos,
   }));
   return (
     <>

@@ -9,6 +9,7 @@ import { RelatedGuides, RelatedReviews } from "@/components/Related";
 import { article, breadcrumbs, faqPage, howTo } from "@/lib/schema";
 import { formatDate } from "@/lib/format";
 import { site } from "@/lib/site";
+import { VpnBox } from "@/components/VpnBox";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -47,6 +48,11 @@ export default async function GuidePage({ params }: Props) {
       <div className="wrap layout-article">
         <article className="prose">
           <Blocks blocks={g.body} />
+          {g.category === "Privacy" || g.slug === "crypto-wallet-for-gambling" || g.slug === "how-to-buy-crypto" ? (
+            <div style={{ margin: "32px 0" }}>
+              <VpnBox pos={`guide-${g.slug}`} />
+            </div>
+          ) : null}
           {g.faq?.length ? (
             <>
               <h2 id="faq">Questions</h2>
@@ -61,6 +67,7 @@ export default async function GuidePage({ params }: Props) {
         <aside className="grid">
           <RelatedReviews prefer={g.relatedReviews} />
           <RelatedGuides slugs={g.relatedGuides} title="Read next" />
+          {g.category !== "Privacy" ? <VpnBox compact pos={`guide-sidebar-${g.slug}`} /> : null}
           <div className="card">
             <h3 style={{ fontSize: "1rem" }}>Start here</h3>
             <p className="dim" style={{ fontSize: 15, margin: 0 }}>

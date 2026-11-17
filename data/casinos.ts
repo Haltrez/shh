@@ -19,7 +19,6 @@ export const casinos: Casino[] = [
     slug: "cashy",
     name: "Cashy",
     affiliateUrl: "https://gocashy.com/beixdsb7w",
-    geos: ["!US"],
     lastChecked: null,
     reported: {
       level: "none",
@@ -38,7 +37,6 @@ export const casinos: Casino[] = [
     slug: "mirax",
     name: "Mirax Casino",
     affiliateUrl: "https://mirax.partners/po7jctlhu",
-    geos: ["!US"],
     lastChecked: null,
     reported: {
       level: "on-request",
@@ -56,7 +54,6 @@ export const casinos: Casino[] = [
     slug: "7bit",
     name: "7Bit Casino",
     affiliateUrl: "https://7bit.partners/piymfrjsr",
-    geos: ["!US"],
     lastChecked: null,
     reported: {
       level: "on-request",
@@ -78,7 +75,6 @@ export const casinos: Casino[] = [
     slug: "bitstarz",
     name: "BitStarz",
     affiliateUrl: "https://bzstarz2.com/bigtntdfo",
-    geos: ["!US"],
     lastChecked: null,
     reported: {
       level: "first-withdrawal",
@@ -100,11 +96,10 @@ export const casinos: Casino[] = [
     slug: "koalabet",
     name: "KoalaBet",
     affiliateUrl: "https://click.koalabetaffiliates.com/redirect.aspx?pid=2408&lpid=8&bid=1479",
-    geos: ["!US"],
     lastChecked: null,
     // No public KYC information yet. Waiting on KoalaBet: when is ID requested, and above what amount?
   },
-  // { slug: "cosmobet", name: "CosmoBet", affiliateUrl: "", geos: ["!US"], lastChecked: null }, // once signed
+  // { slug: "cosmobet", name: "CosmoBet", affiliateUrl: "", lastChecked: null }, // once signed
 ];
 
 export const getCasino = (slug: string) => casinos.find((c) => c.slug === slug);

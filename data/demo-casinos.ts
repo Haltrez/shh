@@ -19,7 +19,6 @@ const demo = (
   slug,
   name,
   affiliateUrl: "",
-  geos: ["!US"],
   lastChecked: "2026-11-01",
   licence: { value: "Example licence (demo)", source: src },
   kyc: {

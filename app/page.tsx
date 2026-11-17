@@ -10,6 +10,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { Caveat } from "@/components/Caveat";
+import { VpnBox } from "@/components/VpnBox";
 import { faqPage, itemList } from "@/lib/schema";
 
 const year = new Date().getFullYear();
@@ -127,6 +128,9 @@ export default function Home() {
                 count.
               </p>
             </div>
+          </div>
+          <div style={{ marginTop: 16 }}>
+            <VpnBox pos="home" />
           </div>
         </div>
       </section>

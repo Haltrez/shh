@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { guides } from "@/content/guides";
 import type { Guide } from "@/content/types";
+import { VpnBox } from "@/components/VpnBox";
 
 export const metadata: Metadata = {
   title: "Crypto Casino Guides: Buy, Deposit, Withdraw, Privacy",
@@ -40,6 +41,7 @@ export default function Guides() {
             </section>
           );
         })}
+        <VpnBox pos="guides-index" />
       </div>
     </>
   );

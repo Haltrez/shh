@@ -13,7 +13,7 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
   const score = privacyScore(c);
   const reported = isReportedOnly(c) ? c.reported : undefined;
   return (
-    <article className={`card casino-card${verified ? "" : " pending"}`} data-geos={JSON.stringify(c.geos)}>
+    <article className={`card casino-card${verified ? "" : " pending"}`}>
       <div className="rank" aria-hidden>{rank !== undefined ? String(rank).padStart(2, "0") : ""}</div>
       <div className="body">
         <div className="top">
