@@ -12,15 +12,15 @@ import { JsonLd } from "@/components/JsonLd";
 import { Caveat } from "@/components/Caveat";
 import { VpnBox } from "@/components/VpnBox";
 import { faqPage, itemList } from "@/lib/schema";
+import { seo } from "@/lib/seo";
 
 const year = new Date().getFullYear();
 
-export const metadata: Metadata = {
-  title: { absolute: `Best No-KYC Crypto Casinos ${year}: Privacy Ranked | shh` },
-  description:
-    "No-KYC crypto casinos ranked by what they actually ask for: ID at sign-up, withdrawal checks, payout speed and coins. Checked against each casino's terms.",
-  alternates: { canonical: "/" },
-};
+export const metadata: Metadata = seo({
+  title: `Best No-KYC Crypto Casinos ${year}: Privacy Ranked | shh`,
+  description: "No-KYC crypto casinos ranked by what they actually ask for: ID at sign-up, withdrawal checks, payout speed and coins. Checked against each casino's terms.",
+  path: "/", absolute: true,
+});
 
 const FAQ = [
   {
@@ -60,6 +60,7 @@ export default function Home() {
             <Lock size={14} aria-hidden /> no-KYC · low-KYC · crypto only
           </div>
           <h1>
+            <span className="h1-kicker">No-KYC crypto casinos.</span>
             Play without{" "}
             <span className="redact" tabIndex={0}>
               uploading

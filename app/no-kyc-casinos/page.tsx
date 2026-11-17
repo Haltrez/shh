@@ -9,15 +9,16 @@ import { Caveat, VPN_NOTICE } from "@/components/Caveat";
 import { JsonLd } from "@/components/JsonLd";
 import { RelatedGuides } from "@/components/Related";
 import { breadcrumbs, faqPage, itemList } from "@/lib/schema";
+import { seo } from "@/lib/seo";
+import { comparePairs, shortName } from "@/lib/compare";
 
 const year = new Date().getFullYear();
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: `No-KYC Casinos ${year}: Every Check, Listed`,
-  description:
-    "What 'no KYC' really means at crypto casinos, and every casino ranked by the ID it asks for at sign-up, on withdrawal, and when checks are triggered.",
-  alternates: { canonical: "/no-kyc-casinos" },
-};
+  description: "What 'no KYC' really means at crypto casinos, and every casino ranked by the ID it asks for at sign-up, on withdrawal, and when checks are triggered.",
+  path: "/no-kyc-casinos",
+});
 
 const FAQ = [
   { q: "Does 'no KYC' mean I'll never be asked for ID?", a: "No. It means no ID at sign-up and for normal withdrawals. Nearly every casino keeps the right to ask in specific cases, such as large withdrawals, AML reviews or source-of-funds checks. We list each one's triggers." },
@@ -49,12 +50,11 @@ export default function Page() {
           <h2 style={{ marginTop: 0 }}>What &ldquo;no KYC&rdquo; means here</h2>
           <p>
             KYC (Know Your Customer) is the ID check: a passport or licence, a selfie, sometimes proof of address. We
-            give every casino one of four badges. A badge marked “reported” comes from third-party reviews and isn’t confirmed against the casino’s terms yet:
+            give every casino one of three badges. A badge marked “reported” comes from third-party reviews and isn’t confirmed against the casino’s terms yet:
           </p>
           <ul>
             <li><b style={{ color: "var(--accent)" }}>No KYC</b>: no ID at sign-up or for normal withdrawals; checks only in narrow, stated cases.</li>
             <li><b style={{ color: "var(--warn)" }}>KYC on request</b>: no ID at sign-up, but routine thresholds or triggers where ID is commonly asked.</li>
-            <li><b style={{ color: "#ffa86b" }}>KYC at first withdrawal</b>: no ID to sign up or deposit, but ID before your first cash-out.</li>
             <li><b style={{ color: "var(--danger)" }}>Full KYC</b>: ID before you can play.</li>
           </ul>
           <Caveat text="Heads-up: if a casino asks for ID and you won't provide it, it can usually hold the withdrawal under its terms. Decide before you deposit whether you'd be willing to verify." />
@@ -66,6 +66,13 @@ export default function Page() {
 
           <h2>VPNs and country rules</h2>
           <Caveat text={VPN_NOTICE} />
+
+          <h2>Head-to-head comparisons</h2>
+          <ul>
+            {comparePairs().map((x) => (
+              <li key={x.slug}><Link href={`/compare/${x.slug}`}>{shortName(x.a)} vs {shortName(x.b)}</Link></li>
+            ))}
+          </ul>
 
           <h2>Questions</h2>
           <Faq items={FAQ} />

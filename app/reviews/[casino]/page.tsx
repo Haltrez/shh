@@ -18,6 +18,10 @@ import { PromoCode } from "@/components/PromoCode";
 import { JsonLd } from "@/components/JsonLd";
 import { RelatedGuides, RelatedLists } from "@/components/Related";
 import { article, breadcrumbs, faqPage } from "@/lib/schema";
+import { seo, clip } from "@/lib/seo";
+import { casinoFaq } from "@/lib/casino-faq";
+import { formatPayout } from "@/lib/format";
+import { pairsFor, shortName } from "@/lib/compare";
 
 type Props = { params: Promise<{ casino: string }> };
 
@@ -30,12 +34,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = findCasino((await params).casino);
   if (!c) return {};
   const published = isPublished(c);
+  const level = kycLevelOf(c);
+  const kycWord = level === "none" ? "No KYC" : "KYC Rules";
+  const summary = c.kyc?.summary ?? c.reported?.summary;
+  const description = published && summary
+    ? clip(`${c.name} review: ${summary} Payouts ${formatPayout(c)} in our tests.${c.offer ? ` Bonus: ${c.offer.text}.` : ""}`)
+    : `${c.name} review: what ID it asks for at sign-up and withdrawal, payout speed, coins, VPN and country rules.`;
   return {
-    title: `${c.name} Review ${new Date().getFullYear()}: KYC, Payouts & Bonus`,
-    description: published && c.verdict
-      ? c.verdict.slice(0, 155)
-      : `${c.name} review: what ID it asks for at sign-up and withdrawal, payout speed, coins, VPN and country rules. Being checked against its terms.`,
-    alternates: { canonical: `/reviews/${c.slug}` },
+    ...seo({
+      title: `${c.name} Review ${new Date().getFullYear()}: ${kycWord}, Payouts & Bonus`,
+      description,
+      path: `/reviews/${c.slug}`,
+      type: "article",
+      modifiedTime: c.lastChecked ?? c.reported?.asOf,
+    }),
     // Reviews without enough data to score stay out of the index.
     robots: published ? undefined : { index: false, follow: true },
   };
@@ -55,6 +67,7 @@ export default async function Review({ params }: Props) {
   const tagReported = isReportedOnly(c);
   const reported = !isVerified(c) ? c.reported : undefined;
   const coinLists = lists.filter((l) => l.filter(c)).map((l) => l.slug);
+  const faq = [...(c.faq ?? []), ...casinoFaq(c)];
 
   return (
     <>
@@ -207,16 +220,29 @@ export default async function Review({ params }: Props) {
             help.
           </p>
 
-          {c.faq?.length ? (
+          {faq.length ? (
             <>
-              <h2 id="faq">FAQ</h2>
-              <Faq items={c.faq} />
+              <h2 id="faq">{c.name} FAQ</h2>
+              <Faq items={faq} />
             </>
           ) : null}
         </article>
 
         <aside className="grid">
           <RelatedLists slugs={coinLists} />
+          {published && pairsFor(c.slug).length ? (
+            <div className="card">
+              <h3 style={{ fontSize: "1rem" }}>Compare {shortName(c)}</h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8, fontSize: 15 }}>
+                {pairsFor(c.slug).map((x) => {
+                  const other = x.a.slug === c.slug ? x.b : x.a;
+                  return (
+                    <li key={x.slug}><Link href={`/compare/${x.slug}`}>{shortName(c)} vs {shortName(other)}</Link></li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : null}
           <RelatedGuides slugs={["how-to-deposit-crypto", "what-is-kyc-at-casinos", "cheapest-coin-to-deposit"]} />
         </aside>
       </div>
@@ -227,7 +253,7 @@ export default async function Review({ params }: Props) {
           ...(published && updated
             ? [article({ headline: `${c.name} review`, description: c.verdict ?? "", path: `/reviews/${c.slug}`, dateModified: updated })]
             : []),
-          ...(c.faq?.length ? [faqPage(c.faq)] : []),
+          ...(faq.length && published ? [faqPage(faq)] : []),
         ]}
       />
     </>

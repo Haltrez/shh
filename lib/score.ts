@@ -33,7 +33,7 @@ export function derivedScores(c: Casino): Partial<Record<Key, number>> | null {
   if (!r || !c.payoutMinutes) return null;
   const out: Partial<Record<Key, number>> = {};
   out.kycSignup = r.level === "full" ? 0 : 5;
-  const triggers = { none: 4, "on-request": 2, "first-withdrawal": 1, full: 0 }[r.level];
+  const triggers = { none: 4, "on-request": 2, full: 0 }[r.level];
   out.kycTriggers = Math.max(0, triggers - (r.conflicting ? 1 : 0));
   const m = c.payoutMinutes.value;
   out.payoutSpeed = m <= 10 ? 5 : m <= 30 ? 4 : m <= 60 ? 3 : m <= 240 ? 2 : 1;
@@ -74,7 +74,7 @@ export const kycLevelOf = (c: Casino) => c.kyc?.level ?? c.reported?.level;
 export const isReportedOnly = (c: Casino) => !isVerified(c) && Boolean(c.reported) && !c.reported?.confirmed;
 export const coinsOf = (c: Casino) => c.coins?.value ?? c.reported?.coins;
 
-const LEVEL_ORDER = { none: 0, "on-request": 1, "first-withdrawal": 2, full: 3 } as const;
+const LEVEL_ORDER = { none: 0, "on-request": 1, full: 2 } as const;
 
 /**
  * Verified casinos by score first. Unverified ones follow, ordered by reported KYC level

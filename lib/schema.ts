@@ -7,6 +7,8 @@ const org = {
   "@id": `${site.url}/#org`,
   name: site.name,
   url: site.url,
+  logo: `${site.url}/icon.svg`,
+  description: site.description,
 };
 
 export const sitewide = [

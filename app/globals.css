@@ -173,6 +173,7 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
   pointer-events: none;
 }
 .hero > * { position: relative; }
+.h1-kicker { display: block; font-size: 0.42em; letter-spacing: -0.01em; color: var(--accent); margin-bottom: 0.35em; }
 .hero p.lead { font-size: 1.15rem; color: var(--text-dim); max-width: 620px; }
 .eyebrow {
   display: inline-flex;
@@ -271,7 +272,6 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 .badge-none { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .badge-on-request { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 35%, transparent); background: color-mix(in srgb, var(--warn) 8%, transparent); }
 .badge-full { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 35%, transparent); background: color-mix(in srgb, var(--danger) 8%, transparent); }
-.badge-first-withdrawal { color: #ffa86b; border-color: rgba(255, 168, 107, .35); background: rgba(255, 168, 107, .08); }
 .badge-reported { border-style: dashed; }
 .badge-tag {
   font-family: var(--font-mono);
@@ -533,3 +533,10 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
 .vpn-box { display: grid; gap: 12px; border-left: 3px solid var(--accent); }
 .vpn-head { display: flex; gap: 10px; align-items: center; }
 .vpn-list { margin: 0; padding-left: 1.2em; color: var(--text-dim); display: grid; gap: 4px; font-size: 15.5px; }
+
+/* ---------- Compare ---------- */
+.vs-logos { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; font-family: var(--font-grotesk); font-weight: 600; font-size: 1.3rem; }
+.vs-table td:first-child { font-family: var(--font-inter); color: var(--text-faint); font-size: 14px; white-space: nowrap; }
+.vs-table td { width: 40%; }
+.vs-table td:first-child { width: 20%; }
+.vs-table th a { color: var(--heading); text-decoration: none; font-size: 15px; text-transform: none; letter-spacing: 0; }

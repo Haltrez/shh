@@ -11,6 +11,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { RelatedGuides, RelatedLists } from "@/components/Related";
 import { breadcrumbs, faqPage, itemList } from "@/lib/schema";
 import { formatDate } from "@/lib/format";
+import { seo } from "@/lib/seo";
 
 type Props = { params: Promise<{ list: string }> };
 
@@ -29,9 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const l = getList(list);
   if (!l) return {};
   return {
-    title: { absolute: `${withYear(l.title)} | shh` },
-    description: l.description,
-    alternates: { canonical: `/best/${l.slug}` },
+    ...seo({ title: `${withYear(l.title)} | shh`, description: l.description, path: `/best/${l.slug}`, absolute: true }),
     // An empty list is thin content: keep it out of the index until casinos qualify.
     robots: matches(list).length ? undefined : { index: false, follow: true },
   };

@@ -252,7 +252,7 @@ export const cryptoGuides: Guide[] = [
           },
           {
             name: "Wait for processing",
-            need: "Patience on the first withdrawal",
+            need: "A few minutes",
             text: "Some casinos send automatically; others review every withdrawal or only the first one. After the casino sends, the network confirms it in seconds to minutes (longer for Bitcoin).",
           },
           {
@@ -266,7 +266,7 @@ export const cryptoGuides: Guide[] = [
       {
         type: "list",
         items: [
-          "A first withdrawal, or one much larger than your usual.",
+          "A withdrawal much larger than your usual.",
           "Withdrawing soon after a deposit with little play in between.",
           "Crossing a threshold the terms set (per withdrawal or cumulative).",
           "Anti-money-laundering (AML) checks, including 'source of funds' or 'source of wealth' requests.",
@@ -279,7 +279,7 @@ export const cryptoGuides: Guide[] = [
       },
     ],
     faq: [
-      { q: "Why is my withdrawal pending?", a: "Usually a manual review: first withdrawal, a large amount, bonus conditions, or a routine AML check. The network itself rarely causes long delays." },
+      { q: "Why is my withdrawal pending?", a: "Usually a manual review: a large amount, bonus conditions, or a routine AML check. The network itself rarely causes long delays." },
       { q: "Can I withdraw to a different coin than I deposited?", a: "Many casinos allow it; some require you to withdraw in the deposit coin. The cashier or terms will say." },
       { q: "What happens if I'm asked for ID?", a: "You can provide it, or decline, in which case the casino may hold or refuse the withdrawal under its terms. That's why we list each casino's triggers up front." },
       { q: "Should I withdraw straight to an exchange?", a: "Withdrawing to your own wallet first is safer. Some exchanges screen or freeze funds coming from gambling sites." },

@@ -253,19 +253,18 @@ export const casinos: Casino[] = [
       source: BITSTARZ_TERMS,
     },
     kyc: {
-      level: "first-withdrawal",
-      summary: "No ID to sign up or deposit. Expect to verify before your first withdrawal.",
+      level: "on-request",
+      summary: "No ID to sign up or deposit. BitStarz can ask for ID before paying out; the terms set no amount.",
       signup: {
-        value: "No ID to register or deposit. BitStarz can verify identity at any time (§3.3, §8.6.3).",
+        value: "No ID to register or deposit. BitStarz reserves the right to verify identity (§3.3, §8.6.3).",
         source: BITSTARZ_TERMS,
       },
       withdrawal: {
-        value: "Without KYC documents you can't receive payments (§7.4); withdrawals can be held until you're fully verified (§8.7.11).",
+        value: "If asked, you must complete KYC to get paid: without the documents, payments are blocked (§7.4).",
         source: BITSTARZ_TERMS,
       },
       triggers: {
         value: [
-          "First withdrawal, per most player reports",
           "Any withdrawal (§8.7.4)",
           "Deposits (§8.6.3)",
           "USD e-wallet withdrawals (§8.7.9)",
@@ -283,10 +282,10 @@ export const casinos: Casino[] = [
       source: BITSTARZ_TERMS,
     },
     verdict:
-      "BitStarz lets you sign up and deposit without ID, but expect to verify before your first withdrawal: its terms block payouts without KYC documents. After that, withdrawals landed in under 10 minutes in our tests. A good pick if you're fine verifying once.",
+      "BitStarz lets you sign up and deposit without ID. Like its sister site Cashy, its terms let it ask for ID before paying out, with no amount stated, so treat it as KYC on request. Withdrawals landed in under 10 minutes in our tests.",
     kycInPractice: [
-      "Sign-up and deposits need no documents. Most player reports say the first withdrawal is where verification happens.",
-      "The terms back that up and go further: without KYC documents BitStarz won't pay out, and it can verify you on deposits or any withdrawal. Expect photo ID, proof of address no older than 90 days, and proof of payment.",
+      "Sign-up and deposits need no documents, just an email.",
+      "The terms let BitStarz verify you on deposits or on any withdrawal, and if it asks, it won't pay out until you've provided the documents: photo ID, proof of address no older than 90 days, and proof of payment. No threshold amount is given.",
     ],
     pros: [
       "No ID to sign up or deposit",
@@ -295,12 +294,12 @@ export const casinos: Casino[] = [
       "Up to 5 BTC + 180 free spins welcome package",
     ],
     cons: [
-      "ID required before your first withdrawal",
-      "Least private of the casinos we list",
+      "Terms allow an ID check on any withdrawal, with no threshold stated",
+      "Large wins may be paid in monthly instalments",
       "Terms last updated June 2025",
       "Bonus terms apply; read them before opting in",
     ],
-    scores: { kycSignup: 5, kycTriggers: 1, payoutSpeed: 5, termsClarity: 3 },
+    scores: { kycSignup: 5, kycTriggers: 2, payoutSpeed: 5, termsClarity: 3 },
   },
   // { slug: "cosmobet", name: "CosmoBet", affiliateUrl: "", lastChecked: null }, // once signed
 ];

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { TrustPage } from "@/components/TrustPage";
+import { seo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Affiliate Disclosure: How shh Makes Money",
   description: "We earn commission from some casinos. Here's how that works and why it never changes our scores.",
-  alternates: { canonical: "/affiliate-disclosure" },
-};
+  path: "/affiliate-disclosure",
+});
 
 export default function Page() {
   return (

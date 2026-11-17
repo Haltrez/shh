@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { TrustPage } from "@/components/TrustPage";
+import { seo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Responsible Gambling: Limits, Breaks and Free Help",
-  description:
-    "Set deposit limits, take a cool-off, self-exclude at a casino, block gambling sites on your devices, and find free, confidential help lines.",
-  alternates: { canonical: "/responsible-gambling" },
-};
+  description: "Set deposit limits, take a cool-off, self-exclude at a casino, block gambling sites on your devices, and find free, confidential help lines.",
+  path: "/responsible-gambling",
+});
 
 const HELP: [string, string, string][] = [
   ["International", "Gambling Therapy: free online support in many languages", "https://www.gamblingtherapy.org"],

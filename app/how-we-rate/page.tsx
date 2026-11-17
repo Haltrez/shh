@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 import { TrustPage } from "@/components/TrustPage";
 import { WEIGHTS, WEIGHT_LABELS } from "@/lib/score";
 import { Caveat } from "@/components/Caveat";
+import { seo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "How We Rate Crypto Casinos: The Privacy Score",
-  description:
-    "How the shh privacy score works: KYC at sign-up 40%, KYC triggers 20%, payout speed 20%, coin choice 10%, terms clarity 10%. Sources and re-check schedule.",
-  alternates: { canonical: "/how-we-rate" },
-};
+  description: "How the shh privacy score works: KYC at sign-up 40%, KYC triggers 20%, payout speed 20%, coin choice 10%, terms clarity 10%. Sources and re-check schedule.",
+  path: "/how-we-rate",
+});
 
 const DETAIL: Record<keyof typeof WEIGHTS, string> = {
   kycSignup: "Can you create an account, deposit and play with only an email? 5 = email only; 0 = ID before deposit.",
@@ -57,7 +57,6 @@ export default function Page() {
       <ul>
         <li><b style={{ color: "var(--accent)" }}>No KYC</b>: no ID at sign-up or for normal withdrawals.</li>
         <li><b style={{ color: "var(--warn)" }}>KYC on request</b>: no ID at sign-up; routine thresholds or triggers.</li>
-        <li><b style={{ color: "#ffa86b" }}>KYC at first withdrawal</b>: no ID to sign up or deposit; ID before your first cash-out.</li>
         <li><b style={{ color: "var(--danger)" }}>Full KYC</b>: ID before you can play.</li>
       </ul>
       <p>

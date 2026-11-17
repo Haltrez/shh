@@ -10,6 +10,7 @@ import { article, breadcrumbs, faqPage, howTo } from "@/lib/schema";
 import { formatDate } from "@/lib/format";
 import { site } from "@/lib/site";
 import { VpnBox } from "@/components/VpnBox";
+import { seo } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,12 +22,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const g = getGuide((await params).slug);
   if (!g) return {};
-  return {
-    title: { absolute: `${g.title} | shh` },
+  return seo({
+    title: `${g.title} | shh`,
     description: g.description,
-    alternates: { canonical: `/guides/${g.slug}` },
-    openGraph: { type: "article", modifiedTime: g.updated },
-  };
+    path: `/guides/${g.slug}`,
+    absolute: true,
+    type: "article",
+    modifiedTime: g.updated,
+  });
 }
 
 export default async function GuidePage({ params }: Props) {

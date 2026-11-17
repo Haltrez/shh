@@ -3,10 +3,9 @@ export type Coin = "BTC" | "ETH" | "USDT" | "USDC" | "SOL" | "LTC" | "TRX" | "DO
 /**
  * "none"             = no ID at sign-up or for normal withdrawals
  * "on-request"       = no ID at sign-up; routine thresholds/triggers where ID is asked
- * "first-withdrawal" = no ID to sign up or deposit; ID before the first withdrawal
  * "full"             = ID before you can play
  */
-export type KycLevel = "none" | "on-request" | "first-withdrawal" | "full";
+export type KycLevel = "none" | "on-request" | "full";
 
 /**
  * What third-party reviews say, before we've confirmed it against the casino's own terms.

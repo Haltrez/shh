@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { TrustPage } from "@/components/TrustPage";
 import { site } from "@/lib/site";
+import { seo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Privacy Policy",
   description: "What shh collects (very little), why, and how long we keep it. No accounts, no ad trackers.",
-  alternates: { canonical: "/privacy" },
-};
+  path: "/privacy",
+});
 
 // TODO: have this reviewed before launch for the jurisdictions you operate in (GDPR/UK GDPR etc.).
 export default function Page() {

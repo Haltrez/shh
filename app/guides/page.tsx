@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 import { guides } from "@/content/guides";
 import type { Guide } from "@/content/types";
 import { VpnBox } from "@/components/VpnBox";
+import { seo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Crypto Casino Guides: Buy, Deposit, Withdraw, Privacy",
-  description:
-    "Plain guides to buying crypto, choosing a wallet, depositing and withdrawing at casinos, network fees, KYC and what privacy really means on a blockchain.",
-  alternates: { canonical: "/guides" },
-};
+  description: "Plain guides to buying crypto, choosing a wallet, depositing and withdrawing at casinos, network fees, KYC and what privacy really means on a blockchain.",
+  path: "/guides",
+});
 
 const ORDER: Guide["category"][] = ["Crypto basics", "Casino know-how", "Money", "Privacy"];
 

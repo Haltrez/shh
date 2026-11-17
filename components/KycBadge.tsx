@@ -4,7 +4,6 @@ import type { KycLevel } from "@/lib/types";
 const MAP = {
   none: { label: "No KYC", Icon: ShieldCheck },
   "on-request": { label: "KYC on request", Icon: ShieldAlert },
-  "first-withdrawal": { label: "KYC at first withdrawal", Icon: ShieldAlert },
   full: { label: "Full KYC", Icon: ShieldX },
 } as const;
 

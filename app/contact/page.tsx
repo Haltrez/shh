@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { TrustPage } from "@/components/TrustPage";
 import { site } from "@/lib/site";
+import { seo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Contact shh",
   description: "Corrections, casino term changes, partnership questions: how to reach the shh editors.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function Page() {
   return (
