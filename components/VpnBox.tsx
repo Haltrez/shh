@@ -3,7 +3,7 @@ import { ShieldCheck, ArrowUpRight } from "lucide-react";
 import { vpn, hasVpnPartner } from "@/data/vpn";
 
 /**
- * "Add a VPN for more privacy". Framed around privacy (ISP, Wi-Fi, trackers),
+ * "Use a VPN". Framed around privacy (ISP, Wi-Fi, trackers),
  * never as a way past a casino's country rules.
  */
 export function VpnBox({ compact = false, pos }: { compact?: boolean; pos?: string }) {
@@ -12,11 +12,11 @@ export function VpnBox({ compact = false, pos }: { compact?: boolean; pos?: stri
     <div className="card vpn-box">
       <div className="vpn-head">
         <ShieldCheck size={compact ? 18 : 22} color="var(--accent)" aria-hidden />
-        <h3 style={{ margin: 0, fontSize: compact ? "1rem" : "1.2rem" }}>Add a VPN for more privacy</h3>
+        <h3 style={{ margin: 0, fontSize: compact ? "1rem" : "1.2rem" }}>Use a VPN</h3>
       </div>
       <p style={{ margin: 0, fontSize: compact ? 15 : 16 }}>
-        A VPN encrypts your connection, so your internet provider, the Wi-Fi you&apos;re on and ad trackers can&apos;t
-        see which exchanges, wallets and sites you use.
+        We recommend using a VPN whenever you buy, move or spend crypto. It encrypts your connection, so your internet
+        provider, the Wi-Fi you&apos;re on and ad trackers can&apos;t see which exchanges, wallets and sites you use.
       </p>
       {!compact ? (
         <ul className="vpn-list">

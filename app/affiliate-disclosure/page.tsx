@@ -4,7 +4,7 @@ import { TrustPage } from "@/components/TrustPage";
 
 export const metadata: Metadata = {
   title: "Affiliate Disclosure: How shh Makes Money",
-  description: "We earn commission from some casinos and VPN providers. Here's how that works and why it never changes our scores.",
+  description: "We earn commission from some casinos. Here's how that works and why it never changes our scores.",
   alternates: { canonical: "/affiliate-disclosure" },
 };
 
@@ -15,7 +15,6 @@ export default function Page() {
       <ul>
         <li><b>Casino referrals:</b> when you sign up through a &ldquo;Visit&rdquo; link, the casino may pay us a commission. It costs you nothing extra.</li>
         <li><b>Featured placements:</b> a casino can pay for a spot labelled <b>Featured</b>. Ranked tables stay in privacy-score order regardless.</li>
-        <li><b>VPN referrals:</b> some privacy guides link to VPN providers that pay us per sale.</li>
       </ul>
 
       <h2>What money can&apos;t buy</h2>
