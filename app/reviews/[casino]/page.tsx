@@ -139,11 +139,11 @@ export default async function Review({ params }: Props) {
           <p>New to this? Read <Link href="/guides/how-to-deposit-crypto">how to deposit crypto</Link> and <Link href="/guides/how-to-withdraw-crypto">how to withdraw</Link>.</p>
 
           <h2 id="bonus">Bonus</h2>
-          {verified && c.offer ? (
+          {c.offer ? (
             <p>
               {c.offer.text}
               {c.offer.code ? <> Code: <span className="mono">{c.offer.code}</span>.</> : null}{" "}
-              <a href={c.offer.source} rel="nofollow noopener" target="_blank">Full terms on {c.name}</a>. 18+, T&amp;Cs apply.
+              {c.offer.source ? <><a href={c.offer.source} rel="nofollow noopener" target="_blank">Full terms on {c.name}</a>. </> : <>Read the full bonus terms on {c.name} before you opt in. </>}18+, T&amp;Cs apply.
             </p>
           ) : (
             <p className="faint">Being checked.</p>

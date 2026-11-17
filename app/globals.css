@@ -329,7 +329,8 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 .casino-logo { height: 28px; width: auto; }
 .casino-card .facts { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 15px; color: var(--text-dim); }
 .casino-card .facts b { color: var(--text); font-weight: 500; }
-.casino-card .offer { font-size: 15px; }
+.casino-card .offer { font-size: 16px; font-weight: 500; color: var(--heading); display: flex; gap: 8px; align-items: flex-start; }
+.casino-card .offer svg { flex: none; margin-top: 4px; }
 .casino-card .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .casino-card .tc { font-size: 13px; color: var(--text-faint); }
 .casino-card.pending { opacity: 0.85; }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Zap, Wallet } from "lucide-react";
+import { ArrowUpRight, Zap, Wallet, Gift } from "lucide-react";
 import type { Casino } from "@/lib/types";
 import { privacyScore, isVerified, isReportedOnly, kycLevelOf } from "@/lib/score";
 import { Sources } from "./Sources";
@@ -38,7 +38,6 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
               <span><Zap size={14} aria-hidden /> Payout <b>{formatPayout(c)}</b></span>
               {c.minDepositUsd ? <span><Wallet size={14} aria-hidden /> Min deposit <b>${c.minDepositUsd.value}</b></span> : null}
             </div>
-            {c.offer ? <div className="offer">{c.offer.text}</div> : null}
           </>
         ) : reported ? (
           <>
@@ -59,8 +58,14 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
           </p>
         )}
 
+        {c.offer ? (
+          <div className="offer">
+            <Gift size={15} aria-hidden color="var(--accent)" /> {c.offer.text}
+          </div>
+        ) : null}
+
         <div className="actions">
-          {verified && c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
+          {c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
           {c.affiliateUrl ? (
             <a className="btn btn-primary" href={`/go/${c.slug}${rank !== undefined ? `?pos=${rank}` : ""}`} rel="sponsored nofollow noopener" target="_blank">
               Visit {c.name} <ArrowUpRight size={16} aria-hidden />

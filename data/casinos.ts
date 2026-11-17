@@ -20,6 +20,7 @@ export const casinos: Casino[] = [
     name: "Cashy",
     affiliateUrl: "https://gocashy.com/beixdsb7w",
     lastChecked: null,
+    offer: { text: "Exclusive 150% welcome bonus up to $3,000" },
     reported: {
       level: "none",
       summary:
@@ -38,6 +39,7 @@ export const casinos: Casino[] = [
     name: "Mirax Casino",
     affiliateUrl: "https://mirax.partners/po7jctlhu",
     lastChecked: null,
+    offer: { text: "325% up to 5 BTC + 150 free spins welcome package", freeSpins: true },
     reported: {
       level: "on-request",
       summary:
@@ -55,6 +57,7 @@ export const casinos: Casino[] = [
     name: "7Bit Casino",
     affiliateUrl: "https://7bit.partners/piymfrjsr",
     lastChecked: null,
+    offer: { text: "325% up to 5.25 BTC + 250 free spins welcome pack", freeSpins: true },
     reported: {
       level: "on-request",
       conflicting: true,
@@ -76,6 +79,7 @@ export const casinos: Casino[] = [
     name: "BitStarz",
     affiliateUrl: "https://bzstarz2.com/bigtntdfo",
     lastChecked: null,
+    offer: { text: "Up to 5 BTC + 180 free spins welcome package", freeSpins: true },
     reported: {
       level: "first-withdrawal",
       summary:
@@ -97,6 +101,7 @@ export const casinos: Casino[] = [
     name: "KoalaBet",
     affiliateUrl: "https://click.koalabetaffiliates.com/redirect.aspx?pid=2408&lpid=8&bid=1479",
     lastChecked: null,
+    offer: { text: "Welcome bonus up to $700" },
     // No public KYC information yet. Waiting on KoalaBet: when is ID requested, and above what amount?
   },
   // { slug: "cosmobet", name: "CosmoBet", affiliateUrl: "", lastChecked: null }, // once signed

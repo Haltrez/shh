@@ -63,7 +63,8 @@ export type Casino = {
   withdrawalLimits?: Sourced<string>;
   /** Only fill from our own verified test withdrawals. Minutes. */
   payoutMinutes?: { value: number; note: string };
-  offer?: { text: string; code?: string; freeSpins?: boolean; source: string };
+  /** Welcome offer as supplied by the partner. `source` = the casino's promotions/terms page, once known. */
+  offer?: { text: string; code?: string; freeSpins?: boolean; source?: string };
   games?: { summary: string; providers: string[] };
   responsibleTools?: Sourced<string[]>;
 
