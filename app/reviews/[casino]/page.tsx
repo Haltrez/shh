@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const kycWord = level === "none" ? "No KYC" : "KYC Rules";
   const summary = c.kyc?.summary ?? c.reported?.summary;
   const description = published && summary
-    ? clip(`${c.name} review: ${summary} Payouts ${formatPayout(c)} in our tests.${c.offer ? ` Bonus: ${c.offer.text}.` : ""}`)
+    ? clip(`${c.name} review: ${summary} Payouts ${formatPayout(c)}${c.payoutMinutes?.stated ? "" : " in our tests"}.${c.offer ? ` Bonus: ${c.offer.text}.` : ""}`)
     : `${c.name} review: what ID it asks for at sign-up and withdrawal, payout speed, coins, VPN and country rules.`;
   return {
     ...seo({
@@ -163,7 +163,7 @@ export default async function Review({ params }: Props) {
           <h2 id="banking">Deposits and withdrawals</h2>
           <Paras items={c.depositsWithdrawals} />
           {c.payoutMinutes ? (
-            <p className="mono">Our test withdrawals: {c.payoutMinutes.label ?? `~${c.payoutMinutes.value} min`}. {c.payoutMinutes.note}</p>
+            <p className="mono">{c.payoutMinutes.stated ? "Stated payout time" : "Our test withdrawals"}: {c.payoutMinutes.label ?? `~${c.payoutMinutes.value} min`}. {c.payoutMinutes.note}</p>
           ) : null}
           <p>New to this? Read <Link href="/guides/how-to-deposit-crypto">how to deposit crypto</Link> and <Link href="/guides/how-to-withdraw-crypto">how to withdraw</Link>.</p>
 

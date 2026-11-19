@@ -41,7 +41,7 @@ function verdict(a: Casino, b: Casino): string {
       ? ` Both are rated ${kycLabel(la)}.`
       : ` ${A} is ${kycLabel(la)}; ${B} is ${kycLabel(lb)}.`;
   const pay =
-    a.payoutMinutes && b.payoutMinutes && formatPayout(a) === formatPayout(b)
+    a.payoutMinutes && b.payoutMinutes && !a.payoutMinutes.stated && !b.payoutMinutes.stated && formatPayout(a) === formatPayout(b)
       ? ` Both paid our test withdrawals in ${formatPayout(a)}.`
       : "";
   return lead + kyc + pay;
@@ -71,7 +71,7 @@ export default async function ComparePage({ params }: Props) {
   const rows: [string, (c: Casino) => ReactNode][] = [
     ["Privacy score", (c) => <span className="mono">{privacyScore(c) ?? "–"}</span>],
     ["KYC", (c) => <><b>{kycLabel(kycLevelOf(c))}</b><br /><span className="dim">{kycText(c)}</span></>],
-    ["Payout (our tests)", (c) => <span className="mono">{formatPayout(c)}</span>],
+    ["Payout", (c) => <span className="mono">{formatPayout(c)}{c.payoutMinutes?.stated ? " (stated)" : ""}</span>],
     ["Welcome offer", (c) => c.offer?.text ?? "–"],
     ["Coins", (c) => <span className="mono">{coinsOf(c)?.join(" ") || "Not listed yet"}</span>],
     ["Licence", (c) => c.licence?.value ?? "Not checked yet"],
@@ -87,7 +87,7 @@ export default async function ComparePage({ params }: Props) {
     },
     {
       q: `Which pays out faster, ${A} or ${B}?`,
-      a: `In our tests, ${A} paid out in ${formatPayout(a)} and ${B} in ${formatPayout(b)}.`,
+      a: `${A}: ${formatPayout(a)}${a.payoutMinutes?.stated ? " (stated by the casino)" : " in our tests"}. ${B}: ${formatPayout(b)}${b.payoutMinutes?.stated ? " (stated by the casino)" : " in our tests"}.`,
     },
     ...(a.offer && b.offer
       ? [{

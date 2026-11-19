@@ -67,7 +67,14 @@ export type Casino = {
   minDepositUsd?: Sourced<number>;
   withdrawalLimits?: Sourced<string>;
   /** Only fill from our own verified test withdrawals. Minutes. */
-  payoutMinutes?: { value: number; note: string; /** e.g. "under 10 min" */ label?: string };
+  payoutMinutes?: {
+    value: number;
+    note: string;
+    /** e.g. "under 10 min" */
+    label?: string;
+    /** True when the time is the casino's own claim, not our test withdrawal. */
+    stated?: boolean;
+  };
   /** Welcome offer as supplied by the partner. `source` = the casino's promotions/terms page, once known. */
   offer?: { text: string; code?: string; freeSpins?: boolean; source?: string };
   games?: { summary: string; providers: string[] };

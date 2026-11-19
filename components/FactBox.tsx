@@ -38,7 +38,7 @@ export function FactBox({ c }: { c: Casino }) {
     ["Coins", c.coins ? fact(c.coins, (v) => mono(v.join(" "))) : c.reported?.coins ? <>{mono(c.reported.coins.join(" "))} <span className="faint">(reported)</span></> : PENDING],
     ["Min deposit", fact(c.minDepositUsd, (v) => mono(`$${v}`))],
     ["Withdrawal limits", fact(c.withdrawalLimits, (v) => v)],
-    ["Payout (our tests)", c.payoutMinutes ? mono(c.payoutMinutes.label ?? `~${c.payoutMinutes.value} min`) : PENDING],
+    [c.payoutMinutes?.stated ? "Payout (stated by casino)" : "Payout (our tests)", c.payoutMinutes ? mono(c.payoutMinutes.label ?? `~${c.payoutMinutes.value} min`) : PENDING],
   ];
   const shown = rows.filter(([, v]) => v !== PENDING);
   const hidden = rows.length - shown.length;

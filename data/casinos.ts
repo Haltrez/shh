@@ -16,6 +16,8 @@ const CASHY_TERMS = "https://cashy.com/terms-and-conditions";
 const MIRAX_TERMS = "https://www.miraxcasino.com/terms-and-conditions";
 const SEVENBIT_TERMS = "https://7bitcasino.com/terms-and-conditions";
 const BITSTARZ_TERMS = "https://www.bitstarz.com/terms";
+const METAWIN_TERMS = "https://metawin.com/terms-and-conditions";
+const METAWIN_FAQ = "https://metawin.com/faq";
 
 /** Cashy and BitStarz share an operator (Gareton B.V.) and near-identical restricted lists. */
 const GARETON_RESTRICTED = ["US", "PR", "GB", "GR", "NL", "ES", "FR", "BE", "PT", "PL", "RU", "BR", "CW", "+ more"];
@@ -54,6 +56,77 @@ export const casinos: Casino[] = [
       sources: [{ name: "KoalaBet" }],
       asOf: CHECKED,
     },
+  },
+  {
+    slug: "metawin",
+    name: "MetaWin",
+    logo: "/logos/metawin.svg",
+    affiliateUrl: "https://affiliates-link.metawin.com/XWar0Wbz?campaign=Shh",
+    lastChecked: "2026-11-19",
+    payoutMinutes: {
+      value: 5,
+      label: "typically instant",
+      stated: true,
+      note: "MetaWin says withdrawals are typically instant and can take up to 24 hours. We haven't timed one yet.",
+    },
+    licence: {
+      value: "Anjouan (Comoros), licence ALSI-202602025-FI1 (Rivolo Limited, Nevis)",
+      source: METAWIN_TERMS,
+    },
+    kyc: {
+      level: "on-request",
+      summary: "No sign-up form: connect a crypto wallet and play. MetaWin can ask for ID at its discretion, with no amount stated.",
+      signup: {
+        value: "No registration form: connect a wallet (MetaMask, Phantom, WalletConnect and others), or sign up with email or Google.",
+        source: METAWIN_FAQ,
+      },
+      withdrawal: {
+        value: "Withdrawals are approved instantly in normal cases; MetaWin can hold them for identity, source-of-funds or anti-fraud checks (§5.3).",
+        source: METAWIN_TERMS,
+      },
+      triggers: {
+        value: [
+          "KYC at MetaWin's sole discretion: ID, proof of address, proof of funds (§10.0.4)",
+          "Identity, source-of-funds or anti-fraud checks on deposits and withdrawals (§5.3)",
+          "Changing your registered personal details (§4.1)",
+          "Enhanced checks for sportsbook users (§10.0.5)",
+        ],
+        source: METAWIN_TERMS,
+      },
+    },
+    vpnRule: {
+      value: "Using a VPN or proxy to hide your real location from a restricted jurisdiction breaches the terms (§2.1).",
+      source: METAWIN_TERMS,
+    },
+    restrictedCountries: { value: ["US", "GB", "DE", "NL", "AU", "+ more"], source: METAWIN_FAQ },
+    coins: {
+      value: ["BTC", "ETH", "SOL", "USDT", "USDC", "LTC", "DOGE", "BNB", "TRX", "XRP"],
+      source: METAWIN_FAQ,
+    },
+    minDepositUsd: { value: 5, source: METAWIN_FAQ },
+    withdrawalLimits: {
+      value: "From $10,000 net per 24 hours at the entry tier, higher for VIP tiers; $2.50 fee per withdrawal",
+      source: METAWIN_FAQ,
+    },
+    verdict:
+      "MetaWin is one of the most private ways to play: there's no sign-up form at all, you just connect a crypto wallet. It takes 14 coins across major chains and says withdrawals are typically instant. Like most casinos, its terms let it ask for ID at its discretion.",
+    kycInPractice: [
+      "There's no registration form. Connect MetaMask, Phantom or one of 300+ wallets via WalletConnect and you can play straight away; email and Google sign-up are optional.",
+      "The terms reserve the right to request ID, proof of address and proof of funds at MetaWin's sole discretion, and to hold transactions during identity or source-of-funds checks. No threshold is published. MoonPay, the card on-ramp, has its own ID check, but only if you choose to buy crypto through it.",
+    ],
+    pros: [
+      "No sign-up form: connect a wallet and play",
+      "14 coins, including BTC, ETH, SOL, USDT, USDC and LTC",
+      "Withdrawals typically instant, per MetaWin",
+      "Low minimum deposit: 5 USDT",
+    ],
+    cons: [
+      "Terms allow ID checks at MetaWin's discretion, with no threshold stated",
+      "Deposits must be wagered once before you can withdraw them",
+      "$2.50 fee on every withdrawal",
+      "Anjouan licence offers less recourse than stricter regulators",
+    ],
+    scores: { kycSignup: 5, kycTriggers: 2, payoutSpeed: 5, coinChoice: 5, termsClarity: 3 },
   },
   {
     slug: "7bit",

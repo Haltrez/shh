@@ -28,7 +28,7 @@ export function casinoFaq(c: Casino): { q: string; a: string }[] {
   if (c.payoutMinutes) {
     out.push({
       q: `How fast are ${c.name} withdrawals?`,
-      a: `Our test withdrawals arrived in ${formatPayout(c)}. The blockchain part takes seconds to minutes; any longer wait is the casino's own review.`,
+      a: `${c.payoutMinutes.stated ? `${c.name} says withdrawals are ${formatPayout(c)}; we haven't timed one yet.` : `Our test withdrawals arrived in ${formatPayout(c)}.`} The blockchain part takes seconds to minutes; any longer wait is the casino's own review.`,
     });
   }
 
