@@ -109,16 +109,18 @@ export const casinos: Casino[] = [
       source: METAWIN_FAQ,
     },
     verdict:
-      "MetaWin is one of the most private ways to play: there's no sign-up form at all, you just connect a crypto wallet. It takes 14 coins across major chains and says withdrawals are typically instant. Like most casinos, its terms let it ask for ID at its discretion.",
+      "MetaWin is one of the most private ways to play: there's no sign-up form at all, you just connect a crypto wallet. It takes 14 coins across major chains, runs provably fair competitions on-chain, and says withdrawals are typically instant. There's no welcome bonus, so there are no wagering conditions to clear. Like most casinos, its terms let it ask for ID at its discretion.",
     kycInPractice: [
       "There's no registration form. Connect MetaMask, Phantom or one of 300+ wallets via WalletConnect and you can play straight away; email and Google sign-up are optional.",
       "The terms reserve the right to request ID, proof of address and proof of funds at MetaWin's sole discretion, and to hold transactions during identity or source-of-funds checks. No threshold is published. MoonPay, the card on-ramp, has its own ID check, but only if you choose to buy crypto through it.",
     ],
     pros: [
       "No sign-up form: connect a wallet and play",
+      "Provably fair: competitions verifiable on-chain, game providers independently tested",
       "14 coins, including BTC, ETH, SOL, USDT, USDC and LTC",
       "Withdrawals typically instant, per MetaWin",
       "Low minimum deposit: 5 USDT",
+      "No welcome bonus, so no bonus wagering conditions holding your withdrawals",
     ],
     cons: [
       "Terms allow ID checks at MetaWin's discretion, with no threshold stated",
