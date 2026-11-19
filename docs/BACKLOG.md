@@ -8,7 +8,7 @@ Take the first unchecked topic. Tick it with the publish date when it's live. Ad
 - [x] crypto-privacy-regulation-2026 (2026-11-17)
 - [x] crypto-news-november-2026 (2026-11-17) — "Sent crypto on the wrong network? What to do next" (Casino know-how)
 - [x] stablecoin-gambling-trend (2026-11-17) — "Why stablecoins are taking over crypto casino deposits" (Trends & news)
-- [ ] crypto-casino-licensing-shift-2026 — "Curaçao's reform one year on: where crypto casinos are licensed now" (Trends & news)
+- [x] crypto-casino-licensing-shift-2026 (2026-11-19) — "Curaçao's reform one year on: where crypto casinos are licensed now" (Trends & news)
 - [ ] crypto-casino-data-breaches — "Casino data breaches: what leaked, and how to protect your ID" (Trends & news)
 - [x] crypto-casino-withdrawal-pending (2026-11-17) — "Why is my crypto casino withdrawal pending?" (Casino know-how)
 - [ ] how-to-buy-usdt-trc20 — "How to buy USDT on TRC20 (Tron), step by step" (Crypto basics)
