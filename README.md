@@ -40,7 +40,7 @@ To publish one, fill in `data/casinos.ts`:
 1. vercel.com → **Add New… → Project** → import `haltrez/shh`. Framework is detected as Next.js; keep the default build settings.
 2. Production branch: `main` (Project → Settings → Git).
 3. Environment variables (Project → Settings → Environment Variables), all optional at first:
-   - `NEXT_PUBLIC_SITE_URL`: e.g. `https://shhcasinos.com`, once the domain is connected. Until then the site uses Vercel's production URL.
+   - `NEXT_PUBLIC_SITE_URL`: optional. Vercel builds already use `https://www.shhcasinos.com`; set this only to override it.
    - `NEXT_PUBLIC_CONTACT_EMAIL`: shown on /contact and /privacy.
    - `INDEXNOW_KEY`: any 32+ char hex string; served at `/indexnow.txt`.
 4. Domains → add your domain and follow the DNS instructions.

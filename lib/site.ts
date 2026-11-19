@@ -1,12 +1,16 @@
 /**
  * Site URL, in order of preference:
  *  1. NEXT_PUBLIC_SITE_URL (set this once the domain is connected in Vercel)
- *  2. Vercel's production URL (auto-set on Vercel, e.g. shh.vercel.app or your custom domain)
+ *  2. https://www.shhcasinos.com on any Vercel build
  *  3. localhost for local dev
  */
+const PRODUCTION_URL = "https://www.shhcasinos.com";
+
 const resolveUrl = () => {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  // Canonicals, sitemaps and schema always point at the real domain on Vercel
+  // (preview deploys are noindex anyway). Local dev uses localhost.
+  if (process.env.VERCEL) return PRODUCTION_URL;
   return "http://localhost:3000";
 };
 
