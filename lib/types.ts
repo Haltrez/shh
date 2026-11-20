@@ -47,6 +47,8 @@ export type Casino = {
   affiliateUrl: string;
   /** ISO date of the last full fact check. null = never checked → page is noindex and shows as pending. */
   lastChecked: string | null;
+  /** You can sign up by connecting a crypto wallet (MetaMask, Phantom, WalletConnect…). */
+  walletSignup?: Sourced<boolean>;
   /** Third-party reports, used until the fact box is verified. */
   reported?: Report;
   /** Paid placement. Shown with a "Featured" label; never changes the score. */

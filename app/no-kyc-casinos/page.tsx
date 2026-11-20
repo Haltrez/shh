@@ -16,12 +16,15 @@ import { formatDate } from "@/lib/format";
 const year = new Date().getFullYear();
 
 export const metadata: Metadata = seo({
-  title: `No-KYC Casinos ${year}: Every Check, Listed`,
-  description: "What 'no KYC' really means at crypto casinos, and every casino ranked by the ID it asks for at sign-up, on withdrawal, and when checks are triggered.",
+  title: `No KYC Casinos ${year}: No-Verification Casinos Ranked`,
+  description: "No KYC crypto casinos ranked: play without ID verification, see when each casino can still ask, and how fast it pays. Checked against their terms.",
   path: "/no-kyc-casinos",
 });
 
 const FAQ = [
+  { q: "What is a no verification casino?", a: "Another name for a no-KYC casino: you can sign up and play without uploading ID. 'No verification' usually means no verification to start, not never." },
+  { q: "Can I play at a casino without ID?", a: "Yes. Every casino on this page lets you start without ID. KoalaBet asks for nothing until $5,000 in deposits or withdrawals; MetaWin lets you sign up by connecting a wallet." },
+  { q: "Can I withdraw from a no-KYC casino without verification?", a: "Usually, for normal amounts. Each casino's terms set when ID can still be requested, typically for large withdrawals or anti-money-laundering checks. We list the triggers for each." },
   { q: "Does 'no KYC' mean I'll never be asked for ID?", a: "No. It means no ID at sign-up and for normal withdrawals. Nearly every casino keeps the right to ask in specific cases, such as large withdrawals, AML reviews or source-of-funds checks. We list each one's triggers." },
   { q: "Why would a no-KYC casino ask for ID later?", a: "Licences and payment partners require anti-money-laundering checks. Big or unusual withdrawals are the most common trigger." },
   { q: "Are no-KYC casinos legal?", a: "It depends on the casino's licence and the law where you live. Only play where online gambling is legal for you." },
@@ -70,6 +73,19 @@ export default function Page() {
           <div className="grid">
             {ranked.map((c, i) => <CasinoCard key={c.slug} c={c} rank={i + 1} />)}
           </div>
+
+          <h2>No KYC, no verification, no ID: the same thing?</h2>
+          <p>
+            Mostly, yes. &ldquo;No KYC casino&rdquo;, &ldquo;no verification casino&rdquo; and &ldquo;casino without
+            ID&rdquo; all describe a casino where you can sign up, deposit and play without uploading documents. The
+            difference that matters is <em>when</em> a casino can still ask: at a stated threshold (the clearest), at
+            first withdrawal, or at its discretion. That&apos;s what our badges and scores measure.
+          </p>
+          <p>
+            Want the most private sign-up of all? See <Link href="/best/metamask-casinos">MetaMask casinos</Link>, where
+            your wallet is your login, or our honest take on <Link href="/anonymous-casinos">anonymous crypto
+            casinos</Link>.
+          </p>
 
           <h2>VPNs and country rules</h2>
           <Caveat text={VPN_NOTICE} />

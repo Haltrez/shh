@@ -162,7 +162,7 @@ a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 }
 .mobile-menu-panel a { color: var(--text); text-decoration: none; padding: 12px 14px; border-radius: 8px; font-size: 16px; }
 .mobile-menu-panel a:hover { background: var(--surface); }
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
   .nav { display: none; }
   .mobile-menu { display: block; }
 }

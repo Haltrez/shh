@@ -73,6 +73,7 @@ export const casinos: Casino[] = [
       label: "~10 seconds",
       note: "Our test withdrawal arrived in about 10 seconds. MetaWin says some withdrawals can take up to 24 hours.",
     },
+    walletSignup: { value: true, source: METAWIN_FAQ },
     licence: {
       value: "Anjouan (Comoros), licence ALSI-202602025-FI1 (Rivolo Limited, Nevis)",
       source: METAWIN_TERMS,
@@ -206,6 +207,7 @@ export const casinos: Casino[] = [
     lastChecked: CHECKED,
     payoutMinutes: PAYOUT,
     offer: { text: "Exclusive 150% welcome bonus up to $3,000" },
+    walletSignup: { value: true, source: "https://dotesports.com/gambling/no-verification-casinos" },
     licence: { value: "Curaçao Gaming Control Board, OGL/2024/165/0185 (Gareton B.V.)", source: CASHY_TERMS },
     kyc: {
       level: "on-request",

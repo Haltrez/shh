@@ -4,7 +4,8 @@ import { lists } from "@/data/lists";
 import { guides } from "@/content/guides";
 
 const NAV = [
-  { href: "/no-kyc-casinos", label: "No-KYC casinos" },
+  { href: "/no-kyc-casinos", label: "No KYC casinos" },
+  { href: "/best-crypto-casinos", label: "Best crypto casinos" },
   { href: "/bonus", label: "Bonus codes" },
   { href: "/best/usdt-casinos", label: "By coin" },
   { href: "/guides", label: "Guides" },
@@ -48,8 +49,10 @@ export function Footer() {
           <div>
             <p className="footer-title">casinos</p>
             <ul>
-              <li><Link href="/no-kyc-casinos">No-KYC casinos</Link></li>
-              <li><Link href="/bonus">Bonus codes</Link></li>
+              <li><Link href="/no-kyc-casinos">No KYC casinos</Link></li>
+              <li><Link href="/best-crypto-casinos">Best crypto casinos</Link></li>
+              <li><Link href="/anonymous-casinos">Anonymous crypto casinos</Link></li>
+              <li><Link href="/bonus">Crypto casino bonus codes</Link></li>
               {lists.map((l) => (
                 <li key={l.slug}><Link href={`/best/${l.slug}`}>{l.short}</Link></li>
               ))}
