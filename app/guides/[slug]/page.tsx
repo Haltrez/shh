@@ -12,6 +12,8 @@ import { site } from "@/lib/site";
 import { VpnBox } from "@/components/VpnBox";
 import { TopPicks } from "@/components/TopPicks";
 import { seo } from "@/lib/seo";
+import { CasinoCard } from "@/components/CasinoCard";
+import { findCasino } from "@/lib/data";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -37,6 +39,7 @@ export default async function GuidePage({ params }: Props) {
   const g = getGuide((await params).slug);
   if (!g) notFound();
   const ht = g.howTo ? howTo(g) : null;
+  const focus = g.casino ? findCasino(g.casino) : undefined;
 
   return (
     <>
@@ -52,8 +55,15 @@ export default async function GuidePage({ params }: Props) {
       <div className="wrap layout-article">
         <article className="prose">
           <Blocks blocks={g.body.slice(0, 1)} />
-          <TopPicks place={`guide-${g.slug}`} />
+          {focus ? (
+            <div style={{ margin: "8px 0 32px" }}>
+              <CasinoCard c={focus} />
+            </div>
+          ) : (
+            <TopPicks place={`guide-${g.slug}`} />
+          )}
           <Blocks blocks={g.body.slice(1)} />
+          {focus ? <TopPicks place={`guide-${g.slug}-alt`} title="Other top picks" exclude={focus.slug} /> : null}
           {g.category === "Privacy" || g.slug === "crypto-wallet-for-gambling" || g.slug === "how-to-buy-crypto" ? (
             <div style={{ margin: "32px 0" }}>
               <VpnBox pos={`guide-${g.slug}`} />

@@ -20,6 +20,8 @@ export type Guide = {
   relatedGuides: string[];
   body: Block[];
   faq?: { q: string; a: string }[];
+  /** Casino slug this article is about: its card replaces the generic top picks after the intro. */
+  casino?: string;
   /** External sources cited in the article. Required for trends & news pieces. */
   sources?: { name: string; url: string }[];
 };

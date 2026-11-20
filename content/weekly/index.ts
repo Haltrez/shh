@@ -9,6 +9,9 @@ import { guide as cryptoNewsNovember2026 } from "./crypto-news-november-2026";
 import { guide as cryptoCasinoWithdrawalPending } from "./crypto-casino-withdrawal-pending";
 import { guide as stablecoinGamblingTrend } from "./stablecoin-gambling-trend";
 import { guide as cryptoCasinoLicensingShift2026 } from "./crypto-casino-licensing-shift-2026";
+import { guide as isMetawinLegit } from "./is-metawin-legit";
+import { guide as metawinKyc } from "./metawin-kyc";
+import { guide as metawinWithdrawalLimits } from "./metawin-withdrawal-limits";
 
 export const weeklyGuides: Guide[] = [
   sentCryptoWrongNetwork,
@@ -19,4 +22,7 @@ export const weeklyGuides: Guide[] = [
   cryptoCasinoWithdrawalPending,
   stablecoinGamblingTrend,
   cryptoCasinoLicensingShift2026,
+  isMetawinLegit,
+  metawinKyc,
+  metawinWithdrawalLimits,
 ];

@@ -16,6 +16,7 @@ import { Caveat } from "@/components/Caveat";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { TopPicks } from "@/components/TopPicks";
+import { StickyCta } from "@/components/StickyCta";
 
 type Props = { params: Promise<{ casino: string }> };
 
@@ -205,6 +206,13 @@ export default async function BonusPage({ params }: Props) {
         </aside>
       </div>
 
+      <StickyCta
+        name={c.name}
+        logo={c.logo}
+        href={`/go/${c.slug}?pos=bonus-sticky`}
+        label={cta}
+        sub={c.offer ? `${c.offer.text} · no code needed` : "No bonus · no wagering conditions"}
+      />
       <JsonLd
         data={[
           breadcrumbs([["Home", "/"], [c.name, `/reviews/${c.slug}`], ["Bonus code", `/bonus/${c.slug}`]]),

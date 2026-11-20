@@ -22,6 +22,8 @@ import { seo, clip } from "@/lib/seo";
 import { casinoFaq } from "@/lib/casino-faq";
 import { formatPayout } from "@/lib/format";
 import { pairsFor, shortName } from "@/lib/compare";
+import { StickyCta } from "@/components/StickyCta";
+import { guides } from "@/content/guides";
 
 type Props = { params: Promise<{ casino: string }> };
 
@@ -238,6 +240,9 @@ export default async function Review({ params }: Props) {
               </p>
             </div>
           ) : null}
+          {guides.some((g) => g.casino === c.slug) ? (
+            <RelatedGuides slugs={guides.filter((g) => g.casino === c.slug).map((g) => g.slug)} title={`More on ${c.name}`} />
+          ) : null}
           <RelatedLists slugs={coinLists} />
           {published && pairsFor(c.slug).length ? (
             <div className="card">
@@ -256,6 +261,15 @@ export default async function Review({ params }: Props) {
         </aside>
       </div>
 
+      {published && c.affiliateUrl ? (
+        <StickyCta
+          name={c.name}
+          logo={c.logo}
+          href={`/go/${c.slug}?pos=review-sticky`}
+          label={c.offer ? "Claim bonus" : `Visit ${c.name}`}
+          sub={c.offer?.text ?? (c.kyc?.summary ?? c.reported?.summary)}
+        />
+      ) : null}
       <JsonLd
         data={[
           breadcrumbs([["Home", "/"], ["Reviews", "/no-kyc-casinos"], [c.name, `/reviews/${c.slug}`]]),
