@@ -26,6 +26,8 @@ export const casinos: Casino[] = [
   {
     slug: "koalabet",
     name: "KoalaBet",
+    featured: true, // paid placement: shown with the "Featured" label
+    priority: 2,
     logo: "/logos/koalabet.svg",
     logoIsMark: true,
     affiliateUrl: "https://click.koalabetaffiliates.com/redirect.aspx?pid=2408&lpid=8&bid=1479",
@@ -60,6 +62,7 @@ export const casinos: Casino[] = [
   {
     slug: "metawin",
     name: "MetaWin",
+    priority: 1,
     logo: "/logos/metawin.svg",
     affiliateUrl: "https://affiliates-link.metawin.com/XWar0Wbz?campaign=Shh",
     lastChecked: "2026-11-19",

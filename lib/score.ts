@@ -78,7 +78,8 @@ const LEVEL_ORDER = { none: 0, "on-request": 1, full: 2 } as const;
 
 /**
  * Verified casinos by score first. Unverified ones follow, ordered by reported KYC level
- * (lightest first), then casinos with nothing reported. Featured status never affects order.
+ * (lightest first), then casinos with nothing reported. Featured status never affects order;
+ * partner priority only breaks exact score ties (disclosed on /how-we-rate).
  */
 export function rank(casinos: Casino[]): Casino[] {
   const lvl = (c: Casino) => {
@@ -86,6 +87,9 @@ export function rank(casinos: Casino[]): Casino[] {
     return l ? LEVEL_ORDER[l] : 9;
   };
   return [...casinos].sort(
-    (a, b) => (privacyScore(b) ?? -1) - (privacyScore(a) ?? -1) || lvl(a) - lvl(b),
+    (a, b) =>
+      (privacyScore(b) ?? -1) - (privacyScore(a) ?? -1) ||
+      lvl(a) - lvl(b) ||
+      (b.priority ?? 0) - (a.priority ?? 0),
   );
 }

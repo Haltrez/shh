@@ -16,6 +16,7 @@ export default function Page() {
       <ul>
         <li><b>Casino referrals:</b> when you sign up through a &ldquo;Claim bonus&rdquo; or &ldquo;Visit&rdquo; link, the casino may pay us a commission. It costs you nothing extra.</li>
         <li><b>Featured placements:</b> a casino can pay for a spot labelled <b>Featured</b>. Ranked tables stay in privacy-score order regardless.</li>
+        <li><b>Ties:</b> when two casinos have exactly the same privacy score, the one we have the closer commercial relationship with is listed first.</li>
       </ul>
 
       <h2>What money can&apos;t buy</h2>

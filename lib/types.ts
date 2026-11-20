@@ -49,6 +49,11 @@ export type Casino = {
   reported?: Report;
   /** Paid placement. Shown with a "Featured" label; never changes the score. */
   featured?: boolean;
+  /**
+   * Partner priority, used ONLY to order casinos with an identical score (higher first).
+   * Disclosed on /how-we-rate and /affiliate-disclosure.
+   */
+  priority?: number;
 
   licence?: Sourced<string>;
   kyc?: {

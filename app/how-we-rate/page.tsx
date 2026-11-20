@@ -82,7 +82,7 @@ export default function Page() {
 
       <h2>Money and rankings</h2>
       <p>
-        We earn commission when you sign up through some links. Casinos can pay for a labelled <b>Featured</b> spot.
+        We earn commission when you sign up through some links. Casinos can pay for a labelled <b>Featured</b> spot. When two casinos have exactly the same score, partners we work with more closely are listed first.
         Neither changes the score or the order of ranked tables. Every review has a mandatory cons section. See our{" "}
         <Link href="/affiliate-disclosure">affiliate disclosure</Link>.
       </p>
