@@ -32,6 +32,11 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ casi
   // US sweepstakes partners: Gold-Coins-only link in the states the partner restricts.
   const sw = findSweeps(slug);
   if (sw) {
+    // US-only partners: send visitors from other countries to the crypto rankings instead.
+    if (country && country !== "US") {
+      log({ target: slug, from, pos: base.searchParams.get("pos"), country, region, link: "non-us" });
+      return NextResponse.redirect(new URL("/no-kyc-casinos", base), { status: 302, headers });
+    }
     const { url, social } = sweepsLink(sw, country, region);
     log({ target: slug, from, pos: base.searchParams.get("pos"), country, region, link: social ? "social" : "sweeps" });
     return NextResponse.redirect(url, { status: 302, headers });
