@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { findCasino } from "@/lib/data";
 import { vpn } from "@/data/vpn";
+import { findSweeps, sweepsLink } from "@/data/sweeps";
 
 /**
  * Outbound affiliate redirect: /go/cashy?pos=1, and /go/vpn for the VPN partner.
@@ -25,8 +26,19 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ casi
     from = referer ? new URL(referer).pathname : null;
   } catch {}
 
+  const country = req.headers.get("x-vercel-ip-country");
+  const region = req.headers.get("x-vercel-ip-country-region");
+
+  // US sweepstakes partners: Gold-Coins-only link in the states the partner restricts.
+  const sw = findSweeps(slug);
+  if (sw) {
+    const { url, social } = sweepsLink(sw, country, region);
+    log({ target: slug, from, pos: base.searchParams.get("pos"), country, region, link: social ? "social" : "sweeps" });
+    return NextResponse.redirect(url, { status: 302, headers });
+  }
+
   const target = slug === "vpn" ? vpn.affiliateUrl : findCasino(slug)?.affiliateUrl;
-  log({ target: slug, from, pos: base.searchParams.get("pos"), country: req.headers.get("x-vercel-ip-country") });
+  log({ target: slug, from, pos: base.searchParams.get("pos"), country });
 
   if (!target) {
     const fallback = slug === "vpn" ? "/guides/vpn-and-crypto-privacy" : findCasino(slug) ? `/reviews/${slug}` : "/no-kyc-casinos";

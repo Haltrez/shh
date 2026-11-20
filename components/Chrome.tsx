@@ -75,6 +75,7 @@ export function Footer() {
             <ul>
               <li><Link href="/es" hrefLang="es">Español</Link></li>
               <li><Link href="/kyc-tracker">KYC policy tracker</Link></li>
+              <li><Link href="/sweepstakes-casinos">US sweepstakes casinos</Link></li>
               <li><Link href="/tools">Free tools</Link></li>
               <li><Link href="/how-we-rate">How we rate</Link></li>
               <li><Link href="/about">About</Link></li>

@@ -27,7 +27,7 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
   // Pages with noindex are left out.
   switch (which) {
     case "pages":
-      return ["/", "/no-kyc-casinos", "/best-crypto-casinos", "/anonymous-casinos", "/bonus", "/kyc-tracker", "/tools", "/tools/wagering-calculator", "/tools/crypto-fee-calculator", ...altBrands.map((b) => `/alternatives/${b.slug}`), "/guides", "/how-we-rate", "/responsible-gambling", "/about", "/contact", "/affiliate-disclosure", "/privacy"].map(
+      return ["/", "/no-kyc-casinos", "/best-crypto-casinos", "/anonymous-casinos", "/bonus", "/kyc-tracker", "/sweepstakes-casinos", "/tools", "/tools/wagering-calculator", "/tools/crypto-fee-calculator", ...altBrands.map((b) => `/alternatives/${b.slug}`), "/guides", "/how-we-rate", "/responsible-gambling", "/about", "/contact", "/affiliate-disclosure", "/privacy"].map(
         (p) => ({ url: absolute(p), lastModified: today }),
       );
     case "reviews":
