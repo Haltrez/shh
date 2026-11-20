@@ -6,7 +6,7 @@ import { CasinoCard } from "./CasinoCard";
 import { SortableTable, type Row } from "./SortableTable";
 
 /** Sortable table ≥ 640px; collapses to casino cards below that. */
-export function ComparisonTable({ casinos }: { casinos: Casino[] }) {
+export function ComparisonTable({ casinos, mobileCards = true }: { casinos: Casino[]; mobileCards?: boolean }) {
   const rows: Row[] = casinos.map((c) => ({
     slug: c.slug,
     name: c.name,
@@ -19,14 +19,16 @@ export function ComparisonTable({ casinos }: { casinos: Casino[] }) {
   }));
   return (
     <>
-      <div className="table-wrap collapse">
+      <div className={`table-wrap${mobileCards ? " collapse" : ""}`}>
         <SortableTable rows={rows} />
       </div>
-      <div className="cmp-cards">
+      {mobileCards ? (
+        <div className="cmp-cards">
         {casinos.map((c, i) => (
           <CasinoCard key={c.slug} c={c} rank={i + 1} />
         ))}
-      </div>
+        </div>
+      ) : null}
     </>
   );
 }

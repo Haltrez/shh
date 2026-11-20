@@ -63,6 +63,7 @@ export default async function ListPage({ params }: Props) {
         <div className="prose">
           {ranked.length ? (
             <>
+              <h2 className="sr-only">Comparison table</h2>
               <ComparisonTable casinos={ranked} />
               <h2>The picks</h2>
               <div className="grid">

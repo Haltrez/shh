@@ -10,7 +10,9 @@ export function CasinoLogo({ c, size = 30 }: { c: Casino; size?: number }) {
         className="casino-logo"
         src={c.logo}
         alt={c.logoIsMark ? "" : c.name}
-        style={{ height: size }}
+        width={Math.round(size * (c.logoAspect ?? 1))}
+        height={size}
+        style={{ height: size, width: "auto" }}
         loading="lazy"
         decoding="async"
       />

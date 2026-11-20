@@ -3,6 +3,14 @@ import { site } from "@/lib/site";
 import { lists } from "@/data/lists";
 import { guides } from "@/content/guides";
 
+const NAV = [
+  { href: "/no-kyc-casinos", label: "No-KYC casinos" },
+  { href: "/bonus", label: "Bonus codes" },
+  { href: "/best/usdt-casinos", label: "By coin" },
+  { href: "/guides", label: "Guides" },
+  { href: "/how-we-rate", label: "How we rate" },
+];
+
 export function Header() {
   return (
     <header className="header">
@@ -11,11 +19,21 @@ export function Header() {
           <span className="logo-mark" aria-hidden /> {site.name}
         </Link>
         <nav className="nav" aria-label="Main">
-          <Link href="/no-kyc-casinos">No-KYC casinos</Link>
-          <Link href="/best/usdt-casinos">By coin</Link>
-          <Link href="/guides">Guides</Link>
-          <Link href="/how-we-rate" className="nav-extra">How we rate</Link>
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href}>{n.label}</Link>
+          ))}
         </nav>
+        {/* Mobile: no-JS disclosure menu */}
+        <details className="mobile-menu">
+          <summary aria-label="Menu">
+            <span className="burger" aria-hidden><i /><i /><i /></span>
+          </summary>
+          <nav className="mobile-menu-panel" aria-label="Main (mobile)">
+            {NAV.map((n) => (
+              <Link key={n.href} href={n.href}>{n.label}</Link>
+            ))}
+          </nav>
+        </details>
       </div>
     </header>
   );
@@ -28,16 +46,17 @@ export function Footer() {
       <div className="wrap">
         <div className="cols">
           <div>
-            <h4>casinos</h4>
+            <p className="footer-title">casinos</p>
             <ul>
               <li><Link href="/no-kyc-casinos">No-KYC casinos</Link></li>
+              <li><Link href="/bonus">Bonus codes</Link></li>
               {lists.map((l) => (
                 <li key={l.slug}><Link href={`/best/${l.slug}`}>{l.short}</Link></li>
               ))}
             </ul>
           </div>
           <div>
-            <h4>guides</h4>
+            <p className="footer-title">guides</p>
             <ul>
               {keyGuides.map((g) => (
                 <li key={g.slug}><Link href={`/guides/${g.slug}`}>{g.h1}</Link></li>
@@ -46,7 +65,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>about</h4>
+            <p className="footer-title">about</p>
             <ul>
               <li><Link href="/how-we-rate">How we rate</Link></li>
               <li><Link href="/about">About</Link></li>

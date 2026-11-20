@@ -91,7 +91,7 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
               href={`/go/${c.slug}${rank !== undefined ? `?pos=${rank}` : ""}`}
               rel="sponsored nofollow noopener"
               target="_blank"
-              aria-label={c.offer ? `Claim ${c.name} bonus` : `Visit ${c.name}`}
+              aria-label={c.offer ? `Claim bonus at ${c.name}` : `Visit ${c.name}`}
             >
               {c.offer ? "Claim bonus" : `Visit ${c.name}`} <ArrowUpRight size={16} aria-hidden />
             </a>

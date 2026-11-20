@@ -14,6 +14,7 @@ import { VpnBox } from "@/components/VpnBox";
 import { faqPage, itemList } from "@/lib/schema";
 import { seo } from "@/lib/seo";
 import { formatDate } from "@/lib/format";
+import { TopPicks } from "@/components/TopPicks";
 
 const year = new Date().getFullYear();
 
@@ -50,6 +51,7 @@ const FEATURED = ["is-crypto-gambling-anonymous", "how-to-buy-crypto", "how-to-d
 
 export default function Home() {
   const ranked = rank(allCasinos);
+  const lastUpdate = allCasinos.map((c) => c.lastChecked ?? c.reported?.asOf ?? "").filter(Boolean).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   const latest = [...guides]
     .filter((g) => !FEATURED.includes(g.slug))
     .sort((a, b) => b.updated.localeCompare(a.updated) || guides.indexOf(b) - guides.indexOf(a))
@@ -62,7 +64,8 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="wrap">
+        <div className="wrap hero-grid">
+          <div className="hero-copy">
           <div className="eyebrow">
             <Lock size={14} aria-hidden /> no-KYC · low-KYC · crypto only
           </div>
@@ -82,6 +85,10 @@ export default function Home() {
             <Link className="btn btn-primary" href="/no-kyc-casinos">See the ranking</Link>
             <Link className="btn btn-ghost" href="/guides/is-crypto-gambling-anonymous">Is it anonymous? (No.)</Link>
           </div>
+          </div>
+          <div className="hero-picks">
+            <TopPicks place="home-hero" title="Top picks today" />
+          </div>
         </div>
       </section>
 
@@ -89,7 +96,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-head">
             <h2>Top no-KYC crypto casinos</h2>
-            <span className="mono">ranked by privacy score · <Link href="/how-we-rate">method</Link></span>
+            <span className="mono">ranked by privacy score · updated {formatDate(lastUpdate)} · <Link href="/how-we-rate">method</Link></span>
           </div>
           <div className="grid">
             {top.map((c, i) => (
@@ -105,7 +112,7 @@ export default function Home() {
             <h2>Compare all</h2>
             <Link href="/no-kyc-casinos" className="mono">full list →</Link>
           </div>
-          <ComparisonTable casinos={ranked} />
+          <ComparisonTable casinos={ranked} mobileCards={false} />
         </div>
       </section>
 

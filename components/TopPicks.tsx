@@ -51,7 +51,7 @@ export function TopPicks({
               href={`/go/${c.slug}?pos=${encodeURIComponent(`${place}-${i + 1}`)}`}
               rel="sponsored nofollow noopener"
               target="_blank"
-              aria-label={c.offer ? `Claim ${c.name} bonus` : `Visit ${c.name}`}
+              aria-label={c.offer ? `Claim bonus at ${c.name}` : `Visit ${c.name}`}
             >
               {c.offer ? "Claim bonus" : "Visit"} <ArrowUpRight size={15} aria-hidden />
             </a>

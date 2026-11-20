@@ -36,7 +36,7 @@ export function StickyCta({
         <div className="sticky-cta-info">
           {logo ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logo} alt="" height={22} className="sticky-cta-logo" />
+            <img src={logo} alt="" height={22} width={66} className="sticky-cta-logo" style={{ width: "auto" }} />
           ) : null}
           <div className="sticky-cta-text">
             <b>{name}</b>

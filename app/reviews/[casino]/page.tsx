@@ -132,7 +132,7 @@ export default async function Review({ params }: Props) {
           {c.affiliateUrl ? (
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center", margin: "20px 0" }}>
               {c.offer?.code ? <PromoCode code={c.offer.code} /> : null}
-              <a className="btn btn-primary" href={`/go/${c.slug}`} rel="sponsored nofollow noopener" target="_blank" aria-label={c.offer ? `Claim ${c.name} bonus` : `Visit ${c.name}`}>
+              <a className="btn btn-primary" href={`/go/${c.slug}`} rel="sponsored nofollow noopener" target="_blank" aria-label={c.offer ? `Claim bonus at ${c.name}` : `Visit ${c.name}`}>
                 {c.offer ? "Claim bonus" : `Visit ${c.name}`} <ArrowUpRight size={16} aria-hidden />
               </a>
               <span className="faint" style={{ fontSize: 13 }}>18+ · T&amp;Cs apply</span>
@@ -179,7 +179,7 @@ export default async function Review({ params }: Props) {
           ) : null}
           {c.offer && c.affiliateUrl ? (
             <p>
-              <a className="btn btn-primary" href={`/go/${c.slug}?pos=bonus`} rel="sponsored nofollow noopener" target="_blank" aria-label={`Claim ${c.name} bonus`}>
+              <a className="btn btn-primary" href={`/go/${c.slug}?pos=bonus`} rel="sponsored nofollow noopener" target="_blank" aria-label={`Claim bonus at ${c.name}`}>
                 Claim bonus <ArrowUpRight size={16} aria-hidden />
               </a>
             </p>

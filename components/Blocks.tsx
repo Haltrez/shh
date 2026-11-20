@@ -21,10 +21,21 @@ export const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-export function Blocks({ blocks }: { blocks: Block[] }) {
+export function Blocks({ blocks, h2Seen = false }: { blocks: Block[]; h2Seen?: boolean }) {
+  let seen = h2Seen;
   return (
     <>
       {blocks.map((b, i) => {
+        if (b.type === "h2") seen = true;
+        if (b.type === "steps" && !seen) {
+          seen = true;
+          return (
+            <div key={i}>
+              <h2 className="sr-only">Step by step</h2>
+              <Steps steps={b.steps} />
+            </div>
+          );
+        }
         switch (b.type) {
           case "p":
             return <p key={i}>{b.text}</p>;

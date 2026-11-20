@@ -11,6 +11,7 @@ import { RelatedGuides } from "@/components/Related";
 import { breadcrumbs, faqPage, itemList } from "@/lib/schema";
 import { seo } from "@/lib/seo";
 import { comparePairs, shortName } from "@/lib/compare";
+import { formatDate } from "@/lib/format";
 
 const year = new Date().getFullYear();
 
@@ -30,6 +31,7 @@ const FAQ = [
 
 export default function Page() {
   const ranked = rank(allCasinos);
+  const lastUpdate = allCasinos.map((c) => c.lastChecked ?? c.reported?.asOf ?? "").filter(Boolean).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   return (
     <>
       <div className="wrap page-head">
@@ -39,9 +41,14 @@ export default function Page() {
           A no-KYC casino lets you sign up and play without uploading ID. It doesn&apos;t mean you&apos;ll never be
           asked. Here&apos;s every casino we cover, ranked by how little it asks and when.
         </p>
+        <p className="meta-strip">
+          <span>{ranked.length} casinos</span>
+          <span>updated {formatDate(lastUpdate)}</span>
+        </p>
       </div>
 
       <section className="wrap" style={{ paddingBottom: 32 }}>
+        <h2 className="sr-only">Comparison table</h2>
         <ComparisonTable casinos={ranked} />
       </section>
 
