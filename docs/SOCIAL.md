@@ -24,7 +24,7 @@ Swap `tg` for `x` in `utm_source` when posting on X.
 ## 10 posts
 
 **1. KoalaBet (featured)**
-> KoalaBet: no KYC until you pass $5,000 in deposits or withdrawals. Above that, basic info only. Payouts landed in under 10 min in our tests.
+> KoalaBet: no KYC until you pass $5,000 in deposits or withdrawals. Above that, basic info only. Payouts landed in 3–5 min in our tests.
 > Welcome bonus up to $700, no code needed:
 > https://www.shhcasinos.com/bonus/koalabet?utm_source=tg&utm_medium=social&utm_campaign=koalabet
 > 18+ · T&Cs apply · affiliate link

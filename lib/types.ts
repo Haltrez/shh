@@ -75,7 +75,7 @@ export type Casino = {
   payoutMinutes?: {
     value: number;
     note: string;
-    /** e.g. "under 10 min" */
+    /** e.g. "3–5 min" */
     label?: string;
     /** True when the time is the casino's own claim, not our test withdrawal. */
     stated?: boolean;

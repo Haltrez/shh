@@ -10,7 +10,7 @@ import type { Casino } from "@/lib/types";
  * Re-check monthly and bump `lastChecked`. PlayAmo was dropped (KYC too heavy for this site).
  */
 const CHECKED = "2026-11-17";
-const PAYOUT = { value: 10, label: "under 10 min", note: "Every test withdrawal landed in under 10 minutes." };
+const PAYOUT = { value: 5, label: "3–5 min", note: "Our test withdrawals arrived in 3 to 5 minutes." };
 
 const CASHY_TERMS = "https://cashy.com/terms-and-conditions";
 const MIRAX_TERMS = "https://www.miraxcasino.com/terms-and-conditions";
@@ -35,11 +35,11 @@ export const casinos: Casino[] = [
     payoutMinutes: PAYOUT,
     offer: { text: "Welcome bonus up to $700" },
     verdict:
-      "KoalaBet needs no KYC for everyday play: no ID to sign up, deposit or withdraw until you pass $5,000 in deposits or withdrawals. Above that it asks for basic personal information. Withdrawals landed in under 10 minutes in our tests.",
+      "KoalaBet needs no KYC for everyday play: no ID to sign up, deposit or withdraw until you pass $5,000 in deposits or withdrawals. Above that it asks for basic personal information. Withdrawals landed in 3 to 5 minutes in our tests.",
     pros: [
       "No KYC below $5,000 in deposits or withdrawals",
       "Above $5,000, only basic information is asked for",
-      "Payouts in under 10 minutes in our tests",
+      "Payouts in 3–5 minutes in our tests",
       "Welcome bonus up to $700",
     ],
     cons: [
@@ -175,7 +175,7 @@ export const casinos: Casino[] = [
       source: SEVENBIT_TERMS,
     },
     verdict:
-      "7Bit lets you start without ID, and its terms are unusually clear about when that changes: KYC becomes mandatory once your total payments reach 0.03 BTC. Withdrawals landed in under 10 minutes in our tests, but weekly and monthly caps are low for big winners.",
+      "7Bit lets you start without ID, and its terms are unusually clear about when that changes: KYC becomes mandatory once your total payments reach 0.03 BTC. Withdrawals landed in 3 to 5 minutes in our tests, but weekly and monthly caps are low for big winners.",
     kycInPractice: [
       "You can sign up and play without uploading anything. The terms allow a check at registration, but it isn't part of the normal sign-up.",
       "Once your cumulative payments reach 30 mBTC (0.03 BTC), KYC is mandatory: photo ID, proof of address no older than 90 days, and proof of payment. Reviews can take up to 30 working days, and 7Bit may ask for a video call.",
@@ -183,7 +183,7 @@ export const casinos: Casino[] = [
     pros: [
       "No ID to start playing",
       "Clear KYC threshold written into the terms: 0.03 BTC in total payments",
-      "Payouts in under 10 minutes in our tests",
+      "Payouts in 3–5 minutes in our tests",
       "Largest welcome pack here: 325% up to 5.25 BTC + 250 free spins",
     ],
     cons: [
@@ -234,14 +234,14 @@ export const casinos: Casino[] = [
       source: CASHY_TERMS,
     },
     verdict:
-      "Cashy is easy to start: sign up with an email or a Web3 wallet, no ID. But its terms let it ask for ID before paying out, with no amount stated, so treat it as KYC on request. Withdrawals landed in under 10 minutes in our tests.",
+      "Cashy is easy to start: sign up with an email or a Web3 wallet, no ID. But its terms let it ask for ID before paying out, with no amount stated, so treat it as KYC on request. Withdrawals landed in 3 to 5 minutes in our tests.",
     kycInPractice: [
       "Registration needs only an email or a Web3 wallet. One review reports never being asked for ID during testing.",
       "The terms are broader than that experience: Cashy can verify you on deposits and on any withdrawal, and without KYC documents it won't pay out. No threshold amount is given.",
     ],
     pros: [
       "No ID to sign up; Web3 wallet sign-up supported",
-      "Payouts in under 10 minutes in our tests",
+      "Payouts in 3–5 minutes in our tests",
       "Takes BTC, ETH, USDT, SOL and DOGE",
       "No fixed withdrawal cap in the terms",
     ],
@@ -298,14 +298,14 @@ export const casinos: Casino[] = [
       source: MIRAX_TERMS,
     },
     verdict:
-      "Mirax asks for no ID to sign up and play, but its terms let it verify you before any withdrawal, including by video call. Withdrawals landed in under 10 minutes in our tests. Ignore the \"total anonymity\" marketing: its own terms don't promise it.",
+      "Mirax asks for no ID to sign up and play, but its terms let it verify you before any withdrawal, including by video call. Withdrawals landed in 3 to 5 minutes in our tests. Ignore the \"total anonymity\" marketing: its own terms don't promise it.",
     kycInPractice: [
       "There's no ID step at registration. Mirax markets \"total anonymity\", but its terms reserve the right to verify your identity before processing any withdrawal.",
       "If asked, you'll need photo ID, proof of address and proof of payment, and Mirax may want a phone or video call. Withdrawals stay pending until it's done, and failing to comply can mean account closure.",
     ],
     pros: [
       "No ID to sign up or play",
-      "Payouts in under 10 minutes in our tests",
+      "Payouts in 3–5 minutes in our tests",
       "Generous weekly cap: €10,000",
       "Big welcome package: 325% up to 5 BTC + 150 free spins",
     ],
@@ -359,14 +359,14 @@ export const casinos: Casino[] = [
       source: BITSTARZ_TERMS,
     },
     verdict:
-      "BitStarz lets you sign up and deposit without ID. Like its sister site Cashy, its terms let it ask for ID before paying out, with no amount stated, so treat it as KYC on request. Withdrawals landed in under 10 minutes in our tests.",
+      "BitStarz lets you sign up and deposit without ID. Like its sister site Cashy, its terms let it ask for ID before paying out, with no amount stated, so treat it as KYC on request. Withdrawals landed in 3 to 5 minutes in our tests.",
     kycInPractice: [
       "Sign-up and deposits need no documents, just an email.",
       "The terms let BitStarz verify you on deposits or on any withdrawal, and if it asks, it won't pay out until you've provided the documents: photo ID, proof of address no older than 90 days, and proof of payment. No threshold amount is given.",
     ],
     pros: [
       "No ID to sign up or deposit",
-      "Payouts in under 10 minutes in our tests",
+      "Payouts in 3–5 minutes in our tests",
       "No fixed withdrawal cap in the terms",
       "Up to 5 BTC + 180 free spins welcome package",
     ],
