@@ -19,6 +19,7 @@ export const metadata: Metadata = seo({
   description:
     "Every bonus at the no-KYC crypto casinos we rank: welcome offers, whether a code is needed, KYC rules and payout times. Updated with each casino check.",
   path: "/bonus",
+  languages: { en: "/bonus", es: "/es/bonos" },
 });
 
 const FAQ = [

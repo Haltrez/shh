@@ -1,13 +1,13 @@
 import type { Block } from "@/content/types";
 import { Caveat } from "./Caveat";
 
-export function Steps({ steps }: { steps: { name: string; need: string; text: string }[] }) {
+export function Steps({ steps, lang = "en" }: { steps: { name: string; need: string; text: string }[]; lang?: "en" | "es" }) {
   return (
     <ol className="steps">
       {steps.map((s, i) => (
         <li key={s.name} id={`step-${i + 1}`}>
           <h3>{s.name}</h3>
-          <div className="need">what you need: {s.need}</div>
+          <div className="need">{lang === "es" ? "qué necesitas" : "what you need"}: {s.need}</div>
           <p>{s.text}</p>
         </li>
       ))}
@@ -21,7 +21,7 @@ export const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-export function Blocks({ blocks, h2Seen = false }: { blocks: Block[]; h2Seen?: boolean }) {
+export function Blocks({ blocks, h2Seen = false, lang = "en" }: { blocks: Block[]; h2Seen?: boolean; lang?: "en" | "es" }) {
   let seen = h2Seen;
   return (
     <>
@@ -31,8 +31,8 @@ export function Blocks({ blocks, h2Seen = false }: { blocks: Block[]; h2Seen?: b
           seen = true;
           return (
             <div key={i}>
-              <h2 className="sr-only">Step by step</h2>
-              <Steps steps={b.steps} />
+              <h2 className="sr-only">{lang === "es" ? "Paso a paso" : "Step by step"}</h2>
+              <Steps steps={b.steps} lang={lang} />
             </div>
           );
         }
@@ -52,7 +52,7 @@ export function Blocks({ blocks, h2Seen = false }: { blocks: Block[]; h2Seen?: b
           case "caveat":
             return <Caveat key={i} text={b.text} />;
           case "steps":
-            return <Steps key={i} steps={b.steps} />;
+            return <Steps key={i} steps={b.steps} lang={lang} />;
           case "table":
             return (
               <div key={i} style={{ marginBottom: "1.5em" }}>

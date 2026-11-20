@@ -5,7 +5,7 @@ import { seo } from "@/lib/seo";
 
 const l = getLanding("best-crypto-casinos")!;
 
-export const metadata: Metadata = seo({ title: withYear(l.title), description: l.description, path: "/best-crypto-casinos" });
+export const metadata: Metadata = seo({ title: withYear(l.title), description: l.description, path: "/best-crypto-casinos", languages: { en: "/best-crypto-casinos", es: "/es/mejores-casinos-cripto" } });
 
 export default function Page() {
   return <LandingPage l={l} />;

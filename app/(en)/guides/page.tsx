@@ -9,6 +9,7 @@ export const metadata: Metadata = seo({
   title: "Crypto Casino Guides: Buy, Deposit, Withdraw, Privacy",
   description: "Plain guides to buying crypto, choosing a wallet, depositing and withdrawing at casinos, network fees, KYC and what privacy really means on a blockchain.",
   path: "/guides",
+  languages: { en: "/guides", es: "/es/guias" },
 });
 
 const ORDER: Guide["category"][] = ["Trends & news", "Crypto basics", "Casino know-how", "Money", "Privacy"];

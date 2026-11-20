@@ -129,7 +129,7 @@ export default async function ResenaEs({ params }: Props) {
           </p>
         </article>
         <aside className="grid">
-          <TopPicks place={`es-review-${c.slug}`} title="Otras opciones" exclude={c.slug} lang="es" />
+          <TopPicks place={`es-review-${c.slug}`} title="Otras opciones" exclude={c.slug} lang="es" only={(x) => Boolean(x.latam)} />
         </aside>
       </div>
 

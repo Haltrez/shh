@@ -30,6 +30,8 @@ const FAQ = [
 
 export default function CasinosSinKyc() {
   const ranked = rank(allCasinos.filter(isPublished));
+  const latam = ranked.filter((c) => c.latam);
+  const others = ranked.filter((c) => !c.latam);
   const last = ranked.map((c) => c.lastChecked ?? c.reported?.asOf ?? "").filter(Boolean).sort().at(-1)!;
   return (
     <>
@@ -44,8 +46,14 @@ export default function CasinosSinKyc() {
       </div>
 
       <div className="wrap" style={{ paddingBottom: 56 }}>
+        <h2 style={{ marginTop: 0 }}>Aceptan jugadores de toda Latinoamérica</h2>
         <div className="grid" style={{ marginBottom: 32 }}>
-          {ranked.map((c, i) => <CasinoCard key={c.slug} c={c} rank={i + 1} lang="es" />)}
+          {latam.map((c, i) => <CasinoCard key={c.slug} c={c} rank={i + 1} lang="es" />)}
+        </div>
+        <h2>Otros casinos sin KYC</h2>
+        <p className="dim prose">Estos casinos restringen algunos países de la región (por ejemplo Brasil o Perú). Revisa sus términos antes de registrarte.</p>
+        <div className="grid" style={{ marginBottom: 32 }}>
+          {others.map((c, i) => <CasinoCard key={c.slug} c={c} rank={latam.length + i + 1} lang="es" />)}
         </div>
 
         <div className="prose">

@@ -3,7 +3,9 @@ import { site } from "@/lib/site";
 
 const NAV = [
   { href: "/es/casinos-sin-kyc", label: "Casinos sin KYC" },
-  { href: "/es#resenas", label: "Reseñas" },
+  { href: "/es/mejores-casinos-cripto", label: "Mejores casinos cripto" },
+  { href: "/es/bonos", label: "Bonos" },
+  { href: "/es/guias", label: "Guías" },
   { href: "/", label: "English" },
 ];
 
@@ -45,6 +47,10 @@ export function FooterEs() {
               <li><Link href="/es/casinos-sin-kyc">Casinos sin KYC</Link></li>
               <li><Link href="/es/resenas/koalabet">Reseña de KoalaBet</Link></li>
               <li><Link href="/es/resenas/metawin">Reseña de MetaWin</Link></li>
+              <li><Link href="/es/mejores-casinos-cripto">Mejores casinos cripto</Link></li>
+              <li><Link href="/es/casinos-anonimos">Casinos cripto anónimos</Link></li>
+              <li><Link href="/es/bonos">Códigos de bono</Link></li>
+              <li><Link href="/es/guias">Guías</Link></li>
             </ul>
           </div>
           <div>

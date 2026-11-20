@@ -26,6 +26,7 @@ export const casinos: Casino[] = [
   {
     slug: "koalabet",
     name: "KoalaBet",
+    latam: true, // all LatAm countries accepted, confirmed with the partner (Nov 2026)
     featured: true, // paid placement: shown with the "Featured" label
     priority: 2,
     logo: "/logos/koalabet.svg",
@@ -63,6 +64,7 @@ export const casinos: Casino[] = [
   {
     slug: "metawin",
     name: "MetaWin",
+    latam: true, // all LatAm countries accepted, confirmed with the partner (Nov 2026)
     priority: 1,
     logo: "/logos/metawin.svg",
     logoAspect: 7,

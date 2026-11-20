@@ -32,6 +32,8 @@ const FAQ = [
 
 export default function InicioEs() {
   const ranked = rank(allCasinos.filter(isPublished));
+  const latam = ranked.filter((c) => c.latam);
+  const others = ranked.filter((c) => !c.latam);
   return (
     <>
       <section className="hero">
@@ -51,7 +53,7 @@ export default function InicioEs() {
             </div>
           </div>
           <div className="hero-picks">
-            <TopPicks place="es-home-hero" title="Lo mejor de hoy" lang="es" />
+            <TopPicks place="es-home-hero" title="Aceptan toda Latinoamérica" lang="es" only={(c) => Boolean(c.latam)} />
           </div>
         </div>
       </section>
@@ -60,10 +62,17 @@ export default function InicioEs() {
         <div className="wrap">
           <div className="section-head">
             <h2>Los mejores casinos cripto sin KYC</h2>
-            <span className="mono">por puntuación de privacidad</span>
+            <span className="mono">aceptan jugadores de toda Latinoamérica</span>
           </div>
           <div className="grid">
-            {ranked.map((c, i) => <CasinoCard key={c.slug} c={c} rank={i + 1} lang="es" />)}
+            {latam.map((c, i) => <CasinoCard key={c.slug} c={c} rank={i + 1} lang="es" />)}
+          </div>
+          <h3 style={{ marginTop: 32 }}>Otros casinos que analizamos</h3>
+          <p className="dim" style={{ fontSize: 15 }}>
+            Estos casinos restringen algunos países de la región. Revisa sus términos antes de registrarte.
+          </p>
+          <div className="grid">
+            {others.map((c, i) => <CasinoCard key={c.slug} c={c} rank={latam.length + i + 1} lang="es" />)}
           </div>
         </div>
       </section>

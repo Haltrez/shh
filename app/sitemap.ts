@@ -8,6 +8,9 @@ import { comparePairs } from "@/lib/compare";
 import { bonusCasinos } from "@/lib/bonus";
 import { altBrands } from "@/data/alternatives";
 import { casinosEs } from "@/data/casinos-es";
+import { guiasEs } from "@/content/es/guias";
+import { bonosCasinos } from "@/lib/bonos-es";
+import { getGuide } from "@/content/guides";
 
 /** Split sitemaps: /sitemap/pages.xml, /sitemap/reviews.xml, /sitemap/lists.xml, /sitemap/guides.xml */
 export const revalidate = 3600;
@@ -46,6 +49,20 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
       return [
         { url: absolute("/es"), lastModified: today, alternates: { languages: { en: absolute("/") } } },
         { url: absolute("/es/casinos-sin-kyc"), lastModified: today, alternates: { languages: { en: absolute("/no-kyc-casinos") } } },
+        { url: absolute("/es/mejores-casinos-cripto"), lastModified: today, alternates: { languages: { en: absolute("/best-crypto-casinos") } } },
+        { url: absolute("/es/casinos-anonimos"), lastModified: today, alternates: { languages: { en: absolute("/anonymous-casinos") } } },
+        { url: absolute("/es/bonos"), lastModified: today, alternates: { languages: { en: absolute("/bonus") } } },
+        ...bonosCasinos().map((c) => ({
+          url: absolute(`/es/bonos/${c.slug}`),
+          lastModified: c.lastChecked ?? c.reported?.asOf ?? today,
+          alternates: { languages: { en: absolute(`/bonus/${c.slug}`) } },
+        })),
+        { url: absolute("/es/guias"), lastModified: today, alternates: { languages: { en: absolute("/guides") } } },
+        ...guiasEs.map((g) => ({
+          url: absolute(`/es/guias/${g.slug}`),
+          lastModified: g.updated,
+          ...(getGuide(g.en) ? { alternates: { languages: { en: absolute(`/guides/${g.en}`) } } } : {}),
+        })),
         ...verified
           .filter((c) => casinosEs[c.slug])
           .map((c) => ({

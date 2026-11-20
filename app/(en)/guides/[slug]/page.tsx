@@ -14,6 +14,7 @@ import { TopPicks } from "@/components/TopPicks";
 import { seo } from "@/lib/seo";
 import { CasinoCard } from "@/components/CasinoCard";
 import { findCasino } from "@/lib/data";
+import { guiasEs } from "@/content/es/guias";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,6 +29,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const g = getGuide((await params).slug);
   if (!g) return {};
+  const es = guiasEs.find((x) => x.en === g.slug);
   return seo({
     title: `${g.title} | shh`,
     description: g.description,
@@ -35,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     absolute: true,
     type: "article",
     modifiedTime: g.updated,
+    ...(es ? { languages: { en: `/guides/${g.slug}`, es: `/es/guias/${es.slug}` } } : {}),
   });
 }
 

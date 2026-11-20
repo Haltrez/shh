@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Gift } from "lucide-react";
 import { findCasino } from "@/lib/data";
 import { bonusCasinos } from "@/lib/bonus";
+import { bonosCasinos } from "@/lib/bonos-es";
 import { isPublished, kycLevelOf, isReportedOnly, coinsOf } from "@/lib/score";
 import { seo, clip } from "@/lib/seo";
 import { breadcrumbs, faqPage } from "@/lib/schema";
@@ -75,6 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: title.length <= 54 ? title : fallback.length <= 54 ? fallback : `${c.name} Bonus Code ${year()}`,
     description,
     path: `/bonus/${c.slug}`,
+    ...(bonosCasinos().some((x) => x.slug === c.slug) ? { languages: { en: `/bonus/${c.slug}`, es: `/es/bonos/${c.slug}` } } : {}),
     type: "article",
     modifiedTime: updatedOf(c),
   });

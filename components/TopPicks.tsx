@@ -5,6 +5,7 @@ import { rank, isPublished, privacyScore, kycLevelOf, isReportedOnly } from "@/l
 import { t, casinoText, type Lang } from "@/lib/i18n";
 import { KycBadge } from "./KycBadge";
 import { CasinoLogo } from "./CasinoLogo";
+import type { Casino } from "@/lib/types";
 
 /**
  * Compact "top picks" box for guides and other content pages.
@@ -16,16 +17,19 @@ export function TopPicks({
   title,
   exclude,
   lang = "en",
+  only,
 }: {
   n?: number;
   place: string;
   title?: string;
   exclude?: string;
   lang?: Lang;
+  /** Extra filter, e.g. (c) => c.latam for Spanish pages. */
+  only?: (c: Casino) => boolean;
 }) {
   const L = t(lang);
   const heading = title ?? L.topPicks;
-  const picks = rank(allCasinos.filter((c) => isPublished(c) && c.affiliateUrl && c.slug !== exclude)).slice(0, n);
+  const picks = rank(allCasinos.filter((c) => isPublished(c) && c.affiliateUrl && c.slug !== exclude && (only ? only(c) : true))).slice(0, n);
   if (!picks.length) return null;
   return (
     <aside className="picks" aria-label={heading}>
