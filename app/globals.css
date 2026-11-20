@@ -543,3 +543,34 @@ table.cmp tbody tr:hover td { background: var(--surface-2); }
 
 .sources { font-size: 15px; color: var(--text-dim); }
 .sources a { color: var(--text-dim); }
+
+/* ---------- Top picks (in-content) ---------- */
+.picks { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); margin: 8px 0 32px; overflow: hidden; }
+.picks-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.picks-title { font-family: var(--font-grotesk); font-weight: 600; color: var(--heading); }
+.picks-head a { font-size: 13px; }
+.picks-list { list-style: none; margin: 0; padding: 0; }
+.prose .picks-list { padding: 0; margin: 0; }
+.pick { display: grid; grid-template-columns: auto 1fr auto; gap: 12px 14px; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--line); margin: 0; }
+.pick:last-child { border-bottom: 0; }
+.pick-rank { color: var(--text-faint); font-size: 13px; }
+.pick-main { min-width: 0; display: grid; gap: 4px; }
+.pick-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.pick-name { color: var(--heading); text-decoration: none; font-weight: 600; display: inline-flex; }
+.pick-meta { font-size: 12.5px; color: var(--text-faint); }
+.pick-offer { font-size: 14.5px; color: var(--text); font-weight: 500; }
+.pick-cta { height: 40px; padding: 0 14px; font-size: 14px; }
+.picks-note { margin: 0; padding: 10px 16px; font-size: 12.5px; color: var(--text-faint); border-top: 1px solid var(--line); }
+.picks-note a { color: var(--text-dim); }
+@media (max-width: 520px) {
+  .pick { grid-template-columns: auto 1fr; }
+  .pick-cta { grid-column: 1 / -1; width: 100%; }
+}
+
+/* ---------- Bonus page ---------- */
+.bonus-card { display: grid; gap: 14px; justify-items: start; margin-bottom: 8px; border-left: 3px solid var(--accent); }
+.bonus-offer { display: flex; gap: 14px; align-items: center; }
+.bonus-offer-text { font-family: var(--font-grotesk); font-weight: 600; font-size: 1.3rem; color: var(--heading); line-height: 1.25; }
+.layout-article > aside .picks { margin: 0; }
+.layout-article > aside .pick { grid-template-columns: auto 1fr; }
+.layout-article > aside .pick-cta { grid-column: 1 / -1; width: 100%; }

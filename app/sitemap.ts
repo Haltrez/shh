@@ -5,10 +5,11 @@ import { isPublished, rank } from "@/lib/score";
 import { lists } from "@/data/lists";
 import { guides } from "@/content/guides";
 import { comparePairs } from "@/lib/compare";
+import { bonusCasinos } from "@/lib/bonus";
 
 /** Split sitemaps: /sitemap/pages.xml, /sitemap/reviews.xml, /sitemap/lists.xml, /sitemap/guides.xml */
 export async function generateSitemaps() {
-  return [{ id: "pages" }, { id: "reviews" }, { id: "lists" }, { id: "guides" }, { id: "compare" }];
+  return [{ id: "pages" }, { id: "reviews" }, { id: "lists" }, { id: "guides" }, { id: "compare" }, { id: "bonus" }];
 }
 
 const today = new Date().toISOString().slice(0, 10);
@@ -36,6 +37,11 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
       return comparePairs().map((p) => ({
         url: absolute(`/compare/${p.slug}`),
         lastModified: [p.a, p.b].map((c) => c.lastChecked ?? c.reported?.asOf ?? today).sort().at(-1),
+      }));
+    case "bonus":
+      return bonusCasinos().map((c) => ({
+        url: absolute(`/bonus/${c.slug}`),
+        lastModified: c.lastChecked ?? c.reported?.asOf ?? today,
       }));
     case "guides":
       return guides.map((g) => ({ url: absolute(`/guides/${g.slug}`), lastModified: g.updated }));

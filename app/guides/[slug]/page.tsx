@@ -10,6 +10,7 @@ import { article, breadcrumbs, faqPage, howTo } from "@/lib/schema";
 import { formatDate } from "@/lib/format";
 import { site } from "@/lib/site";
 import { VpnBox } from "@/components/VpnBox";
+import { TopPicks } from "@/components/TopPicks";
 import { seo } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -50,7 +51,9 @@ export default async function GuidePage({ params }: Props) {
       </div>
       <div className="wrap layout-article">
         <article className="prose">
-          <Blocks blocks={g.body} />
+          <Blocks blocks={g.body.slice(0, 1)} />
+          <TopPicks place={`guide-${g.slug}`} />
+          <Blocks blocks={g.body.slice(1)} />
           {g.category === "Privacy" || g.slug === "crypto-wallet-for-gambling" || g.slug === "how-to-buy-crypto" ? (
             <div style={{ margin: "32px 0" }}>
               <VpnBox pos={`guide-${g.slug}`} />

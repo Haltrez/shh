@@ -229,6 +229,15 @@ export default async function Review({ params }: Props) {
         </article>
 
         <aside className="grid">
+          {published && c.affiliateUrl ? (
+            <div className="card">
+              <h3 style={{ fontSize: "1rem" }}>{c.name} bonus</h3>
+              <p className="dim" style={{ fontSize: 15, margin: 0 }}>
+                {c.offer ? c.offer.text : "No welcome bonus right now."}{" "}
+                <Link href={`/bonus/${c.slug}`}>{c.name} bonus code →</Link>
+              </p>
+            </div>
+          ) : null}
           <RelatedLists slugs={coinLists} />
           {published && pairsFor(c.slug).length ? (
             <div className="card">

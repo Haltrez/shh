@@ -1,7 +1,7 @@
 import { site } from "@/lib/site";
 
 /** Single sitemap index for Search Console: /sitemap_index.xml lists the five section sitemaps. */
-const IDS = ["pages", "reviews", "lists", "guides", "compare"];
+const IDS = ["pages", "reviews", "lists", "guides", "compare", "bonus"];
 
 export function GET() {
   const today = new Date().toISOString().slice(0, 10);
