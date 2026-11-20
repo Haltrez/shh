@@ -19,6 +19,7 @@ export const metadata: Metadata = seo({
   title: `No KYC Casinos ${year}: No-Verification Casinos Ranked`,
   description: "No KYC crypto casinos ranked: play without ID verification, see when each casino can still ask, and how fast it pays. Checked against their terms.",
   path: "/no-kyc-casinos",
+  languages: { en: "/no-kyc-casinos", es: "/es/casinos-sin-kyc" },
 });
 
 const FAQ = [

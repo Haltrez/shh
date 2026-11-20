@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { allCasinos } from "@/lib/data";
 import { rank, isPublished, privacyScore, kycLevelOf, isReportedOnly } from "@/lib/score";
-import { formatPayout } from "@/lib/format";
+import { t, casinoText, type Lang } from "@/lib/i18n";
 import { KycBadge } from "./KycBadge";
 import { CasinoLogo } from "./CasinoLogo";
 
@@ -13,21 +13,25 @@ import { CasinoLogo } from "./CasinoLogo";
 export function TopPicks({
   n = 3,
   place,
-  title = "Top no-KYC casinos right now",
+  title,
   exclude,
+  lang = "en",
 }: {
   n?: number;
   place: string;
   title?: string;
   exclude?: string;
+  lang?: Lang;
 }) {
+  const L = t(lang);
+  const heading = title ?? L.topPicks;
   const picks = rank(allCasinos.filter((c) => isPublished(c) && c.affiliateUrl && c.slug !== exclude)).slice(0, n);
   if (!picks.length) return null;
   return (
-    <aside className="picks" aria-label={title}>
+    <aside className="picks" aria-label={heading}>
       <div className="picks-head">
-        <span className="picks-title">{title}</span>
-        <Link href="/no-kyc-casinos" className="mono">full ranking →</Link>
+        <span className="picks-title">{heading}</span>
+        <Link href={L.rankingPath} className="mono">{L.fullRanking}</Link>
       </div>
       <ol className="picks-list">
         {picks.map((c, i) => (
@@ -35,30 +39,30 @@ export function TopPicks({
             <span className="pick-rank mono">{String(i + 1).padStart(2, "0")}</span>
             <div className="pick-main">
               <div className="pick-top">
-                <Link href={`/reviews/${c.slug}`} className="pick-name">
+                <Link href={L.reviewPath(c.slug)} className="pick-name">
                   <CasinoLogo c={c} size={24} />
                 </Link>
-                <KycBadge level={kycLevelOf(c)} reported={isReportedOnly(c)} />
-                {c.featured ? <span className="badge badge-featured">Featured</span> : null}
+                <KycBadge level={kycLevelOf(c)} reported={isReportedOnly(c)} lang={lang} />
+                {c.featured ? <span className="badge badge-featured">{L.featured}</span> : null}
               </div>
               <div className="pick-meta mono">
-                score {privacyScore(c)} · payout {formatPayout(c)}
+                {L.score} {privacyScore(c)} · {L.payout.toLowerCase()} {casinoText(c, lang).payout}
               </div>
-              {c.offer ? <div className="pick-offer">{c.offer.text}</div> : null}
+              {c.offer ? <div className="pick-offer">{casinoText(c, lang).offer}</div> : null}
             </div>
             <a
               className="btn btn-primary pick-cta"
               href={`/go/${c.slug}?pos=${encodeURIComponent(`${place}-${i + 1}`)}`}
               rel="sponsored nofollow noopener"
               target="_blank"
-              aria-label={c.offer ? `Claim bonus at ${c.name}` : `Visit ${c.name}`}
+              aria-label={c.offer ? L.claimAt(c.name) : L.visit(c.name)}
             >
-              {c.offer ? "Claim bonus" : "Visit"} <ArrowUpRight size={15} aria-hidden />
+              {c.offer ? L.claimBonus : lang === "es" ? "Ir" : "Visit"} <ArrowUpRight size={15} aria-hidden />
             </a>
           </li>
         ))}
       </ol>
-      <p className="picks-note">18+ · T&amp;Cs apply · We may earn a commission. <Link href="/how-we-rate">How we rank</Link></p>
+      <p className="picks-note">{L.picksNote} <Link href="/how-we-rate">{L.howWeRank}</Link></p>
     </aside>
   );
 }

@@ -7,12 +7,13 @@ import { publishedGuides } from "@/content/guides";
 import { comparePairs } from "@/lib/compare";
 import { bonusCasinos } from "@/lib/bonus";
 import { altBrands } from "@/data/alternatives";
+import { casinosEs } from "@/data/casinos-es";
 
 /** Split sitemaps: /sitemap/pages.xml, /sitemap/reviews.xml, /sitemap/lists.xml, /sitemap/guides.xml */
 export const revalidate = 3600;
 
 export async function generateSitemaps() {
-  return [{ id: "pages" }, { id: "reviews" }, { id: "lists" }, { id: "guides" }, { id: "compare" }, { id: "bonus" }];
+  return [{ id: "pages" }, { id: "reviews" }, { id: "lists" }, { id: "guides" }, { id: "compare" }, { id: "bonus" }, { id: "es" }];
 }
 
 const today = new Date().toISOString().slice(0, 10);
@@ -41,6 +42,18 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
         url: absolute(`/compare/${p.slug}`),
         lastModified: [p.a, p.b].map((c) => c.lastChecked ?? c.reported?.asOf ?? today).sort().at(-1),
       }));
+    case "es":
+      return [
+        { url: absolute("/es"), lastModified: today, alternates: { languages: { en: absolute("/") } } },
+        { url: absolute("/es/casinos-sin-kyc"), lastModified: today, alternates: { languages: { en: absolute("/no-kyc-casinos") } } },
+        ...verified
+          .filter((c) => casinosEs[c.slug])
+          .map((c) => ({
+            url: absolute(`/es/resenas/${c.slug}`),
+            lastModified: c.lastChecked ?? c.reported?.asOf ?? today,
+            alternates: { languages: { en: absolute(`/reviews/${c.slug}`) } },
+          })),
+      ];
     case "bonus":
       return bonusCasinos().map((c) => ({
         url: absolute(`/bonus/${c.slug}`),

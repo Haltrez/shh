@@ -21,19 +21,25 @@ export function seo(opts: {
   modifiedTime?: string;
   /** Title already includes the brand suffix (use with `title: { absolute }`). */
   absolute?: boolean;
+  /** hreflang alternates, e.g. { en: "/", es: "/es" }. */
+  languages?: Record<string, string>;
+  locale?: string;
 }): Metadata {
   const ogTitle = opts.absolute ? opts.title : `${opts.title} | ${site.name}`;
   return {
     title: opts.absolute ? { absolute: opts.title } : opts.title,
     description: opts.description,
-    alternates: { canonical: opts.path },
+    alternates: {
+      canonical: opts.path,
+      ...(opts.languages ? { languages: { ...opts.languages, "x-default": opts.languages.en ?? opts.path } } : {}),
+    },
     openGraph: {
       title: ogTitle,
       description: opts.description,
       url: opts.path,
       siteName: site.name,
       type: opts.type ?? "website",
-      locale: "en",
+      locale: opts.locale ?? "en",
       ...(opts.modifiedTime ? { modifiedTime: opts.modifiedTime } : {}),
     },
     twitter: { card: "summary_large_image", title: ogTitle, description: opts.description },

@@ -22,6 +22,7 @@ export const metadata: Metadata = seo({
   title: `Best No-KYC Crypto Casinos ${year}: Privacy Ranked | shh`,
   description: "No-KYC crypto casinos ranked by what they actually ask for: ID at sign-up, withdrawal checks, payout speed and coins. Checked against each casino's terms.",
   path: "/", absolute: true,
+  languages: { en: "/", es: "/es" },
 });
 
 const FAQ = [

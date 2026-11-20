@@ -73,6 +73,7 @@ export function Footer() {
           <div>
             <p className="footer-title">about</p>
             <ul>
+              <li><Link href="/es" hrefLang="es">Español</Link></li>
               <li><Link href="/kyc-tracker">KYC policy tracker</Link></li>
               <li><Link href="/tools">Free tools</Link></li>
               <li><Link href="/how-we-rate">How we rate</Link></li>

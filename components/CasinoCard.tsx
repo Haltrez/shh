@@ -2,15 +2,16 @@ import Link from "next/link";
 import { ArrowUpRight, Zap, Wallet, Gift } from "lucide-react";
 import type { Casino } from "@/lib/types";
 import { privacyScore, isReportedOnly, isVerified, kycLevelOf, coinsOf } from "@/lib/score";
-import { formatDate } from "@/lib/format";
-import { formatPayout } from "@/lib/format";
+import { t, casinoText, formatDateL, type Lang } from "@/lib/i18n";
 import { Sources } from "./Sources";
 import { PrivacyMeter } from "./PrivacyMeter";
 import { KycBadge } from "./KycBadge";
 import { PromoCode } from "./PromoCode";
 import { CasinoLogo } from "./CasinoLogo";
 
-export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
+export function CasinoCard({ c, rank, lang = "en" }: { c: Casino; rank?: number; lang?: Lang }) {
+  const L = t(lang);
+  const tx = casinoText(c, lang);
   const score = privacyScore(c);
   const tagReported = isReportedOnly(c);
   const reported = !isVerified(c) ? c.reported : undefined;
@@ -22,41 +23,40 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
       <div className="body">
         <div className="top">
           <h3>
-            <Link href={`/reviews/${c.slug}`}><CasinoLogo c={c} /></Link>
+            <Link href={L.reviewPath(c.slug)}><CasinoLogo c={c} /></Link>
           </h3>
           <PrivacyMeter score={score} />
-          <KycBadge level={kycLevelOf(c)} reported={tagReported} />
-          {c.featured ? <span className="badge badge-featured">Featured</span> : null}
+          <KycBadge level={kycLevelOf(c)} reported={tagReported} lang={lang} />
+          {c.featured ? <span className="badge badge-featured">{L.featured}</span> : null}
         </div>
 
         {coins?.length ? (
-          <div className="chips" aria-label="Coins accepted">
+          <div className="chips" aria-label={L.coinsAccepted}>
             {coins.map((coin) => <span className="chip" key={coin}>{coin}</span>)}
           </div>
         ) : null}
 
         {c.payoutMinutes || c.minDepositUsd ? (
           <div className="facts">
-            {c.payoutMinutes ? <span><Zap size={14} aria-hidden /> Payout <b>{formatPayout(c)}</b></span> : null}
-            {c.minDepositUsd ? <span><Wallet size={14} aria-hidden /> Min deposit <b>${c.minDepositUsd.value}</b></span> : null}
+            {c.payoutMinutes ? <span><Zap size={14} aria-hidden /> {L.payout} <b>{tx.payout}</b></span> : null}
+            {c.minDepositUsd ? <span><Wallet size={14} aria-hidden /> {L.minDeposit} <b>${c.minDepositUsd.value}</b></span> : null}
           </div>
         ) : null}
 
         {c.kyc && c.lastChecked ? (
           <>
-            <p style={{ margin: 0, fontSize: 15.5 }}>{c.kyc.summary}</p>
+            <p style={{ margin: 0, fontSize: 15.5 }}>{tx.summary}</p>
             <p className="reported-note">
-              Checked against{" "}
-              <a href={c.kyc.withdrawal.source} rel="nofollow noopener" target="_blank">{c.name}&apos;s terms</a> on{" "}
-              {formatDate(c.lastChecked)}.
+              <a href={c.kyc.withdrawal.source} rel="nofollow noopener" target="_blank">{L.checkedAgainst(c.name)}</a>{" "}
+              {formatDateL(c.lastChecked, lang)}.
             </p>
           </>
         ) : reported ? (
           <>
-            <p style={{ margin: 0, fontSize: 15.5 }}>{reported.summary}</p>
+            <p style={{ margin: 0, fontSize: 15.5 }}>{tx.summary}</p>
             <p className="reported-note">
               {reported.confirmed ? (
-                <>Confirmed directly by {c.name} on {formatDate(reported.asOf)}.</>
+                <>{L.confirmedBy(c.name)} {formatDateL(reported.asOf, lang)}.</>
               ) : (
                 <>
                   KYC info reported by <Sources sources={reported.sources} />; not yet confirmed against {c.name}&apos;s
@@ -75,9 +75,9 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
           <div className="offer">
             <Gift size={15} aria-hidden color="var(--accent)" />
             <span>
-              {c.offer.text}
+              {tx.offer}
               {!c.offer.code && c.affiliateUrl ? (
-                <span className="offer-note">No code needed: the bonus applies when you sign up through the Claim bonus button.</span>
+                <span className="offer-note">{L.noCode}</span>
               ) : null}
             </span>
           </div>
@@ -91,13 +91,13 @@ export function CasinoCard({ c, rank }: { c: Casino; rank?: number }) {
               href={`/go/${c.slug}${rank !== undefined ? `?pos=${rank}` : ""}`}
               rel="sponsored nofollow noopener"
               target="_blank"
-              aria-label={c.offer ? `Claim bonus at ${c.name}` : `Visit ${c.name}`}
+              aria-label={c.offer ? L.claimAt(c.name) : L.visit(c.name)}
             >
-              {c.offer ? "Claim bonus" : `Visit ${c.name}`} <ArrowUpRight size={16} aria-hidden />
+              {c.offer ? L.claimBonus : L.visit(c.name)} <ArrowUpRight size={16} aria-hidden />
             </a>
           ) : null}
-          <Link className="btn btn-ghost" href={`/reviews/${c.slug}`}>Read review</Link>
-          <span className="tc">18+ · T&amp;Cs apply · Play responsibly</span>
+          <Link className="btn btn-ghost" href={L.reviewPath(c.slug)}>{L.readReview}</Link>
+          <span className="tc">{L.tc}</span>
         </div>
       </div>
     </article>

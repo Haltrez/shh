@@ -24,6 +24,7 @@ import { formatPayout } from "@/lib/format";
 import { pairsFor, shortName } from "@/lib/compare";
 import { StickyCta } from "@/components/StickyCta";
 import { guides } from "@/content/guides";
+import { casinosEs } from "@/data/casinos-es";
 
 type Props = { params: Promise<{ casino: string }> };
 
@@ -49,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path: `/reviews/${c.slug}`,
       type: "article",
       modifiedTime: c.lastChecked ?? c.reported?.asOf,
+      ...(casinosEs[c.slug] && published ? { languages: { en: `/reviews/${c.slug}`, es: `/es/resenas/${c.slug}` } } : {}),
     }),
     // Reviews without enough data to score stay out of the index.
     robots: published ? undefined : { index: false, follow: true },
