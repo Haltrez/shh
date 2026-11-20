@@ -185,7 +185,7 @@ export default async function Review({ params }: Props) {
             </p>
           ) : null}
           {c.offer ? null : (
-            <p className="faint">Being checked.</p>
+            <p>{published ? `${c.name} doesn't run a welcome bonus right now, so there are no bonus wagering conditions to clear.` : "Being checked."}</p>
           )}
 
           {c.games ? (

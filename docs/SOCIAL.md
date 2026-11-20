@@ -30,7 +30,7 @@ Swap `tg` for `x` in `utm_source` when posting on X.
 > 18+ · T&Cs apply · affiliate link
 
 **2. MetaWin**
-> MetaWin has no sign-up form. Connect MetaMask or Phantom and you're in. 14 coins, withdrawals "typically instant" per MetaWin.
+> MetaWin has no sign-up form. Connect MetaMask or Phantom and you're in. 14 coins, and our test withdrawal landed in about 10 seconds.
 > What its terms say about KYC, limits and VPNs:
 > https://www.shhcasinos.com/guides/is-metawin-legit?utm_source=tg&utm_medium=social&utm_campaign=metawin
 > 18+
@@ -79,7 +79,7 @@ Swap `tg` for `x` in `utm_source` when posting on X.
 
 2/ KoalaBet: no KYC until $5,000 in deposits/withdrawals, then basic info. Clearest threshold we've seen.
 
-3/ MetaWin: no sign-up form at all. Connect a wallet and play. Terms still allow ID checks "at our sole discretion".
+3/ MetaWin: no sign-up form at all. Connect a wallet and play. Our test withdrawal: ~10 seconds. Terms still allow ID checks "at our sole discretion".
 
 4/ 7Bit: the only one with a hard number in its terms: KYC becomes mandatory at 0.03 BTC in total payments.
 

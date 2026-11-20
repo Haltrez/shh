@@ -65,12 +65,11 @@ export const casinos: Casino[] = [
     priority: 1,
     logo: "/logos/metawin.svg",
     affiliateUrl: "https://affiliates-link.metawin.com/XWar0Wbz?campaign=Shh",
-    lastChecked: "2026-11-19",
+    lastChecked: "2026-11-20",
     payoutMinutes: {
-      value: 5,
-      label: "typically instant",
-      stated: true,
-      note: "MetaWin says withdrawals are typically instant and can take up to 24 hours. We haven't timed one yet.",
+      value: 1,
+      label: "~10 seconds",
+      note: "Our test withdrawal arrived in about 10 seconds. MetaWin says some withdrawals can take up to 24 hours.",
     },
     licence: {
       value: "Anjouan (Comoros), licence ALSI-202602025-FI1 (Rivolo Limited, Nevis)",
@@ -112,7 +111,7 @@ export const casinos: Casino[] = [
       source: METAWIN_FAQ,
     },
     verdict:
-      "MetaWin is one of the most private ways to play: there's no sign-up form at all, you just connect a crypto wallet. It takes 14 coins across major chains, runs provably fair competitions on-chain, and says withdrawals are typically instant. There's no welcome bonus, so there are no wagering conditions to clear. Like most casinos, its terms let it ask for ID at its discretion.",
+      "MetaWin is one of the most private ways to play: there's no sign-up form at all, you just connect a crypto wallet. It takes 14 coins across major chains, runs provably fair competitions on-chain, and our test withdrawal arrived in about 10 seconds. There's no welcome bonus, so there are no wagering conditions to clear. Like most casinos, its terms let it ask for ID at its discretion.",
     kycInPractice: [
       "There's no registration form. Connect MetaMask, Phantom or one of 300+ wallets via WalletConnect and you can play straight away; email and Google sign-up are optional.",
       "The terms reserve the right to request ID, proof of address and proof of funds at MetaWin's sole discretion, and to hold transactions during identity or source-of-funds checks. No threshold is published. MoonPay, the card on-ramp, has its own ID check, but only if you choose to buy crypto through it.",
@@ -121,7 +120,7 @@ export const casinos: Casino[] = [
       "No sign-up form: connect a wallet and play",
       "Provably fair: competitions verifiable on-chain, game providers independently tested",
       "14 coins, including BTC, ETH, SOL, USDT, USDC and LTC",
-      "Withdrawals typically instant, per MetaWin",
+      "Fastest payout we've tested: about 10 seconds",
       "Low minimum deposit: 5 USDT",
       "No welcome bonus, so no bonus wagering conditions holding your withdrawals",
     ],

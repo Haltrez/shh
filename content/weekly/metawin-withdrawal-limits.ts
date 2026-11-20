@@ -14,7 +14,7 @@ export const guide: Guide = {
   body: [
     {
       type: "p",
-      text: "MetaWin caps withdrawals at $10,000 net every 24 hours at the entry level, rising with its MetaMax loyalty tiers. Withdrawals are approved instantly in normal cases and, per MetaWin, can take up to 24 hours. Every withdrawal costs a $2.50 fee, and deposits must be wagered once before you can withdraw them.",
+      text: "MetaWin caps withdrawals at $10,000 net every 24 hours at the entry level, rising with its MetaMax loyalty tiers. Our test withdrawal arrived in about 10 seconds; MetaWin says some can take up to 24 hours. Every withdrawal costs a $2.50 fee, and deposits must be wagered once before you can withdraw them.",
     },
     { type: "h2", text: "Daily withdrawal limits by tier" },
     {
@@ -65,13 +65,13 @@ export const guide: Guide = {
         "Make sure your deposits have been wagered at least once.",
         "Choose the coin and network your wallet supports.",
         "Paste your own wallet address, check the first and last characters, and confirm.",
-        "Expect it in minutes in normal cases; allow up to 24 hours.",
+        "Expect it within seconds to minutes (ours took about 10 seconds); allow up to 24 hours.",
       ],
     },
   ],
   faq: [
     { q: "What is MetaWin's withdrawal limit?", a: "From $10,000 net per 24 hours at the entry tier, rising with MetaMax loyalty tiers. Check your cashier for your exact limit." },
-    { q: "How long do MetaWin withdrawals take?", a: "MetaWin says typically instant, and up to 24 hours in some cases." },
+    { q: "How long do MetaWin withdrawals take?", a: "Our test withdrawal arrived in about 10 seconds. MetaWin says some can take up to 24 hours." },
     { q: "Does MetaWin charge withdrawal fees?", a: "Yes. MetaWin's FAQ lists a $2.50 fee on all withdrawals, plus network fees on deposits." },
     { q: "Why can't I withdraw my MetaWin deposit?", a: "Deposits must be wagered once before withdrawal. A pending identity or anti-fraud check can also hold a withdrawal." },
   ],
