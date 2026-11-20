@@ -84,7 +84,8 @@ export default function Page() {
           <p>
             Want the most private sign-up of all? See <Link href="/best/metamask-casinos">MetaMask casinos</Link>, where
             your wallet is your login, or our honest take on <Link href="/anonymous-casinos">anonymous crypto
-            casinos</Link>.
+            casinos</Link>. Every casino&apos;s rules, with dates and sources, are in our{" "}
+            <Link href="/kyc-tracker">KYC policy tracker</Link>.
           </p>
 
           <h2>VPNs and country rules</h2>

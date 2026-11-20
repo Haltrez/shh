@@ -53,6 +53,9 @@ export function Footer() {
               <li><Link href="/best-crypto-casinos">Best crypto casinos</Link></li>
               <li><Link href="/anonymous-casinos">Anonymous crypto casinos</Link></li>
               <li><Link href="/bonus">Crypto casino bonus codes</Link></li>
+              <li><Link href="/alternatives/stake">Sites like Stake</Link></li>
+              <li><Link href="/alternatives/bc-game">BC.Game alternatives</Link></li>
+              <li><Link href="/alternatives/roobet">Roobet alternatives</Link></li>
               {lists.map((l) => (
                 <li key={l.slug}><Link href={`/best/${l.slug}`}>{l.short}</Link></li>
               ))}
@@ -70,6 +73,8 @@ export function Footer() {
           <div>
             <p className="footer-title">about</p>
             <ul>
+              <li><Link href="/kyc-tracker">KYC policy tracker</Link></li>
+              <li><Link href="/tools">Free tools</Link></li>
               <li><Link href="/how-we-rate">How we rate</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>

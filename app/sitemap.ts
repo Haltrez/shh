@@ -6,6 +6,7 @@ import { lists } from "@/data/lists";
 import { publishedGuides } from "@/content/guides";
 import { comparePairs } from "@/lib/compare";
 import { bonusCasinos } from "@/lib/bonus";
+import { altBrands } from "@/data/alternatives";
 
 /** Split sitemaps: /sitemap/pages.xml, /sitemap/reviews.xml, /sitemap/lists.xml, /sitemap/guides.xml */
 export const revalidate = 3600;
@@ -22,7 +23,7 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
   // Pages with noindex are left out.
   switch (which) {
     case "pages":
-      return ["/", "/no-kyc-casinos", "/best-crypto-casinos", "/anonymous-casinos", "/bonus", "/guides", "/how-we-rate", "/responsible-gambling", "/about", "/contact", "/affiliate-disclosure", "/privacy"].map(
+      return ["/", "/no-kyc-casinos", "/best-crypto-casinos", "/anonymous-casinos", "/bonus", "/kyc-tracker", "/tools", "/tools/wagering-calculator", "/tools/crypto-fee-calculator", ...altBrands.map((b) => `/alternatives/${b.slug}`), "/guides", "/how-we-rate", "/responsible-gambling", "/about", "/contact", "/affiliate-disclosure", "/privacy"].map(
         (p) => ({ url: absolute(p), lastModified: today }),
       );
     case "reviews":
