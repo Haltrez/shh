@@ -1,6 +1,15 @@
 # Weekly article playbook
 
-Two new guides a week. Every article follows these rules. The scheduled task reads this file before writing.
+Two new guides a week, released Monday and Thursday. Every article follows these rules. The scheduled task reads this file before writing.
+
+## The queue
+
+Articles are written ahead and released automatically:
+
+- Set `publishAt` (and `updated`) to the release date, ISO format. The guide stays hidden (404, not in lists or sitemaps) until that date (UTC); pages refresh hourly, so it appears that day without a deploy.
+- Release days are Mondays and Thursdays. Keep **at least 4 scheduled articles** (two weeks) in the queue. To see the queue: `grep -n "publishAt" content/weekly/*.ts`.
+- Each scheduled run: if fewer than 4 future-dated articles exist, write enough to get back to 4, dated on the next free Monday/Thursday slots.
+- Trends & news pieces with prices or fast-moving facts: schedule them no more than a week ahead.
 
 ## Pick the topic
 
@@ -66,7 +75,8 @@ Always:
 ## Check and ship
 
 ```bash
-npm run build && npm run check
+SHH_PREVIEW_SCHEDULED=1 npm run build && npm run check   # checks scheduled articles too
+npm run build && npm run check                           # the real build
 ```
 
 Both must pass (0 errors). The check enforces title/description length, one H1, valid schema, no broken internal links and banned phrases. Then:

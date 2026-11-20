@@ -12,6 +12,8 @@ export type Guide = {
   h1: string;
   description: string; // ≤ 155
   updated: string; // ISO date
+  /** Optional release date (ISO, UTC). Hidden everywhere until then; pages refresh hourly. */
+  publishAt?: string;
   category: "Crypto basics" | "Privacy" | "Casino know-how" | "Money" | "Trends & news";
   /** Renders HowTo schema from the first steps block. */
   howTo?: boolean;

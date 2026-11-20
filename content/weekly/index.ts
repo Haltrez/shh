@@ -13,6 +13,15 @@ import { guide as isMetawinLegit } from "./is-metawin-legit";
 import { guide as metawinKyc } from "./metawin-kyc";
 import { guide as metawinWithdrawalLimits } from "./metawin-withdrawal-limits";
 
+import { guide as howToBuyUsdtTrc20 } from "./how-to-buy-usdt-trc20";
+import { guide as wageringRequirementsExplained } from "./wagering-requirements-explained";
+import { guide as cryptoCasinoDepositNotShowing } from "./crypto-casino-deposit-not-showing";
+import { guide as usdtVsUsdcForGambling } from "./usdt-vs-usdc-for-gambling";
+import { guide as howToBuyLitecoin } from "./how-to-buy-litecoin";
+import { guide as howToSpotACryptoCasinoScam } from "./how-to-spot-a-crypto-casino-scam";
+import { guide as seedPhraseSafety } from "./seed-phrase-safety";
+import { guide as cryptoCasinoDataBreaches } from "./crypto-casino-data-breaches";
+
 export const weeklyGuides: Guide[] = [
   sentCryptoWrongNetwork,
   noKycCasinoTrends2026,
@@ -25,4 +34,13 @@ export const weeklyGuides: Guide[] = [
   isMetawinLegit,
   metawinKyc,
   metawinWithdrawalLimits,
+  // Scheduled (publishAt):
+  howToBuyUsdtTrc20,
+  wageringRequirementsExplained,
+  cryptoCasinoDepositNotShowing,
+  usdtVsUsdcForGambling,
+  howToBuyLitecoin,
+  howToSpotACryptoCasinoScam,
+  seedPhraseSafety,
+  cryptoCasinoDataBreaches,
 ];

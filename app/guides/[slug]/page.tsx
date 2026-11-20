@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { guides, getGuide } from "@/content/guides";
+import { publishedGuides, getGuide } from "@/content/guides";
 import { Blocks } from "@/components/Blocks";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
@@ -17,9 +17,12 @@ import { findCasino } from "@/lib/data";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const dynamicParams = false;
+// Scheduled guides (publishAt in the future) aren't prebuilt; once their date passes,
+// the first request renders them and the page is cached, refreshing hourly.
+export const dynamicParams = true;
+export const revalidate = 3600;
 export function generateStaticParams() {
-  return guides.map((g) => ({ slug: g.slug }));
+  return publishedGuides().map((g) => ({ slug: g.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -4,7 +4,7 @@ import { Lock, EyeOff, Zap } from "lucide-react";
 import { allCasinos } from "@/lib/data";
 import { rank, isPublished } from "@/lib/score";
 import { lists } from "@/data/lists";
-import { guides } from "@/content/guides";
+import { publishedGuides } from "@/content/guides";
 import { CasinoCard } from "@/components/CasinoCard";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { Faq } from "@/components/Faq";
@@ -49,7 +49,10 @@ const FAQ = [
 
 const FEATURED = ["is-crypto-gambling-anonymous", "how-to-buy-crypto", "how-to-deposit-crypto", "cheapest-coin-to-deposit", "what-is-kyc-at-casinos", "usdt-trc20-vs-erc20"];
 
+export const revalidate = 3600;
+
 export default function Home() {
+  const guides = publishedGuides();
   const ranked = rank(allCasinos);
   const lastUpdate = allCasinos.map((c) => c.lastChecked ?? c.reported?.asOf ?? "").filter(Boolean).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   const latest = [...guides]

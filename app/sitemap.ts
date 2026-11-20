@@ -3,11 +3,13 @@ import { absolute } from "@/lib/site";
 import { allCasinos } from "@/lib/data";
 import { isPublished, rank } from "@/lib/score";
 import { lists } from "@/data/lists";
-import { guides } from "@/content/guides";
+import { publishedGuides } from "@/content/guides";
 import { comparePairs } from "@/lib/compare";
 import { bonusCasinos } from "@/lib/bonus";
 
 /** Split sitemaps: /sitemap/pages.xml, /sitemap/reviews.xml, /sitemap/lists.xml, /sitemap/guides.xml */
+export const revalidate = 3600;
+
 export async function generateSitemaps() {
   return [{ id: "pages" }, { id: "reviews" }, { id: "lists" }, { id: "guides" }, { id: "compare" }, { id: "bonus" }];
 }
@@ -44,7 +46,7 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
         lastModified: c.lastChecked ?? c.reported?.asOf ?? today,
       }));
     case "guides":
-      return guides.map((g) => ({ url: absolute(`/guides/${g.slug}`), lastModified: g.updated }));
+      return publishedGuides().map((g) => ({ url: absolute(`/guides/${g.slug}`), lastModified: g.updated }));
     default:
       return [];
   }

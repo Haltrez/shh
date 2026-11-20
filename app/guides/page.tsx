@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { guides } from "@/content/guides";
+import { publishedGuides } from "@/content/guides";
 import type { Guide } from "@/content/types";
 import { VpnBox } from "@/components/VpnBox";
 import { seo } from "@/lib/seo";
@@ -13,7 +13,10 @@ export const metadata: Metadata = seo({
 
 const ORDER: Guide["category"][] = ["Trends & news", "Crypto basics", "Casino know-how", "Money", "Privacy"];
 
+export const revalidate = 3600;
+
 export default function Guides() {
+  const guides = publishedGuides();
   return (
     <>
       <div className="wrap page-head">
