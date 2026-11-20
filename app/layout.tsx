@@ -4,7 +4,6 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import { sitewide } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
-import { Header, Footer } from "@/components/Chrome";
 import { AgeBanner } from "@/components/AgeBanner";
 import { OutboundTracker } from "@/components/OutboundTracker";
 import { Analytics } from "@vercel/analytics/next";
@@ -34,10 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${grotesk.variable} ${mono.variable}`}>
       <body>
-        <a href="#main" className="sr-only">Skip to content</a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        {children}
         <AgeBanner />
         <OutboundTracker />
         <Analytics />

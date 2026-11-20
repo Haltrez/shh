@@ -1,7 +1,11 @@
 import Link from "next/link";
+import { Header, Footer } from "@/components/Chrome";
 
 export default function NotFound() {
   return (
+    <>
+    <Header />
+    <main id="main">
     <div className="wrap page-head" style={{ minHeight: "50vh" }}>
       <p className="mono">404</p>
       <h1>
@@ -11,5 +15,8 @@ export default function NotFound() {
         Try the <Link href="/no-kyc-casinos">no-KYC ranking</Link> or the <Link href="/guides">guides</Link>.
       </p>
     </div>
+    </main>
+    <Footer />
+    </>
   );
 }
