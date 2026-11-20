@@ -6,6 +6,8 @@ import { sitewide } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
 import { Header, Footer } from "@/components/Chrome";
 import { AgeBanner } from "@/components/AgeBanner";
+import { OutboundTracker } from "@/components/OutboundTracker";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500"], display: "swap", variable: "--font-inter" });
 const grotesk = Space_Grotesk({ subsets: ["latin"], weight: ["600"], display: "swap", variable: "--font-grotesk" });
@@ -37,6 +39,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <AgeBanner />
+        <OutboundTracker />
+        <Analytics />
         <JsonLd data={sitewide} />
       </body>
     </html>

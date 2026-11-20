@@ -16,6 +16,7 @@ export default function Page() {
       <h2 style={{ marginTop: 0 }}>What we collect</h2>
       <ul>
         <li><b>Outbound click counts:</b> when you use a <span className="mono">/go/</span> link we log the casino, the page you clicked from, the link position, your country (from your IP, not stored) and the time. We don&apos;t store your IP address.</li>
+        <li><b>Visit statistics:</b> we use Vercel Web Analytics, which counts page views and outbound clicks without cookies and without storing your IP address. It can&apos;t identify you or follow you across sites.</li>
         <li><b>Hosting logs:</b> our host keeps standard request logs for security and debugging for a limited period.</li>
         <li><b>Your browser:</b> we store one local setting (that you dismissed the 18+ banner). It never leaves your device.</li>
       </ul>
