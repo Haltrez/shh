@@ -4,7 +4,7 @@ import "@/app/globals.css";
 import { site } from "@/lib/site";
 import { sitewide } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
-import { AgeBanner } from "@/components/AgeBanner";
+import { AgeBanner, AGE_SCRIPT } from "@/components/AgeBanner";
 import { OutboundTracker } from "@/components/OutboundTracker";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -32,10 +32,13 @@ export const viewport: Viewport = {
 /** <html>/<body> shared by the two root layouts, app/(en) and app/(es), so each sets its own lang. */
 export function RootShell({ lang, children }: { lang: "en" | "es"; children: React.ReactNode }) {
   return (
-    <html lang={lang} className={`${inter.variable} ${grotesk.variable} ${mono.variable}`}>
+    <html suppressHydrationWarning lang={lang} className={`${inter.variable} ${grotesk.variable} ${mono.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: AGE_SCRIPT }} />
+      </head>
       <body>
         {children}
-        <AgeBanner />
+        <AgeBanner lang={lang} />
         <OutboundTracker />
         <Analytics />
         <JsonLd data={sitewide} />

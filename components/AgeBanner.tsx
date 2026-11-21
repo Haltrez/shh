@@ -1,21 +1,17 @@
-"use client";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { AgeOkButton } from "./AgeOkButton";
 
-const KEY = "shh-age-ok";
+/** Storage key; also read by AGE_SCRIPT before first paint. */
+export const AGE_KEY = "shh-age-ok";
+
+/**
+ * Runs in <head> before paint: if the visitor already confirmed, hide the banner via a class on <html>.
+ * Keeps the banner in the server HTML (no late pop-in that hurts Speed Index) without flashing it for returning visitors.
+ */
+export const AGE_SCRIPT = `try{if(localStorage.getItem("${AGE_KEY}"))document.documentElement.classList.add("age-ok")}catch(e){}`;
 
 /** Light banner, not a wall (no intrusive interstitial). Remembered per browser. */
-export function AgeBanner() {
-  const [show, setShow] = useState(false);
-  const es = (usePathname() ?? "").startsWith("/es");
-  useEffect(() => {
-    try {
-      if (!localStorage.getItem(KEY)) setShow(true);
-    } catch {
-      setShow(true);
-    }
-  }, []);
-  if (!show) return null;
+export function AgeBanner({ lang }: { lang: "en" | "es" }) {
+  const es = lang === "es";
   return (
     <div className="age-banner" role="region" aria-label={es ? "Aviso de edad" : "Age notice"}>
       {es ? (
@@ -29,18 +25,7 @@ export function AgeBanner() {
           legal.
         </span>
       )}
-      <button
-        type="button"
-        className="btn btn-ghost"
-        onClick={() => {
-          try {
-            localStorage.setItem(KEY, "1");
-          } catch {}
-          setShow(false);
-        }}
-      >
-        {es ? "Tengo +18" : <>I&apos;m 18+</>}
-      </button>
+      <AgeOkButton label={es ? "Tengo +18" : "I'm 18+"} storageKey={AGE_KEY} />
     </div>
   );
 }
