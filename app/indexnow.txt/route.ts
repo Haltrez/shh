@@ -1,6 +1,6 @@
-/** IndexNow key file. Set INDEXNOW_KEY in Vercel; scripts/indexnow.mjs passes this URL as keyLocation. */
+/** IndexNow key (public by design: search engines fetch it to verify submissions). Also served at /e539744f30a15442e73e0d42fbf5d945.txt. */
+export const INDEXNOW_KEY = process.env.INDEXNOW_KEY ?? "e539744f30a15442e73e0d42fbf5d945";
+
 export function GET() {
-  const key = process.env.INDEXNOW_KEY;
-  if (!key) return new Response("Not configured", { status: 404 });
-  return new Response(key, { headers: { "Content-Type": "text/plain" } });
+  return new Response(INDEXNOW_KEY, { headers: { "Content-Type": "text/plain" } });
 }

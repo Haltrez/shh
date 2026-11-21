@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 /**
  * Submit every URL in the live sitemaps to IndexNow (Bing, Yandex, Seznam, Naver…).
- *   SITE_URL=https://shhcasinos.com INDEXNOW_KEY=xxxx npm run indexnow
- * INDEXNOW_KEY must match the one set in Vercel (served at /indexnow.txt).
+ *   npm run indexnow            (defaults: live site, key from app/indexnow.txt/route.ts)
+ * Run after a deploy that adds pages.
  */
-const site = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
-const key = process.env.INDEXNOW_KEY;
+import { readFileSync } from "node:fs";
+const site = (process.env.SITE_URL || "https://www.shhcasinos.com").replace(/\/$/, "");
+const key =
+  process.env.INDEXNOW_KEY || readFileSync(new URL("../app/indexnow.txt/route.ts", import.meta.url), "utf8").match(/\?\? "([0-9a-f]{32})"/)?.[1];
 if (!site || !key) {
   console.error("Set SITE_URL and INDEXNOW_KEY.");
   process.exit(1);
@@ -18,6 +20,9 @@ for (const sm of sitemaps) {
   const xml = await (await fetch(sm)).text();
   urls.push(...[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
 }
+const pages = [...new Set(urls)].filter((u) => !u.endsWith(".xml"));
+urls.length = 0;
+urls.push(...pages);
 if (!urls.length) {
   console.error("No URLs found in sitemaps.");
   process.exit(1);
