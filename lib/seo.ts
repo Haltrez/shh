@@ -9,6 +9,9 @@ export function clip(text: string, max = 155): string {
   return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:.\s]+$/, "") + "…";
 }
 
+/** Sitewide share image (app/opengraph-image.tsx). Set explicitly: a page's openGraph object replaces the parent's. */
+const OG_IMAGE = { url: "/opengraph-image", width: 1200, height: 630, alt: "shh: straight answers on crypto casino privacy" };
+
 /**
  * Canonical + Open Graph + Twitter for one page. Next.js doesn't copy <title>/description
  * into og:* on its own, so every page should spread this into its metadata.
@@ -40,8 +43,9 @@ export function seo(opts: {
       siteName: site.name,
       type: opts.type ?? "website",
       locale: opts.locale ?? "en",
+      images: [OG_IMAGE],
       ...(opts.modifiedTime ? { modifiedTime: opts.modifiedTime } : {}),
     },
-    twitter: { card: "summary_large_image", title: ogTitle, description: opts.description },
+    twitter: { card: "summary_large_image", title: ogTitle, description: opts.description, images: [OG_IMAGE.url] },
   };
 }

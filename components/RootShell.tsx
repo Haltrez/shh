@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { site } from "@/lib/site";
 import { sitewide } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500"], display: "swap
 const grotesk = Space_Grotesk({ subsets: ["latin"], weight: ["600"], display: "swap", variable: "--font-grotesk" });
 const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["500"], display: "swap", variable: "--font-mono" });
 
-export const metadata: Metadata = {
+export const rootMetadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `No-KYC Crypto Casinos: Straight Answers on Privacy | ${site.name}`, template: `%s | ${site.name}` },
   description: site.description,
@@ -29,9 +29,10 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+/** <html>/<body> shared by the two root layouts, app/(en) and app/(es), so each sets its own lang. */
+export function RootShell({ lang, children }: { lang: "en" | "es"; children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${grotesk.variable} ${mono.variable}`}>
+    <html lang={lang} className={`${inter.variable} ${grotesk.variable} ${mono.variable}`}>
       <body>
         {children}
         <AgeBanner />

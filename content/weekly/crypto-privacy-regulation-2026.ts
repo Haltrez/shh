@@ -8,7 +8,7 @@ export const guide: Guide = {
     "MiCA's transition ended, the Travel Rule covers self-hosted wallets over €1,000 and privacy coins face an EU ban in 2027. What changes for you.",
   updated: "2026-11-17",
   category: "Trends & news",
-  relatedGuides: ["is-crypto-gambling-anonymous", "crypto-wallet-for-gambling", "crypto-gambling-taxes"],
+  relatedGuides: ["is-crypto-gambling-anonymous", "crypto-news-november-2026", "crypto-gambling-taxes"],
   relatedReviews: [],
   body: [
     {

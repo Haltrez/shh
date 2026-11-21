@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  experimental: { globalNotFound: true },
   trailingSlash: false,
   images: { formats: ["image/webp"] },
   async headers() {

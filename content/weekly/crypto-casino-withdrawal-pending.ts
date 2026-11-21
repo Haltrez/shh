@@ -9,7 +9,7 @@ export const guide: Guide = {
   updated: "2026-11-17",
   category: "Casino know-how",
   howTo: true,
-  relatedGuides: ["how-to-withdraw-crypto", "what-is-kyc-at-casinos", "usdt-trc20-vs-erc20"],
+  relatedGuides: ["how-to-withdraw-crypto", "what-is-kyc-at-casinos", "sent-crypto-wrong-network"],
   relatedReviews: [],
   body: [
     {

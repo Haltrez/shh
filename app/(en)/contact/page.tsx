@@ -5,7 +5,7 @@ import { seo } from "@/lib/seo";
 
 export const metadata: Metadata = seo({
   title: "Contact shh",
-  description: "Corrections, casino term changes, partnership questions: how to reach the shh editors.",
+  description: "Spotted a wrong fact or a casino that changed its terms? How to reach the shh editors for corrections, casino term changes and partnership questions.",
   path: "/contact",
 });
 

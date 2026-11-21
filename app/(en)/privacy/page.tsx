@@ -5,7 +5,7 @@ import { seo } from "@/lib/seo";
 
 export const metadata: Metadata = seo({
   title: "Privacy Policy",
-  description: "What shh collects (very little), why, and how long we keep it. No accounts, no ad trackers.",
+  description: "What shh collects (very little), why, and how long we keep it: no accounts, no ad trackers, only privacy-friendly analytics and outbound click counts.",
   path: "/privacy",
 });
 

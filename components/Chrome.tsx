@@ -67,6 +67,8 @@ export function Footer() {
               {keyGuides.map((g) => (
                 <li key={g.slug}><Link href={`/guides/${g.slug}`}>{g.h1}</Link></li>
               ))}
+              <li><Link href="/tools/wagering-calculator">Wagering calculator</Link></li>
+              <li><Link href="/tools/crypto-fee-calculator">Crypto fee calculator</Link></li>
               <li><Link href="/guides">All guides →</Link></li>
             </ul>
           </div>

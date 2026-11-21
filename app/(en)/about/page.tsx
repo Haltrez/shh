@@ -6,7 +6,7 @@ import { seo } from "@/lib/seo";
 
 export const metadata: Metadata = seo({
   title: "About shh: Straight Answers on Privacy",
-  description: "Who writes shh, what we publish, what we refuse to publish, and how we keep casino facts current.",
+  description: "Who writes shh, what we publish and refuse to publish, how we check terms and keep facts current, and how affiliate deals are kept apart from scores.",
   path: "/about",
 });
 

@@ -156,7 +156,7 @@ export const cryptoGuides: Guide[] = [
     updated: "2026-11-17",
     category: "Casino know-how",
     howTo: true,
-    relatedGuides: ["usdt-trc20-vs-erc20", "cheapest-coin-to-deposit", "how-to-withdraw-crypto"],
+    relatedGuides: ["usdt-trc20-vs-erc20", "sent-crypto-wrong-network", "how-to-withdraw-crypto"],
     relatedReviews: [],
     body: [
       {

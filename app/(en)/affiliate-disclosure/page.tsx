@@ -5,7 +5,7 @@ import { seo } from "@/lib/seo";
 
 export const metadata: Metadata = seo({
   title: "Affiliate Disclosure: How shh Makes Money",
-  description: "We earn commission from some casinos. Here's how that works and why it never changes our scores.",
+  description: "We earn commission from some casinos we link to. How affiliate links and featured placements work on shh, and why commissions never change our scores.",
   path: "/affiliate-disclosure",
 });
 

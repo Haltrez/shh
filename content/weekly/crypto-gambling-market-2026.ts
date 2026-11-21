@@ -8,7 +8,7 @@ export const guide: Guide = {
     "Estimates range from about $6B to $90B+ in yearly revenue, and $571B in wagers. Why the numbers disagree, what's driving growth, and what to make of it.",
   updated: "2026-11-17",
   category: "Trends & news",
-  relatedGuides: ["no-kyc-casino-trends-2026", "cheapest-coin-to-deposit", "usdt-trc20-vs-erc20"],
+  relatedGuides: ["no-kyc-casino-trends-2026", "stablecoin-gambling-trend", "crypto-news-november-2026"],
   relatedReviews: [],
   body: [
     {

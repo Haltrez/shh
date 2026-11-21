@@ -92,7 +92,7 @@ export default async function ResenaEs({ params }: Props) {
                 {c.minDepositUsd ? <tr><td>Depósito mínimo</td><td>{c.minDepositUsd.value} $</td></tr> : null}
                 {tx.withdrawalLimits ? <tr><td>Límites de retiro</td><td>{tx.withdrawalLimits}</td></tr> : null}
                 {c.licence ? <tr><td>Licencia</td><td>{c.licence.value}</td></tr> : null}
-                <tr><td>Bono</td><td>{tx.offer ?? "Sin bono de bienvenida"}</td></tr>
+                <tr><td>Bono</td><td>{tx.offer ?? "Sin bono de bienvenida"} · <Link href={`/es/bonos/${c.slug}`}>detalles del bono</Link></td></tr>
               </tbody>
             </table>
           </div>
