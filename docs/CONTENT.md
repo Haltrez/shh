@@ -72,6 +72,16 @@ Always:
 - Mention responsible gambling where money or bonuses come up.
 - A VPN may be recommended for general privacy (ISP, public Wi-Fi, trackers). No VPN referral links.
 
+## Spanish guides (LatAm)
+
+One Spanish guide a week, released on Mondays, for the `/es` section. Same hard rules as above.
+
+- Add an entry to `allGuiasEs` in `content/es/guias.ts` (type `GuiaEs`): `slug` in Spanish kebab-case, `title` ≤ 54, `description` ≤ 155, `updated` and `publishAt` = the release Monday, `category` `"Cripto básico"` or `"Privacidad"`, `related` (2 existing Spanish slugs), optional `en` (slug of the English counterpart, if one exists) and `casino` (a review slug when the article is about one casino).
+- Keep **at least 2 scheduled Spanish guides** in the queue (`grep -n "publishAt" content/es/guias.ts`).
+- Topics: first unchecked item under "Spanish" in `docs/BACKLOG.md`. Prefer translating and adapting an existing English guide for LatAm readers (USDT, Litecoin, wallets, deposits, withdrawals, privacy). Native, neutral Latin-American Spanish ("tú"); amounts in $ unless the source says €.
+- Casino facts only from `data/casinos.ts` / `data/casinos-es.ts`. KoalaBet and MetaWin are the LatAm-wide partners; the others restrict some LatAm countries.
+- Caveats start with "Atención: ". VPN rule as in English: privacy yes, never to bypass a country block.
+
 ## Check and ship
 
 ```bash

@@ -6,6 +6,7 @@ import { breadcrumbs, faqPage } from "@/lib/schema";
 import { formatDate } from "@/lib/format";
 import { sweeps, SWEEPS_FACTS as F } from "@/data/sweeps";
 import { Caveat } from "@/components/Caveat";
+import { Steps } from "@/components/Blocks";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -29,6 +30,8 @@ const FAQ = [
     a: `No. Both sites below verify your identity before a prize redemption, and can ask for photo ID and proof of address above ${usd(F.dailyBankLimitUsd)}. That's why they aren't in our no-KYC rankings.`,
   },
   { q: "Can I redeem in crypto?", a: "Not according to their rules: cash prizes are paid in US dollars to a bank account." },
+  { q: "How do I get free Sweeps Coins?", a: "With marked Gold Coin packs, daily login gifts and free spins, or by mail: both sites send 1 Sweeps Coin per handwritten request once your identity is verified." },
+  { q: "Do Sweeps Coins expire?", a: "Yes. On both sites, Sweeps Coins expire 60 days after your last login." },
   {
     q: "Which states can't play for Sweeps Coins?",
     a: `Their Sweeps Rules exclude ${F.excludedStates.join(", ")}. If you're in one of those states, our links send you to the Gold Coins (social play) version.`,
@@ -87,6 +90,29 @@ export default function Sweepstakes() {
               </tbody>
             </table>
           </div>
+          <h2>How sweepstakes casinos work</h2>
+          <p>
+            They run on two virtual currencies. <b>Gold Coins</b> are for play only: you can buy them, but they have no
+            cash value and can&apos;t be redeemed. <b>Sweeps Coins</b> can&apos;t be bought. You get them free: as a
+            bonus with marked Gold Coin packs, from daily gifts and free spins, or by mail. Sweeps Coins you win can be
+            redeemed for prizes at 1 Sweeps Coin = $1.
+          </p>
+          <ul>
+            <li><b>No purchase necessary:</b> both sites send 1 free Sweeps Coin per handwritten mail-in request, after you&apos;ve verified your identity.</li>
+            <li><b>Playthrough:</b> Sweeps Coins must be played through once before they can be redeemed.</li>
+            <li><b>Expiry:</b> Sweeps Coins expire 60 days after your last login.</li>
+          </ul>
+
+          <h2>How to redeem Sweeps Coins</h2>
+          <Steps
+            steps={[
+              { name: "Make one Gold Coin purchase", need: "A payment method in your name", text: "Before your first redemption, both sites require one successful Gold Coin purchase, played through once, to validate your payment method." },
+              { name: "Reach the minimum", need: `${F.minRedemptionUsd} Sweeps Coins`, text: `Redemptions start at ${usd(F.minRedemptionUsd)} (100 Sweeps Coins), played through at least once.` },
+              { name: "Verify your identity", need: "Photo ID; proof of address above the limit", text: `Your account details must match your ID. Above ${usd(F.dailyBankLimitUsd)}, expect proof of address or source of funds.` },
+              { name: "Request a bank redemption", need: "A US bank account", text: `Choose Prize Redemption in the Coin Store. Cash goes to your bank account, up to ${usd(F.dailyBankLimitUsd)} a day, and can take ${F.redemptionTime}.` },
+            ]}
+          />
+
           <Caveat text="Watch out: neither site names the company behind it in its terms, and both require ID before paying out. If you want to keep your ID out of a casino's database, our no-KYC crypto casinos are the better fit." />
           <p>
             Looking for privacy instead? See the <Link href="/no-kyc-casinos">no-KYC crypto casinos</Link> we rank.

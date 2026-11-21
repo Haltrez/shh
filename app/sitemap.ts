@@ -58,10 +58,10 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
           alternates: { languages: { en: absolute(`/bonus/${c.slug}`) } },
         })),
         { url: absolute("/es/guias"), lastModified: today, alternates: { languages: { en: absolute("/guides") } } },
-        ...guiasEs.map((g) => ({
+        ...guiasEs().map((g) => ({
           url: absolute(`/es/guias/${g.slug}`),
           lastModified: g.updated,
-          ...(getGuide(g.en) ? { alternates: { languages: { en: absolute(`/guides/${g.en}`) } } } : {}),
+          ...((g.en ? getGuide(g.en) : undefined) ? { alternates: { languages: { en: absolute(`/guides/${g.en!}`) } } } : {}),
         })),
         ...verified
           .filter((c) => casinosEs[c.slug])

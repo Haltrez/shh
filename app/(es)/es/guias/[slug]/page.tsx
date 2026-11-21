@@ -14,16 +14,17 @@ import { seo } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const dynamicParams = false;
+// Scheduled Spanish guides render on first request after their release date, then refresh hourly.
+export const dynamicParams = true;
 export const revalidate = 3600;
 export function generateStaticParams() {
-  return guiasEs.map((g) => ({ slug: g.slug }));
+  return guiasEs().map((g) => ({ slug: g.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const g = findGuiaEs((await params).slug);
   if (!g) return {};
-  const en = getGuide(g.en);
+  const en = (g.en ? getGuide(g.en) : undefined);
   return seo({
     title: `${g.title} | shh`,
     description: g.description,
@@ -40,7 +41,7 @@ export default async function GuiaPage({ params }: Props) {
   const g = findGuiaEs((await params).slug);
   if (!g) notFound();
   const ht = g.howTo ? howTo(g as unknown as Guide) : null;
-  const en = getGuide(g.en);
+  const en = (g.en ? getGuide(g.en) : undefined);
   const related = g.related.map(findGuiaEs).filter((x) => x !== undefined);
 
   return (
@@ -59,6 +60,16 @@ export default async function GuiaPage({ params }: Props) {
             <>
               <h2 id="preguntas">Preguntas</h2>
               <Faq items={g.faq} />
+            </>
+          ) : null}
+          {(g.sources ?? en?.sources)?.length ? (
+            <>
+              <h2 id="fuentes">Fuentes</h2>
+              <ul className="sources">
+                {(g.sources ?? en?.sources)!.map((s) => (
+                  <li key={s.url}><a href={s.url} rel="nofollow noopener" target="_blank">{s.name}</a></li>
+                ))}
+              </ul>
             </>
           ) : null}
           <p className="faint" style={{ fontSize: 14 }}>

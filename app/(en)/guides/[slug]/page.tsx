@@ -29,7 +29,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const g = getGuide((await params).slug);
   if (!g) return {};
-  const es = guiasEs.find((x) => x.en === g.slug);
+  const es = guiasEs().find((x) => x.en === g.slug);
   return seo({
     title: `${g.title} | shh`,
     description: g.description,

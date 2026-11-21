@@ -22,11 +22,13 @@ export const casinosEs: Record<string, CasinoEs> = {
       "Sin KYC por debajo de 5.000 $ en depósitos o retiros",
       "Por encima de 5.000 $, solo piden información básica",
       "Retiros en 3–5 minutos en nuestras pruebas",
+      "9 monedas, entre ellas BTC, USDT, USDC, SOL y LTC",
       "Bono de bienvenida de hasta 700 $",
     ],
     cons: [
       "Piden información básica al superar 5.000 $",
-      "Aún no listamos las monedas aceptadas",
+      "Límite de retiro de 10.000 € al mes",
+      "No disponible en España",
       "Aplican términos del bono; léelos antes de activarlo",
     ],
     offer: "Bono de bienvenida de hasta 700 $",
@@ -34,6 +36,7 @@ export const casinosEs: Record<string, CasinoEs> = {
       "Por debajo de 5.000 $: ni documento ni datos personales para registrarte, depositar o retirar.",
       "Por encima de 5.000 $ en depósitos o retiros: KoalaBet pide información personal básica. Política confirmada directamente por KoalaBet.",
     ],
+    withdrawalLimits: "10.000 € al mes (5.000 € si tu saldo es 10 veces tus depósitos); mínimo 15 $",
     payout: "3–5 min",
   },
   metawin: {

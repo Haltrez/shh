@@ -33,3 +33,16 @@ Take the first unchecked topic. Tick it with the publish date when it's live. Ad
 - [ ] privacy-coins-2027-eu-ban — "The 2027 EU privacy coin ban: what changes for crypto users" (Trends & news)
 - [ ] us-crypto-regulation-after-midterms — "US crypto regulation after the 2026 midterms" (Trends & news)
 - [ ] ai-and-crypto-casinos — "How AI is changing crypto casinos: risk checks, support, fraud" (Trends & news)
+
+## Spanish (LatAm, one a week, Mondays)
+
+- [x] como-comprar-litecoin (scheduled 2026-11-30) — "Cómo comprar Litecoin (LTC) para depositar en un casino" (Cripto básico, en: how-to-buy-litecoin)
+- [ ] mejor-wallet-cripto-para-apostar — "La mejor wallet cripto para apostar: cómo elegir" (Cripto básico, en: crypto-wallet-for-gambling)
+- [ ] como-retirar-cripto-de-un-casino — "Cómo retirar cripto de un casino paso a paso" (Cripto básico, en: how-to-withdraw-crypto)
+- [ ] usdt-trc20-vs-erc20 — "USDT TRC20 vs ERC20: cuál usar para depositar" (Cripto básico, en: usdt-trc20-vs-erc20)
+- [ ] que-es-kyc-en-casinos — "¿Qué es el KYC en los casinos cripto?" (Privacidad, en: what-is-kyc-at-casinos)
+- [ ] envie-cripto-a-la-red-equivocada — "Envié cripto a la red equivocada: qué hacer" (Cripto básico, en: sent-crypto-wrong-network)
+- [ ] deposito-cripto-no-aparece — "Mi depósito cripto no aparece en el casino: qué hacer" (Cripto básico, en: crypto-casino-deposit-not-showing)
+- [x] es-confiable-metawin (scheduled 2026-11-23) — "¿Es confiable MetaWin? Licencia y términos" (Privacidad, en: is-metawin-legit, casino: metawin)
+- [ ] frase-semilla-seguridad — "Frase semilla: las reglas de seguridad que importan" (Privacidad, en: seed-phrase-safety)
+- [ ] usdt-vs-usdc-para-apostar — "USDT vs USDC para apostar: diferencias" (Cripto básico, en: usdt-vs-usdc-for-gambling)

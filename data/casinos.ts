@@ -17,6 +17,9 @@ const MIRAX_TERMS = "https://www.miraxcasino.com/terms-and-conditions";
 const SEVENBIT_TERMS = "https://7bitcasino.com/terms-and-conditions";
 const BITSTARZ_TERMS = "https://www.bitstarz.com/terms";
 const METAWIN_TERMS = "https://metawin.com/terms-and-conditions";
+const KOALABET_TERMS = "https://koalabet.io/policy/terms-of-service";
+const KOALABET_WITHDRAWALS = "https://koalabet.io/policy/withdrawal-policy";
+const KOALABET_RG = "https://koalabet.io/policy/responsible-gambling";
 const METAWIN_FAQ = "https://metawin.com/faq";
 
 /** Cashy and BitStarz share an operator (Gareton B.V.) and near-identical restricted lists. */
@@ -36,17 +39,40 @@ export const casinos: Casino[] = [
     lastChecked: null,
     payoutMinutes: PAYOUT,
     offer: { text: "Welcome bonus up to $700" },
+    // Facts below: KoalaBet Terms of Service (updated 25.08.2026), Withdrawal Policy and footer, read 2026-11-21.
+    licence: {
+      value: "Anjouan (Comoros), licence ALSI-202508036-FI1 (3-102-970462 SRL, Costa Rica)",
+      source: KOALABET_TERMS,
+    },
+    vpnRule: {
+      value: "You may not use a VPN, proxy or similar service that masks your real location (§3.4).",
+      source: KOALABET_TERMS,
+    },
+    restrictedCountries: {
+      value: ["AT", "FR", "DE", "NL", "ES", "KM", "GB", "US", "FATF blacklist", "+ more"],
+      source: KOALABET_TERMS,
+    },
+    coins: { value: ["BTC", "USDT", "USDC", "ETH", "XRP", "TRX", "LTC", "DOGE", "SOL"], source: KOALABET_TERMS },
+    withdrawalLimits: {
+      value: "€10,000 per month (€5,000 if your balance is 10x your total deposits); minimum $15 per the Withdrawal Policy",
+      source: KOALABET_WITHDRAWALS,
+    },
+    responsibleTools: {
+      value: ["Self-exclusion for at least 6 months", "7-day cooling-off period", "Self-exclusion by email takes effect within 24 hours"],
+      source: KOALABET_RG,
+    },
     verdict:
       "KoalaBet needs no KYC for everyday play: no ID to sign up, deposit or withdraw until you pass $5,000 in deposits or withdrawals. Above that it asks for basic personal information. Withdrawals landed in 3 to 5 minutes in our tests.",
     pros: [
       "No KYC below $5,000 in deposits or withdrawals",
       "Above $5,000, only basic information is asked for",
       "Payouts in 3–5 minutes in our tests",
+      "9 coins, including BTC, USDT, USDC, SOL and LTC",
       "Welcome bonus up to $700",
     ],
     cons: [
       "Basic information is required once you pass $5,000",
-      "Accepted coins not yet listed here",
+      "Monthly withdrawal cap of €10,000",
       "Bonus terms apply; read them before opting in",
     ],
     reported: {

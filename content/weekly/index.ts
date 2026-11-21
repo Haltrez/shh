@@ -12,6 +12,8 @@ import { guide as cryptoCasinoLicensingShift2026 } from "./crypto-casino-licensi
 import { guide as isMetawinLegit } from "./is-metawin-legit";
 import { guide as metawinKyc } from "./metawin-kyc";
 import { guide as metawinWithdrawalLimits } from "./metawin-withdrawal-limits";
+import { guide as isKoalabetLegit } from "./is-koalabet-legit";
+import { guide as koalabetWithdrawalLimits } from "./koalabet-withdrawal-limits";
 
 import { guide as howToBuyUsdtTrc20 } from "./how-to-buy-usdt-trc20";
 import { guide as wageringRequirementsExplained } from "./wagering-requirements-explained";
@@ -34,6 +36,8 @@ export const weeklyGuides: Guide[] = [
   isMetawinLegit,
   metawinKyc,
   metawinWithdrawalLimits,
+  isKoalabetLegit,
+  koalabetWithdrawalLimits,
   // Scheduled (publishAt):
   howToBuyUsdtTrc20,
   wageringRequirementsExplained,

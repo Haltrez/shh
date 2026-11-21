@@ -8,6 +8,7 @@ import { seo, clip } from "@/lib/seo";
 import { breadcrumbs, faqPage } from "@/lib/schema";
 import { casinoText, formatDateL } from "@/lib/i18n";
 import { casinosEs } from "@/data/casinos-es";
+import { guiasEs } from "@/content/es/guias";
 import { PrivacyMeter } from "@/components/PrivacyMeter";
 import { KycBadge } from "@/components/KycBadge";
 import { CasinoLogo } from "@/components/CasinoLogo";
@@ -20,6 +21,7 @@ import { StickyCta } from "@/components/StickyCta";
 type Props = { params: Promise<{ casino: string }> };
 
 export const dynamicParams = false;
+export const revalidate = 3600;
 export function generateStaticParams() {
   return allCasinos.filter((c) => isPublished(c) && casinosEs[c.slug]).map((c) => ({ casino: c.slug }));
 }
@@ -121,6 +123,17 @@ export default async function ResenaEs({ params }: Props) {
 
           <h2>Juego responsable</h2>
           <p>Fija un límite de depósito antes de jugar. Si necesitas un descanso, usa las herramientas de pausa o autoexclusión del casino.</p>
+
+          {guiasEs().some((g) => g.casino === c.slug) ? (
+            <>
+              <h2>Más sobre {c.name}</h2>
+              <ul>
+                {guiasEs().filter((g) => g.casino === c.slug).map((g) => (
+                  <li key={g.slug}><Link href={`/es/guias/${g.slug}`}>{g.h1}</Link></li>
+                ))}
+              </ul>
+            </>
+          ) : null}
 
           <h2>Preguntas sobre {c.name}</h2>
           <Faq items={faq} />
