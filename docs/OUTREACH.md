@@ -3,18 +3,18 @@
 Each email has three boxes: **To**, **Subject**, **Body**. Click the copy icon on each box.
 Send from your shhcasinos.com address. Follow up once after 5–7 days if there's no reply.
 
-| # | Site | Type |
-|---|---|---|
-| 1 | brightsideofnews.com | Free guest post |
-| 2 | casino.org | Free contribution (long shot) |
-| 3 | blockport.io | Editorial pitch |
-| 4 | heimdalsecurity.com/blog | Free guest post (pitch topic first) |
-| 5 | coinranking.com/blog | Paid, from $149 |
-| 6 | decrypt.co | Op-ed (long shot) |
-| 7 | criptotendencia.com | Spanish, contact |
-| 8 | observatorioblockchain.com | Spanish, data pitch (check email in browser) |
-| 9 | diariobitcoin.com | Spanish, paid ($700 guest article) |
-| 10 | criptonoticias.com | Spanish, contact form only |
+| # | Site | Type | Sent | Follow up | Reply |
+|---|---|---|---|---|---|
+| 1 | brightsideofnews.com | Free guest post | 2026-11-21 | 2026-11-27 | |
+| 2 | casino.org | Free contribution (long shot) | 2026-11-21 | 2026-11-27 | |
+| 3 | blockport.io | Editorial pitch | 2026-11-21 | 2026-11-27 | |
+| 4 | heimdalsecurity.com/blog | Free guest post (pitch topic first) | 2026-11-21 | 2026-11-27 | |
+| 5 | coinranking.com/blog | Paid, from $149 | 2026-11-21 | 2026-11-27 | |
+| 6 | decrypt.co | Op-ed (long shot) | 2026-11-21 | 2026-11-27 | |
+| 7 | criptotendencia.com | Spanish, contact | 2026-11-21 | 2026-11-27 | |
+| 8 | observatorioblockchain.com | Spanish, data pitch | 2026-11-21 | 2026-11-27 | |
+| 9 | diariobitcoin.com | Spanish, paid ($700 guest article) | 2026-11-21 | 2026-11-27 | |
+| 10 | criptonoticias.com | Spanish, contact form (Columna de opinión) | 2026-11-21 | 2026-11-27 | |
 
 ---
 
