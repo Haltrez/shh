@@ -35,6 +35,8 @@ export function RootShell({ lang, children }: { lang: "en" | "es"; children: Rea
     <html suppressHydrationWarning lang={lang} className={`${inter.variable} ${grotesk.variable} ${mono.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: AGE_SCRIPT }} />
+        <link rel="ard" href="/.well-known/ard.json" type="application/json" />
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="llms.txt" />
       </head>
       <body>
         {children}

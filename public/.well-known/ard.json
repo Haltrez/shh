@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:shhcasinos.com:data:no-kyc-casinos",
+      "displayName": "shh no-KYC crypto casino dataset",
+      "type": "application/json",
+      "url": "https://www.shhcasinos.com/data/casinos.json",
+      "description": "Ranked no-KYC and low-KYC crypto casinos with each casino's KYC rule, tested payout time, accepted coins, licence and sources, checked against the casinos' own terms.",
+      "representativeQueries": [
+        "Which crypto casinos don't require KYC?",
+        "What is the fastest paying no-KYC crypto casino?",
+        "When does a crypto casino ask for ID?",
+        "Which crypto casinos accept players from Latin America?"
+      ],
+      "tags": ["crypto casinos", "no KYC", "privacy", "casino reviews", "gambling"]
+    },
+    {
+      "identifier": "urn:air:shhcasinos.com:docs:llms-txt",
+      "displayName": "shh site guide for AI assistants (llms.txt)",
+      "type": "application/x-llms-txt",
+      "url": "https://www.shhcasinos.com/llms.txt",
+      "description": "Markdown map of shhcasinos.com: rankings, casino facts, guides in English and Spanish, tools and methodology.",
+      "representativeQueries": [
+        "Best no KYC crypto casinos",
+        "Is crypto gambling anonymous?",
+        "How to deposit crypto at a casino"
+      ],
+      "tags": ["llms.txt", "crypto casinos", "guides"]
+    }
+  ]
+}
