@@ -37,7 +37,7 @@ Take the first unchecked topic. Tick it with the publish date when it's live. Ad
 ## Spanish (LatAm, one a week, Mondays)
 
 - [x] como-comprar-litecoin (scheduled 2026-11-30) — "Cómo comprar Litecoin (LTC) para depositar en un casino" (Cripto básico, en: how-to-buy-litecoin)
-- [ ] mejor-wallet-cripto-para-apostar — "La mejor wallet cripto para apostar: cómo elegir" (Cripto básico, en: crypto-wallet-for-gambling)
+- [x] mejor-wallet-cripto-para-apostar (scheduled 2026-12-07) — "La mejor wallet cripto para apostar: cómo elegir" (Cripto básico, en: crypto-wallet-for-gambling)
 - [ ] como-retirar-cripto-de-un-casino — "Cómo retirar cripto de un casino paso a paso" (Cripto básico, en: how-to-withdraw-crypto)
 - [ ] usdt-trc20-vs-erc20 — "USDT TRC20 vs ERC20: cuál usar para depositar" (Cripto básico, en: usdt-trc20-vs-erc20)
 - [ ] que-es-kyc-en-casinos — "¿Qué es el KYC en los casinos cripto?" (Privacidad, en: what-is-kyc-at-casinos)

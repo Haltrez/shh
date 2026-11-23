@@ -419,6 +419,71 @@ export const allGuiasEs: GuiaEs[] = [
       { q: "¿Necesito memo para depositar LTC?", a: "No. Los depósitos de Litecoin no usan memo ni tag." },
     ],
   },
+  {
+    slug: "mejor-wallet-cripto-para-apostar",
+    en: "crypto-wallet-for-gambling",
+    title: "La Mejor Wallet Cripto para Apostar: Cómo Elegir",
+    h1: "Cómo elegir una wallet cripto para depositar en casinos",
+    description:
+      "Wallet propia o de exchange, qué redes debe soportar, cómo proteger la frase semilla y por qué conviene una wallet aparte solo para apostar.",
+    updated: "2026-12-07",
+    publishAt: "2026-12-07",
+    category: "Cripto básico",
+    related: ["como-depositar-cripto-en-un-casino", "como-comprar-usdt-trc20"],
+    body: [
+      {
+        type: "p",
+        text: "Usa una wallet propia, de las que te dan la frase semilla. Asegúrate de que soporte exactamente las redes que usa el casino y mantenla separada de tus ahorros.",
+      },
+      { type: "h2", text: "Wallet propia o wallet de exchange" },
+      {
+        type: "table",
+        head: ["", "Wallet propia", "Wallet de exchange"],
+        rows: [
+          ["Quién tiene las claves", "Tú (frase semilla)", "El exchange"],
+          ["¿Pueden congelarla?", "No, la app de la wallet no puede", "Sí, según las reglas del exchange"],
+          ["Envíos a casinos", "Tú decides", "A menudo restringidos o señalados"],
+          ["Si pierdes el acceso", "La frase semilla la recupera; si la pierdes, los fondos se pierden", "Recuperación de cuenta con soporte"],
+        ],
+      },
+      { type: "h2", text: "Qué necesita tu wallet" },
+      {
+        type: "list",
+        items: [
+          "Soporte para tu moneda y red: por ejemplo TRC20 para USDT en Tron, Solana para SOL o USDC, y la red propia de Litecoin para LTC.",
+          "Selección de red clara en la pantalla de envío, para no mandar por la red equivocada sin querer.",
+          "La comisión de red visible antes de confirmar.",
+          "Libreta de direcciones o etiquetas, para distinguir tus direcciones de depósito.",
+          "En Tron (TRC20): un poco de TRX para pagar las comisiones. Con solo USDT no se puede enviar.",
+        ],
+      },
+      { type: "h2", text: "Cómo proteger la frase semilla" },
+      {
+        type: "list",
+        items: [
+          "Escríbela en papel. No le hagas captura, no la mandes por email ni la guardes en notas en la nube.",
+          "Nadie legítimo te la va a pedir nunca: ni el soporte del casino, ni el de la wallet, ni alguien en un chat.",
+          "Guárdala donde guardarías tu pasaporte.",
+          "Si crees que alguien la vio, crea una wallet nueva y mueve los fondos.",
+        ],
+      },
+      { type: "h2", text: "Por qué usar una wallet solo para apostar" },
+      {
+        type: "p",
+        text: "Una wallet para apostar y otra para todo lo demás. Así ves exactamente qué entró y qué salió, lo que hace tu presupuesto más honesto y tus registros fiscales más fáciles. Además, un casino o un enlace de estafa nunca toca tus fondos principales.",
+      },
+      {
+        type: "caveat",
+        text: "Atención: una wallet aparte ordena tus registros, pero no te hace anónimo. Si la cargaste desde un exchange, ese vínculo queda en la blockchain.",
+      },
+    ],
+    faq: [
+      { q: "¿Necesito una wallet de hardware para apostar?", a: "No para saldos pequeños de uso diario: una wallet móvil reconocida basta. Guarda los ahorros grandes en una wallet de hardware, separados del dinero para apostar." },
+      { q: "¿Por qué no puedo enviar mi USDT en Tron?", a: "Las comisiones de la red Tron se pagan en TRX (o energía). Deja un poco de TRX en la wallet." },
+      { q: "¿Puedo usar una wallet para varios casinos?", a: "Sí. Etiqueta la dirección de depósito de cada casino para no confundirlas." },
+      { q: "¿Es segura una wallet de extensión del navegador?", a: "Puede serlo, pero las extensiones son un objetivo habitual de phishing. Instálala solo desde la fuente oficial y revisa cada sitio al que la conectas." },
+    ],
+  },
 ];
 
 const todayUtc = () => new Date().toISOString().slice(0, 10);
