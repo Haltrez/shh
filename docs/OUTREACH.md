@@ -18,16 +18,16 @@ Never pitch a site twice: check the log first.
 | 8 | observatorioblockchain.com | contacto@observatorioblockchain.com | ES, data pitch | 2026-11-21 | 2026-11-27 | |
 | 9 | diariobitcoin.com | anuncios@diariobitcoin.com | ES, paid ($700) | 2026-11-21 | 2026-11-27 | |
 | 10 | criptonoticias.com | form (Columna de opinión) | ES, guest column | 2026-11-21 | 2026-11-27 | |
-| 11 | gncrypto.news | info@gncrypto.news | Free guest post (Security & Self-Custody) | to send | | |
-| 12 | captainaltcoin.com | petar@captainaltcoin.com | Contributor application | to send | | |
-| 13 | coingabbar.com | sourabh@coingabbar.com | Free contribution | to send | | |
-| 14 | privacyaffairs.com | contact@privacyaffairs.com | Data citation | to send | | |
-| 15 | gambling911.com | pobrien@costiganmedia.com | News tip | to send | | |
-| 16 | feedcryptobuzz.com | editors@feedcryptobuzz.com | Guest post | to send | | |
-| 17 | criptoinforme.com | contacto@criptoinforme.com | ES, guest column | to send | | |
-| 18 | iupana.com | editor@iupana.com | ES/EN, opinion article | to send | | |
-| 19 | betokenmyfriend.substack.com | subscribers@betoken.capital | ES, free contribution | to send | | |
-| 20 | trading-latam.com | gerencia@trading-latam.com | ES, contact (weak lead) | to send | | |
+| 11 | gncrypto.news | info@gncrypto.news | Free guest post (Security & Self-Custody) | 2026-11-22 | 2026-11-28 | |
+| 12 | captainaltcoin.com | petar@captainaltcoin.com | Contributor application | 2026-11-22 | 2026-11-28 | |
+| 13 | coingabbar.com | sourabh@coingabbar.com | Free contribution | 2026-11-22 | 2026-11-28 | |
+| 14 | privacyaffairs.com | contact@privacyaffairs.com | Data citation | 2026-11-22 | 2026-11-28 | |
+| 15 | gambling911.com | pobrien@costiganmedia.com | News tip | 2026-11-22 | 2026-11-28 | |
+| 16 | feedcryptobuzz.com | editors@feedcryptobuzz.com | Guest post | 2026-11-22 | 2026-11-28 | |
+| 17 | criptoinforme.com | contacto@criptoinforme.com | ES, guest column | 2026-11-22 | 2026-11-28 | |
+| 18 | iupana.com | editor@iupana.com | ES/EN, opinion article | 2026-11-22 | 2026-11-28 | |
+| 19 | betokenmyfriend.substack.com | subscribers@betoken.capital | ES, free contribution | 2026-11-22 | 2026-11-28 | |
+| 20 | trading-latam.com | gerencia@trading-latam.com | ES, contact (weak lead) | 2026-11-22 | 2026-11-28 | |
 
 Another batch of about 10 was sent around 2026-11-20 from outside this file. Its sites aren't recorded yet: add them here so nobody gets pitched twice.
 
@@ -315,7 +315,7 @@ Hola, les escribo de nuevo por si se perdió el mensaje. Con gusto adapto el tem
 | casinobeats.com | info@casinobeats.com | Confirm in browser; they say all content is in-house |
 | soloazar.com | info@soloazar.com.ar | Argentine gaming industry news, general inquiries |
 
-# Batch 2 (to send)
+# Batch 2 (sent 2026-11-22)
 
 ---
 
