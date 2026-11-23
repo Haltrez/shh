@@ -29,9 +29,19 @@ Never pitch a site twice: check the log first.
 | 19 | betokenmyfriend.substack.com | subscribers@betoken.capital | ES, free contribution | 2026-11-22 | 2026-11-28 | |
 | 20 | trading-latam.com | gerencia@trading-latam.com | ES, contact (weak lead) | 2026-11-22 | 2026-11-28 | |
 
+| 21 | gamblingindustrynews.com | news@gamblingindustrynews.com | Data/news tip | to send | | |
+| 22 | finbold.com | editor@finbold.com | Data story pitch | to send | | |
+| 23 | cryptobriefing.com | editorial@cryptobriefing.com | News tip | to send | | |
+| 24 | dmcnews.org | partners@dmcnews.org | Free guest post (pitch first) | to send | | |
+| 25 | coingape.com | editorial@coingape.com | News tip | to send | | |
+| 26 | igamingbusiness.com | news@igamingbusiness.com | Data story (big outlet) | to send | | |
+| 27 | coinspeaker.com | contact@coinspeaker.com | News tip | to send | | |
+| 28 | criptotendencias.com (plural, not criptotendencia.com) | froldan@criptotendencias.com | ES, colaboración editorial | to send | | |
+| 29 | blogfinanzas.net | finanzas@blogfinanzas.net | ES, free guest post | to send | | |
+| 30 | ciberseguridadlatam.com | info@ciberseguridadlatam.com | ES, opinion column | to send | | |
 Another batch of about 10 was sent around 2026-11-20 from outside this file. Its sites aren't recorded yet: add them here so nobody gets pitched twice.
 
-Ruled out (don't pitch): CoinsFolks (bans gambling), US iGaming Report (sponsored only), IgamePost and CasinoDesk (link sellers), AzarPlus (regulated Spain only), Bitcoinist and GamblingNews (form/Telegram only).
+Ruled out (don't pitch): CyberInsider/RestorePrivacy (no guest posts), Territorio Bitcoin, Apuesta Colombia, Crypto-Reporter (Gmail only), Cryptopolitan (hiring only), Quinielaposible (paid link seller), Calvin Ayre (personal site now), CoinsFolks (bans gambling), US iGaming Report (sponsored only), IgamePost and CasinoDesk (link sellers), AzarPlus (regulated Spain only), Bitcoinist and GamblingNews (form/Telegram only).
 
 # Batch 1 (sent 2026-11-21)
 
@@ -587,3 +597,283 @@ shhcasinos.com/es
 ## Follow-up (batch 2, after 5–7 days)
 
 Use the same English or Spanish follow-up as batch 1.
+
+# Batch 3 (to send)
+
+Backups if some bounce: Livecoins (contato@livecoins.com.br, Portuguese, tips only, email once), EarnYatra (info@earnyatra.com, free guest posts, subject "Write for Us Pitch – [Your Topic]"), Crypto-Economy ES (form only: https://www.crypto-economy.com/es/contacto/).
+
+---
+
+## 21. Gambling Industry News
+
+To:
+```
+news@gamblingindustrynews.com
+```
+Subject:
+```
+Data for a story: when crypto casinos require ID, dated and sourced
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. We keep a dated, sourced log of crypto casinos' KYC rules: when each casino asks for ID, and when that changes. Each rule links to the casino's own terms.
+
+A few examples:
+- 7Bit Casino makes KYC mandatory once total payments reach 0.03 BTC (terms §9.2).
+- Cashy and BitStarz share an operator and set no threshold: either can ask for ID before paying out.
+- MetaWin has no sign-up form at all (wallet connect), but keeps the right to verify at its discretion.
+
+Tracker: https://www.shhcasinos.com/kyc-tracker
+Dataset (JSON): https://www.shhcasinos.com/data/casinos.json
+
+Free to cite with a link. Happy to answer questions.
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 22. Finbold
+
+To:
+```
+editor@finbold.com
+```
+Subject:
+```
+Story idea: what moving $50 in crypto really costs, by network
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. A data angle for Finbold: small crypto transfers can lose a big share to fees if you pick the wrong network. We built a free calculator comparing USDT on TRC20 and ERC20, Litecoin, Solana and Bitcoin for small amounts: https://www.shhcasinos.com/tools/crypto-fee-calculator
+
+We also publish a sourced dataset of crypto casino KYC rules: https://www.shhcasinos.com/data/casinos.json
+
+Happy to provide figures or a short write-up if either is useful.
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 23. Crypto Briefing
+
+To:
+```
+editorial@cryptobriefing.com
+```
+Subject:
+```
+Story tip: "no KYC" crypto casinos and when they really ask for ID
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. A story tip: most "no KYC" crypto casinos still keep the right to ask for ID, and the rules for when vary a lot. Some set a clear threshold (7Bit Casino: KYC mandatory at 0.03 BTC in total payments), others set none and can ask before any payout (Cashy, BitStarz).
+
+We log these rules with dates and sources from each casino's terms:
+https://www.shhcasinos.com/kyc-tracker
+
+There's a Spanish version of the site too, if it's useful for your Spanish edition.
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 24. DMCNews
+
+To:
+```
+partners@dmcnews.org
+```
+Subject:
+```
+Pitch: buying USDT on TRC20 vs Litecoin, fees and privacy trade-offs
+```
+Body:
+```
+Hi,
+
+I'm Roberts. I run shhcasinos.com, which covers crypto privacy, wallets and payments for crypto casino users. Commercial interest, up front: the site earns affiliate commission from some casinos. The piece below wouldn't include casino links.
+
+Pitch: "USDT on TRC20 or Litecoin: what small transfers really cost, and the privacy trade-offs"
+- Why now: stablecoins on Tron have become the default rail for small payments, but fees and network mistakes still catch people out.
+- Outline: how each network charges fees, typical confirmation times, the TRX-for-fees trap on Tron, choosing the right network on an exchange, and what each reveals on-chain.
+- Data: dated and sourced, with our free fee calculator as a supporting tool.
+
+About 1,200 words. Happy to adjust the angle.
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 25. CoinGape
+
+To:
+```
+editorial@coingape.com
+```
+Subject:
+```
+News tip: dated tracker of crypto casino KYC rules
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. A tip that might suit CoinGape: we track when crypto casinos require identity checks, with each rule dated and sourced to the casino's terms. For example, 7Bit Casino makes KYC mandatory at 0.03 BTC in total payments, while MetaWin needs no sign-up form at all but can verify at its discretion.
+
+Tracker: https://www.shhcasinos.com/kyc-tracker
+Dataset (JSON): https://www.shhcasinos.com/data/casinos.json
+
+Free to use with a link.
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 26. iGaming Business
+
+To:
+```
+news@igamingbusiness.com
+```
+Subject:
+```
+Data: how crypto casinos set their KYC thresholds (dated, sourced)
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. We maintain a dated, sourced record of crypto casinos' KYC thresholds and verification rules, taken from each operator's own terms. It shows how differently operators handle it: a fixed payment threshold at some (7Bit Casino: 0.03 BTC), discretion with no threshold at others (Cashy, BitStarz, MetaWin).
+
+Tracker: https://www.shhcasinos.com/kyc-tracker
+Dataset (JSON): https://www.shhcasinos.com/data/casinos.json
+
+Happy to provide more detail or contribute to Industry Voices if useful.
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 27. Coinspeaker
+
+To:
+```
+contact@coinspeaker.com
+```
+Subject:
+```
+News tip: when "no KYC" crypto casinos really ask for ID
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. A tip: we keep a dated, sourced log of crypto casinos' identity-check rules. "No KYC" usually means no ID to start, not never: some casinos set a threshold (7Bit Casino, 0.03 BTC in total payments), others can ask before any payout.
+
+https://www.shhcasinos.com/kyc-tracker
+
+Free to cite with a link. I'd also be glad to write a guest piece on crypto privacy basics if you take contributors.
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 28. Criptotendencias (ES, plural domain)
+
+To:
+```
+froldan@criptotendencias.com
+```
+Subject:
+```
+Colaboración editorial: ¿es anónimo apostar con cripto?
+```
+Body:
+```
+Hola,
+
+Soy Roberts, de shhcasinos.com/es. Les propongo una colaboración editorial para sus lectores latinoamericanos: "¿Es anónimo apostar con cripto? Qué oculta un casino sin KYC y qué no", sobre lo que queda privado, lo que revelan el exchange y la blockchain, y hábitos simples de seguridad.
+
+Es original y educativo, sin promoción. Puedo enviar el texto completo en el propio mensaje.
+
+Saludos,
+Roberts
+shhcasinos.com/es
+```
+
+---
+
+## 29. Blog Finanzas (ES)
+
+To:
+```
+finanzas@blogfinanzas.net
+```
+Subject:
+```
+Artículo invitado: lo que de verdad cuestan las comisiones al enviar cripto
+```
+Body:
+```
+Hola,
+
+Soy Roberts, de shhcasinos.com. Les propongo un artículo invitado de finanzas personales: "Lo que de verdad cuestan las comisiones al enviar cripto (y cómo no perder dinero eligiendo la red)": USDT en TRC20 frente a ERC20, Litecoin y Solana, con ejemplos para montos pequeños.
+
+Es original, sin enlaces de afiliado, y lo envío en Word con una biografía breve. ¿Les interesa?
+
+Saludos,
+Roberts
+shhcasinos.com/es
+```
+
+---
+
+## 30. CiberSeguridad LATAM (ES)
+
+To:
+```
+info@ciberseguridadlatam.com
+```
+Subject:
+```
+Propuesta de columna de opinión: frases semilla y estafas a usuarios de cripto en Latinoamérica
+```
+Body:
+```
+Hola,
+
+Soy Roberts, de shhcasinos.com/es, donde escribo sobre privacidad y seguridad cripto. Me gustaría proponer una columna para la sección de Opinión: "Tu frase semilla es tu dinero: cómo se vacían wallets en Latinoamérica", sobre apps de wallet falsas, secuestro del portapapeles, falso soporte técnico y cómo hacer una copia de seguridad offline.
+
+Es original y sin promoción. ¿Aceptan columnas de autores externos?
+
+Saludos,
+Roberts
+shhcasinos.com/es
+```
