@@ -2,7 +2,7 @@
 
 Each email has three boxes: **To**, **Subject**, **Body**. Click the copy icon on each box.
 Send from your shhcasinos.com address. Follow up once after 5–7 days if there's no reply.
-Never pitch a site twice: check the log first.
+Never pitch a site twice: check the log first. Most crypto/gambling sites quote $500+ for a post; we don't pay for placements (decline politely, keep the door open for free pieces or data citations).
 
 ## Log (every site pitched)
 
@@ -12,19 +12,19 @@ Never pitch a site twice: check the log first.
 | 2 | casino.org | editors@casino.org | Free contribution (long shot) | 2026-11-21 | 2026-11-27 | |
 | 3 | blockport.io | contact@blockport.io | Editorial pitch | 2026-11-21 | 2026-11-27 | |
 | 4 | heimdalsecurity.com/blog | guestauthors@heimdalsecurity.com | Free guest post (topic first) | 2026-11-21 | 2026-11-27 | |
-| 5 | coinranking.com/blog | sales@coinranking.com | Paid, from $149 | 2026-11-21 | 2026-11-27 | |
+| 5 | coinranking.com/blog | sales@coinranking.com | Paid, from $149 | 2026-11-21 | 2026-11-27 | Paid only (quoted $500+), declined |
 | 6 | decrypt.co | editor@decrypt.co | Op-ed (long shot) | 2026-11-21 | 2026-11-27 | |
-| 7 | criptotendencia.com | info@criptotendencia.com | ES, contact | 2026-11-21 | 2026-11-27 | |
+| 7 | criptotendencia.com | info@criptotendencia.com | ES, contact | 2026-11-21 | 2026-11-27 | Paid only (quoted $500+), declined |
 | 8 | observatorioblockchain.com | contacto@observatorioblockchain.com | ES, data pitch | 2026-11-21 | 2026-11-27 | |
-| 9 | diariobitcoin.com | anuncios@diariobitcoin.com | ES, paid ($700) | 2026-11-21 | 2026-11-27 | |
+| 9 | diariobitcoin.com | anuncios@diariobitcoin.com | ES, paid ($700) | 2026-11-21 | 2026-11-27 | Paid only (quoted $500+), declined |
 | 10 | criptonoticias.com | form (Columna de opinión) | ES, guest column | 2026-11-21 | 2026-11-27 | |
 | 11 | gncrypto.news | info@gncrypto.news | Free guest post (Security & Self-Custody) | 2026-11-22 | 2026-11-28 | |
 | 12 | captainaltcoin.com | petar@captainaltcoin.com | Contributor application | 2026-11-22 | 2026-11-28 | |
-| 13 | coingabbar.com | sourabh@coingabbar.com | Free contribution | 2026-11-22 | 2026-11-28 | |
+| 13 | coingabbar.com | sourabh@coingabbar.com | Free contribution | 2026-11-22 | 2026-11-28 | Paid only (quoted $500+), declined |
 | 14 | privacyaffairs.com | contact@privacyaffairs.com | Data citation | 2026-11-22 | 2026-11-28 | |
 | 15 | gambling911.com | pobrien@costiganmedia.com | News tip | 2026-11-22 | 2026-11-28 | |
 | 16 | feedcryptobuzz.com | editors@feedcryptobuzz.com | Guest post | 2026-11-22 | 2026-11-28 | |
-| 17 | criptoinforme.com | contacto@criptoinforme.com | ES, guest column | 2026-11-22 | 2026-11-28 | |
+| 17 | criptoinforme.com | contacto@criptoinforme.com | ES, guest column | 2026-11-22 | 2026-11-28 | Paid only (quoted $500+), declined |
 | 18 | iupana.com | editor@iupana.com | ES/EN, opinion article | 2026-11-22 | 2026-11-28 | |
 | 19 | betokenmyfriend.substack.com | subscribers@betoken.capital | ES, free contribution | 2026-11-22 | 2026-11-28 | |
 | 20 | trading-latam.com | gerencia@trading-latam.com | ES, contact (weak lead) | 2026-11-22 | 2026-11-28 | |
