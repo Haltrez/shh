@@ -39,9 +39,19 @@ Never pitch a site twice: check the log first. Most crypto/gambling sites quote 
 | 28 | criptotendencias.com (plural, not criptotendencia.com) | froldan@criptotendencias.com | ES, colaboración editorial | to send | | |
 | 29 | blogfinanzas.net | finanzas@blogfinanzas.net | ES, free guest post | to send | | |
 | 30 | ciberseguridadlatam.com | info@ciberseguridadlatam.com | ES, opinion column | to send | | |
+| 31 | cryptobusinesshub.com | editor@cryptobusinesshub.com | Free guest post (stated) | to send | | |
+| 32 | camocryptcom.org | partners@camocryptcom.org | Free contributor programme (stated; mixed signals) | to send | | |
+| 33 | coinyoga.io | editor@coinyoga.io | Free guest post (stated) | to send | | |
+| 34 | financialsuccessmd.com | MD@FinancialSuccessMD.com | Free guest post (stated) | to send | | |
+| 35 | monero.observer | escapethe3ra@monero.observer | Non-commercial, news tip | to send | | |
+| 36 | mises.org (Mises Wire) | rwmcmaken@mises.org | Nonprofit, unpaid op-ed | to send | | |
+| 37 | guidetomoney.com | kevin@guidetomoney.com | Guest post, no payment either way (conditional) | to send | | |
+| 38 | estudiobitcoin.com | info@estudiobitcoin.com | ES, community resource site | to send | | |
+| 39 | studentsforliberty.org/es | blog@eslibertad.org | ES, nonprofit blog, unpaid | to send | | |
+| 40 | bitcoininsider.org | info@bitcoininsider.org | Free guest post, bio link only | to send | | |
 Another batch of about 10 was sent around 2026-11-20 from outside this file. Its sites aren't recorded yet: add them here so nobody gets pitched twice.
 
-Ruled out (don't pitch): CyberInsider/RestorePrivacy (no guest posts), Territorio Bitcoin, Apuesta Colombia, Crypto-Reporter (Gmail only), Cryptopolitan (hiring only), Quinielaposible (paid link seller), Calvin Ayre (personal site now), CoinsFolks (bans gambling), US iGaming Report (sponsored only), IgamePost and CasinoDesk (link sellers), AzarPlus (regulated Spain only), Bitcoinist and GamblingNews (form/Telegram only).
+Ruled out (don't pitch): Altcoin Investor, DailyCoin, Final Crypto Tool, Fintechfilter, Cyber Rebels (paid), Vibetrace (no casino), Blockchain.cl (competitor), Six Figures Under (closed), CyberInsider/RestorePrivacy (no guest posts), Territorio Bitcoin, Apuesta Colombia, Crypto-Reporter (Gmail only), Cryptopolitan (hiring only), Quinielaposible (paid link seller), Calvin Ayre (personal site now), CoinsFolks (bans gambling), US iGaming Report (sponsored only), IgamePost and CasinoDesk (link sellers), AzarPlus (regulated Spain only), Bitcoinist and GamblingNews (form/Telegram only).
 
 # Batch 1 (sent 2026-11-21)
 
@@ -876,4 +886,273 @@ Es original y sin promoción. ¿Aceptan columnas de autores externos?
 Saludos,
 Roberts
 shhcasinos.com/es
+```
+
+# Batch 4: free-only sites (to send)
+
+Every site here says on its own page that it doesn't charge, or is non-commercial. Lead with education and data, never casino rankings.
+
+---
+
+## 31. Crypto Business Hub
+
+To:
+```
+editor@cryptobusinesshub.com
+```
+Subject (required):
+```
+Guest Post Submission
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com, where I write about crypto privacy and wallet security. I'd like to submit a free, non-promotional guest post for your Tech and Security section:
+
+"Sent crypto on the wrong network? What happens, and the wallet habits that prevent it"
+- Why transfers on the wrong chain go missing, and when they can be recovered
+- Seed phrase and backup rules that actually matter
+- A pre-send checklist: network, address, test amount
+
+About 1,300 words, delivered as a Google Doc with a short bio. A related piece of mine: https://www.shhcasinos.com/guides/sent-crypto-wrong-network
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 32. CamoCrypt
+
+To:
+```
+partners@camocryptcom.org
+```
+Subject:
+```
+Contributor pitch: wrong-network transfers and seed-phrase backup strategy
+```
+Body:
+```
+Hi,
+
+I'm Roberts. I write about crypto self-custody and privacy at shhcasinos.com.
+
+One idea for your contributor programme: "Seed-phrase backup strategy for people who move crypto often", covering where backups fail in practice (screenshots, cloud notes, fake "support"), wrong-network transfers and how to recover from them, and a simple routine for test sends. Vendor-neutral, with primary sources.
+
+Background: https://www.shhcasinos.com/guides/sent-crypto-wrong-network and https://www.shhcasinos.com/guides/crypto-wallet-for-gambling
+
+Happy to adjust the scope.
+
+Thanks,
+Roberts
+```
+
+---
+
+## 33. CoinYoga
+
+To:
+```
+editor@coinyoga.io
+```
+Subject (required format):
+```
+Guest Post – USDT on TRC20 vs ERC20: what small transfers really cost
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. I'd like to write a free guest post: "USDT on TRC20 vs ERC20: what small transfers really cost", covering how each network charges fees, the TRX-for-fees trap on Tron, and how to avoid sending on the wrong chain.
+
+About 1,200 words, original, with no promotional or affiliate links. I'd reference our free fee calculator as a tool: https://www.shhcasinos.com/tools/crypto-fee-calculator
+
+Thanks,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 34. FinancialSuccessMD
+
+To:
+```
+MD@FinancialSuccessMD.com
+```
+Subject:
+```
+Guest post idea: what moving money in crypto really costs
+```
+Body:
+```
+Dr. Fawcett,
+
+I'm Roberts, and I write about the practical costs of crypto payments at shhcasinos.com. I'd like to offer a guest post for your readers: "Stablecoins for professionals: what moving money in crypto really costs." It's a plain-English look at network fees, exchange withdrawal fees and common mistakes, with worked examples.
+
+I write it myself (no AI), as an original Word document, with a photo and links. Would this topic suit your audience?
+
+Kind regards,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 35. Monero Observer (news tip)
+
+To:
+```
+escapethe3ra@monero.observer
+```
+Subject:
+```
+Tip: dated, sourced tracker of crypto casino KYC rules
+```
+Body:
+```
+Hi,
+
+A tip in case it's useful for the community: we keep a dated, sourced log of when crypto casinos require identity checks, with every rule linked to the casino's own terms. "No KYC" usually means no ID to start, not never.
+
+Tracker: https://www.shhcasinos.com/kyc-tracker
+Dataset (JSON): https://www.shhcasinos.com/data/casinos.json
+Related, on the EU's planned privacy-coin restrictions: https://www.shhcasinos.com/guides/crypto-privacy-regulation-2026
+
+Thanks for the work you do.
+Roberts
+```
+
+---
+
+## 36. Mises Wire
+
+To:
+```
+rwmcmaken@mises.org
+```
+Subject (required):
+```
+Mises Wire submission
+```
+Body:
+```
+Dear Mr. McMaken,
+
+I'd like to propose an article for Mises Wire: "KYC creep: how 'no ID' crypto platforms quietly became 'ID later'." It's about 1,200 words on how identity-verification rules spread through crypto services, why platforms reserve open-ended rights to demand documents, and what that means for financial privacy.
+
+It draws on a dated, sourced log of KYC rules that I maintain: https://www.shhcasinos.com/kyc-tracker
+
+I understand submissions are unpaid and published under CC-BY. I can send the full .docx if the topic fits.
+
+Regards,
+Roberts
+shhcasinos.com
+```
+
+---
+
+## 37. Guide to Money (conditional)
+
+To:
+```
+kevin@guidetomoney.com
+```
+Subject:
+```
+Guest post pitch: the real math of casino bonus wagering requirements
+```
+Body:
+```
+Hi Kevin,
+
+Pitch for Guide to Money:
+
+Title: "The real math of bonus wagering requirements (and why most bonuses cost more than they give)"
+Synopsis: welcome bonuses look like free money, but a 35x wagering requirement on a $100 bonus means $3,500 in bets before you can withdraw. The piece walks through the math step by step: wagering on bonus vs deposit plus bonus, game contribution rates, expected loss from the house edge, max-bet rules, and a simple way to decide whether a bonus is worth taking. It's educational and responsible-gambling minded, with no promotion.
+Length: about 1,800 words.
+Bio: Roberts runs shhcasinos.com, which publishes free tools including a wagering calculator: https://www.shhcasinos.com/tools/wagering-calculator
+
+Thanks,
+Roberts
+```
+
+---
+
+## 38. Estudio Bitcoin (ES)
+
+To:
+```
+info@estudiobitcoin.com
+```
+Subject:
+```
+Sugerencia de recurso: privacidad al usar Bitcoin y otras cripto
+```
+Body:
+```
+Hola,
+
+Soy Roberts, de shhcasinos.com/es. Les escribo para sugerir un recurso para su sección de privacidad: una guía en español sobre qué es privado y qué no al usar cripto (exchanges, blockchain pública, wallets propias y hábitos que ayudan):
+https://www.shhcasinos.com/es/guias/es-anonimo-apostar-con-cripto
+
+Si les interesa, también puedo escribir una entrada para el blog sobre autocustodia y copias de seguridad de la frase semilla.
+
+Gracias por mantener la web.
+Roberts
+```
+
+---
+
+## 39. Estudiantes por la Libertad (ES)
+
+To:
+```
+blog@eslibertad.org
+```
+Subject (required):
+```
+Contribución para el blog
+```
+Body:
+```
+Hola,
+
+Soy Roberts, de shhcasinos.com. Me gustaría contribuir al blog con un artículo de opinión: "Privacidad financiera en Latinoamérica: cuando 'sin documento' se convierte en 'documento después'", sobre cómo se extienden los controles de identidad (KYC) en los servicios cripto y qué significa para la privacidad de las personas.
+
+Se apoya en un registro con fechas y fuentes de las reglas de KYC: https://www.shhcasinos.com/kyc-tracker
+
+Si el tema encaja, envío el texto completo en el cuerpo del correo, con una biografía de menos de 120 palabras y una foto cuadrada, según sus normas.
+
+Saludos,
+Roberts
+shhcasinos.com/es
+```
+
+---
+
+## 40. Bitcoin Insider (conditional: bio link only)
+
+To:
+```
+info@bitcoininsider.org
+```
+Subject (required):
+```
+Guest post in Bitcoin Insider
+```
+Body:
+```
+Hi,
+
+I'm Roberts from shhcasinos.com. I'd like to submit a free guest post: "Sent crypto on the wrong network? What happens and how to prevent it", a practical guide to wrong-chain transfers, recovery options and a pre-send checklist.
+
+I understand free posts carry no in-text links, only a nofollow link in the author bio, and that's fine. I'll send it as a .doc.
+
+Thanks,
+Roberts
+shhcasinos.com
 ```
