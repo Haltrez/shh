@@ -29,16 +29,16 @@ Never pitch a site twice: check the log first. Most crypto/gambling sites quote 
 | 19 | betokenmyfriend.substack.com | subscribers@betoken.capital | ES, free contribution | 2026-11-22 | 2026-11-28 | |
 | 20 | trading-latam.com | gerencia@trading-latam.com | ES, contact (weak lead) | 2026-11-22 | 2026-11-28 | |
 
-| 21 | gamblingindustrynews.com | news@gamblingindustrynews.com | Data/news tip | to send | | |
-| 22 | finbold.com | editor@finbold.com | Data story pitch | to send | | |
-| 23 | cryptobriefing.com | editorial@cryptobriefing.com | News tip | to send | | |
-| 24 | dmcnews.org | partners@dmcnews.org | Free guest post (pitch first) | to send | | |
-| 25 | coingape.com | editorial@coingape.com | News tip | to send | | |
-| 26 | igamingbusiness.com | news@igamingbusiness.com | Data story (big outlet) | to send | | |
-| 27 | coinspeaker.com | contact@coinspeaker.com | News tip | to send | | |
-| 28 | criptotendencias.com (plural, not criptotendencia.com) | froldan@criptotendencias.com | ES, colaboración editorial | to send | | |
-| 29 | blogfinanzas.net | finanzas@blogfinanzas.net | ES, free guest post | to send | | |
-| 30 | ciberseguridadlatam.com | info@ciberseguridadlatam.com | ES, opinion column | to send | | |
+| 21 | gamblingindustrynews.com | news@gamblingindustrynews.com | Data/news tip | 2026-11-24 | 2026-11-30 | |
+| 22 | finbold.com | editor@finbold.com | Data story pitch | 2026-11-24 | 2026-11-30 | |
+| 23 | cryptobriefing.com | editorial@cryptobriefing.com | News tip | 2026-11-24 | 2026-11-30 | |
+| 24 | dmcnews.org | partners@dmcnews.org | Free guest post (pitch first) | 2026-11-24 | 2026-11-30 | |
+| 25 | coingape.com | editorial@coingape.com | News tip | 2026-11-24 | 2026-11-30 | |
+| 26 | igamingbusiness.com | news@igamingbusiness.com | Data story (big outlet) | 2026-11-24 | 2026-11-30 | |
+| 27 | coinspeaker.com | contact@coinspeaker.com | News tip | 2026-11-24 | 2026-11-30 | |
+| 28 | criptotendencias.com (plural, not criptotendencia.com) | froldan@criptotendencias.com | ES, colaboración editorial | 2026-11-24 | 2026-11-30 | |
+| 29 | blogfinanzas.net | finanzas@blogfinanzas.net | ES, free guest post | 2026-11-24 | 2026-11-30 | |
+| 30 | ciberseguridadlatam.com | info@ciberseguridadlatam.com | ES, opinion column | 2026-11-24 | 2026-11-30 | |
 | 31 | cryptobusinesshub.com | editor@cryptobusinesshub.com | Free guest post (stated) | to send | | |
 | 32 | camocryptcom.org | partners@camocryptcom.org | Free contributor programme (stated; mixed signals) | to send | | |
 | 33 | coinyoga.io | editor@coinyoga.io | Free guest post (stated) | to send | | |
@@ -608,7 +608,7 @@ shhcasinos.com/es
 
 Use the same English or Spanish follow-up as batch 1.
 
-# Batch 3 (to send)
+# Batch 3 (sent by 2026-11-24)
 
 Backups if some bounce: Livecoins (contato@livecoins.com.br, Portuguese, tips only, email once), EarnYatra (info@earnyatra.com, free guest posts, subject "Write for Us Pitch – [Your Topic]"), Crypto-Economy ES (form only: https://www.crypto-economy.com/es/contacto/).
 
