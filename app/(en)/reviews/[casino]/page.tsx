@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const kycWord = level === "none" ? "No KYC" : "KYC Rules";
   const summary = c.kyc?.summary ?? c.reported?.summary;
   const description = published && summary
-    ? clip(`${c.name} review: ${summary} Payouts ${formatPayout(c)}${c.payoutMinutes?.stated ? "" : " in our tests"}.${c.offer ? ` Bonus: ${c.offer.text}.` : ""}`)
+    ? clip(`${c.name} review: ${summary} ${c.payoutMinutes ? `Payouts ${formatPayout(c)}${c.payoutMinutes.stated ? "" : " in our tests"}.` : ""}${c.offer ? ` Bonus: ${c.offer.text}.` : ""}`)
     : `${c.name} review: what ID it asks for at sign-up and withdrawal, payout speed, coins, VPN and country rules.`;
   return {
     ...seo({

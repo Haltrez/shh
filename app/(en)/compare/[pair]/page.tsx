@@ -87,7 +87,7 @@ export default async function ComparePage({ params }: Props) {
     },
     {
       q: `Which pays out faster, ${A} or ${B}?`,
-      a: `${A}: ${formatPayout(a)}${a.payoutMinutes?.stated ? " (stated by the casino)" : " in our tests"}. ${B}: ${formatPayout(b)}${b.payoutMinutes?.stated ? " (stated by the casino)" : " in our tests"}.`,
+      a: `${A}: ${formatPayout(a)}${!a.payoutMinutes ? "" : a.payoutMinutes.stated ? " (stated by the casino)" : " in our tests"}. ${B}: ${formatPayout(b)}${!b.payoutMinutes ? "" : b.payoutMinutes.stated ? " (stated by the casino)" : " in our tests"}.`,
     },
     ...(a.offer && b.offer
       ? [{

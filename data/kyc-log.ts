@@ -6,6 +6,12 @@ export type KycLogEntry = { date: string; casino: string; change: string; source
 
 export const kycLog: KycLogEntry[] = [
   {
+    date: "2026-11-25",
+    casino: "Duel",
+    change: "Added. No ID or email to sign up; terms reserve the right to request KYC before processing a withdrawal, with no threshold stated.",
+    source: "https://duel.com/policies/tos",
+  },
+  {
     date: "2026-11-20",
     casino: "MetaWin",
     change: "Our test withdrawal arrived in about 10 seconds.",

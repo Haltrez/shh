@@ -50,7 +50,7 @@ export function TopPicks({
                 {c.featured ? <span className="badge badge-featured">{L.featured}</span> : null}
               </div>
               <div className="pick-meta mono">
-                {L.score} {privacyScore(c)} · {L.payout.toLowerCase()} {casinoText(c, lang).payout}
+                {L.score} {privacyScore(c)}{casinoText(c, lang).payout ? <> · {L.payout.toLowerCase()} {casinoText(c, lang).payout}</> : null}
               </div>
               {c.offer ? <div className="pick-offer">{casinoText(c, lang).offer}</div> : null}
             </div>

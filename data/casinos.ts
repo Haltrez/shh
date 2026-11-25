@@ -18,6 +18,7 @@ const SEVENBIT_TERMS = "https://7bitcasino.com/terms-and-conditions";
 const BITSTARZ_TERMS = "https://www.bitstarz.com/terms";
 const METAWIN_TERMS = "https://metawin.com/terms-and-conditions";
 const KOALABET_TERMS = "https://koalabet.io/policy/terms-of-service";
+const DUEL_TERMS = "https://duel.com/policies/tos";
 const KOALABET_WITHDRAWALS = "https://koalabet.io/policy/withdrawal-policy";
 const KOALABET_RG = "https://koalabet.io/policy/responsible-gambling";
 const METAWIN_FAQ = "https://metawin.com/faq";
@@ -413,6 +414,64 @@ export const casinos: Casino[] = [
       "Bonus terms apply; read them before opting in",
     ],
     scores: { kycSignup: 5, kycTriggers: 2, payoutSpeed: 5, termsClarity: 3 },
+  },
+  {
+    // Facts from Duel's Terms of Service (updated 03.11.2026), Responsible Gaming policy and site, read 2026-11-25.
+    slug: "duel",
+    name: "Duel",
+    affiliateUrl: "https://duel.com/r/scatterdrop",
+    lastChecked: "2026-11-25",
+    licence: {
+      value: "Anjouan (Comoros), licence ALSI-202411026-FI1 (Immortal Snail LLC, Nevis)",
+      source: DUEL_TERMS,
+    },
+    kyc: {
+      level: "on-request",
+      summary: "No ID to sign up: a username and password, email optional. Duel can ask for ID before paying out, and its terms set no amount.",
+      signup: {
+        value: "Username and password; email is optional. Google and Steam login also available. No ID asked.",
+        source: DUEL_TERMS,
+      },
+      withdrawal: {
+        value: "Duel reserves the right to request KYC before processing a withdrawal; if you don't provide documents, it isn't liable for lost access to funds (Deposits & Withdrawals).",
+        source: DUEL_TERMS,
+      },
+      triggers: {
+        value: [
+          "Any withdrawal, at Duel's discretion (Deposits & Withdrawals)",
+          "Attempts to get around its betting rules (Betting)",
+          "AML checks: funds can be frozen and shared with authorities (AML Compliance)",
+        ],
+        source: DUEL_TERMS,
+      },
+    },
+    restrictedCountries: {
+      value: ["US", "GB", "DE", "FR", "NL", "ES", "AU", "VE", "AE", "SK", "LT", "AM", "+ more"],
+      source: DUEL_TERMS,
+    },
+    coins: { value: ["BTC", "ETH", "LTC", "USDT", "USDC", "SOL", "TRX", "BNB", "XRP", "DOGE"], source: "https://duel.com" },
+    responsibleTools: {
+      value: ["Self-exclusion for at least 6 months", "7-day cooling-off period", "In-app break: lock chosen games for up to 30 days"],
+      source: "https://duel.com/responsible-gaming-policy",
+    },
+    verdict:
+      "Duel is quick to start: a username and password, no email needed, no ID. It takes 20+ coin and network options and runs zero-edge originals plus 50% instant rakeback on slots instead of a welcome bonus. Its terms let it ask for ID before any payout with no amount stated, so treat it as KYC on request. We haven't timed a Duel withdrawal yet.",
+    kycInPractice: [
+      "Sign-up asks for a username and password; email is optional. No documents to start.",
+      "The terms reserve the right to request KYC before processing a withdrawal, with no threshold stated. Duel uses Checkin.com for identity and document checks.",
+    ],
+    pros: [
+      "No ID and no email needed to sign up",
+      "20+ coins and networks, including BTC, USDT, SOL and LTC",
+      "50% instant rakeback on slots, withdrawable straight away",
+      "Zero-edge originals instead of a wagering-heavy bonus",
+    ],
+    cons: [
+      "Terms allow an ID check before any withdrawal, with no threshold stated",
+      "No welcome bonus",
+      "Not available in the US, UK, Spain, Venezuela and other listed countries",
+    ],
+    scores: { kycSignup: 5, kycTriggers: 2, coinChoice: 5, termsClarity: 3 },
   },
   // { slug: "cosmobet", name: "CosmoBet", affiliateUrl: "", lastChecked: null }, // once signed
 ];

@@ -143,4 +143,24 @@ export const casinosEs: Record<string, CasinoEs> = {
     withdrawalLimits: "Sin límite fijo; las ganancias grandes pueden pagarse en cuotas mensuales",
     payout: "3–5 min",
   },
+  duel: {
+    summary: "Sin documento para registrarte: usuario y contraseña, email opcional. Duel puede pedir documentos antes de pagar, y sus términos no fijan un monto.",
+    verdict:
+      "Duel es rápido para empezar: usuario y contraseña, sin email obligatorio ni documento. Acepta más de 20 monedas y redes, y en lugar de bono de bienvenida ofrece juegos originales sin ventaja de la casa y un 50 % de rakeback instantáneo en slots. Sus términos le permiten pedir documentos antes de cualquier retiro, sin un monto fijado, así que lo clasificamos como KYC a petición. Aún no hemos cronometrado un retiro en Duel.",
+    pros: [
+      "Sin documento ni email para registrarte",
+      "Más de 20 monedas y redes, entre ellas BTC, USDT, SOL y LTC",
+      "50 % de rakeback instantáneo en slots, retirable al momento",
+      "Juegos originales sin ventaja de la casa",
+    ],
+    cons: [
+      "Los términos permiten pedir documentos antes de cualquier retiro, sin umbral",
+      "Sin bono de bienvenida",
+      "No disponible en EE. UU., Reino Unido, España, Venezuela y otros países listados",
+    ],
+    kycInPractice: [
+      "El registro pide usuario y contraseña; el email es opcional. Sin documentos para empezar.",
+      "Los términos se reservan el derecho de pedir KYC antes de procesar un retiro, sin umbral. Duel usa Checkin.com para verificar identidad y documentos.",
+    ],
+  },
 };

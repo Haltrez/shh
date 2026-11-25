@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tx = casinoText(c, "es");
   return seo({
     title: `${c.name}: Reseña ${new Date().getFullYear()}, KYC y Retiros`,
-    description: clip(`Reseña de ${c.name}: ${tx.summary} Retiros en ${tx.payout}.${tx.offer ? ` Bono: ${tx.offer}.` : ""}`),
+    description: clip(`Reseña de ${c.name}: ${tx.summary} ${tx.payout ? `Retiros en ${tx.payout}.` : ""}${tx.offer ? ` Bono: ${tx.offer}.` : ""}`),
     path: `/es/resenas/${c.slug}`,
     type: "article",
     locale: "es",
@@ -51,7 +51,7 @@ export default async function ResenaEs({ params }: Props) {
 
   const faq = [
     { q: `¿${c.name} pide KYC?`, a: tx.summary },
-    { q: `¿Qué tan rápido paga ${c.name}?`, a: `En nuestras pruebas, los retiros llegaron en ${tx.payout}.` },
+    { q: `¿Qué tan rápido paga ${c.name}?`, a: tx.payout ? `En nuestras pruebas, los retiros llegaron en ${tx.payout}.` : `Aún no hemos cronometrado un retiro en ${c.name}. La parte de la blockchain tarda de segundos a minutos; cualquier espera mayor es la revisión del propio casino.` },
     ...(tx.offer ? [{ q: `¿${c.name} tiene código de bono?`, a: `No necesitas código. La oferta (${tx.offer}) se aplica al registrarte con nuestro enlace. +18, aplican T&C.` }] : [{ q: `¿${c.name} tiene bono de bienvenida?`, a: `${c.name} no tiene bono de bienvenida ahora mismo, así que no hay requisitos de apuesta que cumplir.` }]),
     ...(c.licence ? [{ q: `¿${c.name} tiene licencia?`, a: `Sí. Sus términos indican: ${c.licence.value}.` }] : []),
     { q: `¿Puedo usar una VPN en ${c.name}?`, a: "Una VPN sirve para tu privacidad general, pero los términos de casi todos los casinos prohíben usarla para acceder desde un país restringido. Juega solo donde sea legal para ti." },
@@ -89,7 +89,7 @@ export default async function ResenaEs({ params }: Props) {
             <table className="data-table">
               <tbody>
                 <tr><td>KYC</td><td><KycBadge level={kycLevelOf(c)} reported={isReportedOnly(c)} lang="es" /> {tx.summary}</td></tr>
-                <tr><td>Retiro (nuestras pruebas)</td><td>{tx.payout}</td></tr>
+                <tr><td>Retiro (nuestras pruebas)</td><td>{tx.payout ?? "Aún sin probar"}</td></tr>
                 {coins?.length ? <tr><td>Monedas</td><td className="mono">{coins.join(" ")}</td></tr> : null}
                 {c.minDepositUsd ? <tr><td>Depósito mínimo</td><td>{c.minDepositUsd.value} $</td></tr> : null}
                 {tx.withdrawalLimits ? <tr><td>Límites de retiro</td><td>{tx.withdrawalLimits}</td></tr> : null}
