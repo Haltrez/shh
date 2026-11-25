@@ -39,7 +39,7 @@ Never pitch a site twice: check the log first. Most crypto/gambling sites quote 
 | 28 | criptotendencias.com (plural, not criptotendencia.com) | froldan@criptotendencias.com | ES, colaboración editorial | 2026-11-24 | 2026-11-30 | |
 | 29 | blogfinanzas.net | finanzas@blogfinanzas.net | ES, free guest post | 2026-11-24 | 2026-11-30 | |
 | 30 | ciberseguridadlatam.com | info@ciberseguridadlatam.com | ES, opinion column | 2026-11-24 | 2026-11-30 | |
-| 31 | cryptobusinesshub.com | editor@cryptobusinesshub.com | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
+| 31 | cryptobusinesshub.com | editor@cryptobusinesshub.com | Free guest post (stated) | 2026-11-25 | 2026-12-01 | Free = no links; paid $50 for 2 dofollow. Pending decision |
 | 32 | camocryptcom.org | partners@camocryptcom.org | Free contributor programme (stated; mixed signals) | 2026-11-25 | 2026-12-01 | |
 | 33 | coinyoga.io | editor@coinyoga.io | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
 | 34 | financialsuccessmd.com | MD@FinancialSuccessMD.com | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
