@@ -39,16 +39,16 @@ Never pitch a site twice: check the log first. Most crypto/gambling sites quote 
 | 28 | criptotendencias.com (plural, not criptotendencia.com) | froldan@criptotendencias.com | ES, colaboración editorial | 2026-11-24 | 2026-11-30 | |
 | 29 | blogfinanzas.net | finanzas@blogfinanzas.net | ES, free guest post | 2026-11-24 | 2026-11-30 | |
 | 30 | ciberseguridadlatam.com | info@ciberseguridadlatam.com | ES, opinion column | 2026-11-24 | 2026-11-30 | |
-| 31 | cryptobusinesshub.com | editor@cryptobusinesshub.com | Free guest post (stated) | to send | | |
-| 32 | camocryptcom.org | partners@camocryptcom.org | Free contributor programme (stated; mixed signals) | to send | | |
-| 33 | coinyoga.io | editor@coinyoga.io | Free guest post (stated) | to send | | |
-| 34 | financialsuccessmd.com | MD@FinancialSuccessMD.com | Free guest post (stated) | to send | | |
-| 35 | monero.observer | escapethe3ra@monero.observer | Non-commercial, news tip | to send | | |
-| 36 | mises.org (Mises Wire) | rwmcmaken@mises.org | Nonprofit, unpaid op-ed | to send | | |
-| 37 | guidetomoney.com | kevin@guidetomoney.com | Guest post, no payment either way (conditional) | to send | | |
-| 38 | estudiobitcoin.com | info@estudiobitcoin.com | ES, community resource site | to send | | |
-| 39 | studentsforliberty.org/es | blog@eslibertad.org | ES, nonprofit blog, unpaid | to send | | |
-| 40 | bitcoininsider.org | info@bitcoininsider.org | Free guest post, bio link only | to send | | |
+| 31 | cryptobusinesshub.com | editor@cryptobusinesshub.com | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
+| 32 | camocryptcom.org | partners@camocryptcom.org | Free contributor programme (stated; mixed signals) | 2026-11-25 | 2026-12-01 | |
+| 33 | coinyoga.io | editor@coinyoga.io | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
+| 34 | financialsuccessmd.com | MD@FinancialSuccessMD.com | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
+| 35 | monero.observer | escapethe3ra@monero.observer | Non-commercial, news tip | 2026-11-25 | 2026-12-01 | |
+| 36 | mises.org (Mises Wire) | rwmcmaken@mises.org | Nonprofit, unpaid op-ed | 2026-11-25 | 2026-12-01 | |
+| 37 | guidetomoney.com | kevin@guidetomoney.com | Guest post, no payment either way (conditional) | 2026-11-25 | 2026-12-01 | |
+| 38 | estudiobitcoin.com | info@estudiobitcoin.com | ES, community resource site | 2026-11-25 | 2026-12-01 | |
+| 39 | studentsforliberty.org/es | blog@eslibertad.org | ES, nonprofit blog, unpaid | 2026-11-25 | 2026-12-01 | |
+| 40 | bitcoininsider.org | info@bitcoininsider.org | Free guest post, bio link only | 2026-11-25 | 2026-12-01 | |
 Another batch of about 10 was sent around 2026-11-20 from outside this file. Its sites aren't recorded yet: add them here so nobody gets pitched twice.
 
 Ruled out (don't pitch): Altcoin Investor, DailyCoin, Final Crypto Tool, Fintechfilter, Cyber Rebels (paid), Vibetrace (no casino), Blockchain.cl (competitor), Six Figures Under (closed), CyberInsider/RestorePrivacy (no guest posts), Territorio Bitcoin, Apuesta Colombia, Crypto-Reporter (Gmail only), Cryptopolitan (hiring only), Quinielaposible (paid link seller), Calvin Ayre (personal site now), CoinsFolks (bans gambling), US iGaming Report (sponsored only), IgamePost and CasinoDesk (link sellers), AzarPlus (regulated Spain only), Bitcoinist and GamblingNews (form/Telegram only).
@@ -888,7 +888,7 @@ Roberts
 shhcasinos.com/es
 ```
 
-# Batch 4: free-only sites (to send)
+# Batch 4: free-only sites (sent 2026-11-25)
 
 Every site here says on its own page that it doesn't charge, or is non-commercial. Lead with education and data, never casino rankings.
 
