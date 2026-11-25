@@ -419,8 +419,11 @@ export const casinos: Casino[] = [
     // Facts from Duel's Terms of Service (updated 03.11.2026), Responsible Gaming policy and site, read 2026-11-25.
     slug: "duel",
     name: "Duel",
+    logo: "/logos/duel.png",
+    logoAspect: 2.69,
     affiliateUrl: "https://duel.com/r/scatterdrop",
     lastChecked: "2026-11-25",
+    payoutMinutes: { value: 3, label: "under 3 min", note: "Our test withdrawal arrived in under 3 minutes." },
     licence: {
       value: "Anjouan (Comoros), licence ALSI-202411026-FI1 (Immortal Snail LLC, Nevis)",
       source: DUEL_TERMS,
@@ -455,13 +458,14 @@ export const casinos: Casino[] = [
       source: "https://duel.com/responsible-gaming-policy",
     },
     verdict:
-      "Duel is quick to start: a username and password, no email needed, no ID. It takes 20+ coin and network options and runs zero-edge originals plus 50% instant rakeback on slots instead of a welcome bonus. Its terms let it ask for ID before any payout with no amount stated, so treat it as KYC on request. We haven't timed a Duel withdrawal yet.",
+      "Duel is quick to start: a username and password, no email needed, no ID. It takes 20+ coin and network options and runs zero-edge originals plus 50% instant rakeback on slots instead of a welcome bonus. Its terms let it ask for ID before any payout with no amount stated, so treat it as KYC on request. Our test withdrawal arrived in under 3 minutes.",
     kycInPractice: [
       "Sign-up asks for a username and password; email is optional. No documents to start.",
       "The terms reserve the right to request KYC before processing a withdrawal, with no threshold stated. Duel uses Checkin.com for identity and document checks.",
     ],
     pros: [
       "No ID and no email needed to sign up",
+      "Withdrawal in under 3 minutes in our test",
       "20+ coins and networks, including BTC, USDT, SOL and LTC",
       "50% instant rakeback on slots, withdrawable straight away",
       "Zero-edge originals instead of a wagering-heavy bonus",
@@ -471,7 +475,7 @@ export const casinos: Casino[] = [
       "No welcome bonus",
       "Not available in the US, UK, Spain, Venezuela and other listed countries",
     ],
-    scores: { kycSignup: 5, kycTriggers: 2, coinChoice: 5, termsClarity: 3 },
+    scores: { kycSignup: 5, kycTriggers: 2, payoutSpeed: 5, coinChoice: 5, termsClarity: 3 },
   },
   // { slug: "cosmobet", name: "CosmoBet", affiliateUrl: "", lastChecked: null }, // once signed
 ];

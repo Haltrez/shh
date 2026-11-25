@@ -8,6 +8,11 @@ export const kycLog: KycLogEntry[] = [
   {
     date: "2026-11-25",
     casino: "Duel",
+    change: "Our test withdrawal arrived in under 3 minutes.",
+  },
+  {
+    date: "2026-11-25",
+    casino: "Duel",
     change: "Added. No ID or email to sign up; terms reserve the right to request KYC before processing a withdrawal, with no threshold stated.",
     source: "https://duel.com/policies/tos",
   },

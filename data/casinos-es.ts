@@ -146,9 +146,10 @@ export const casinosEs: Record<string, CasinoEs> = {
   duel: {
     summary: "Sin documento para registrarte: usuario y contraseña, email opcional. Duel puede pedir documentos antes de pagar, y sus términos no fijan un monto.",
     verdict:
-      "Duel es rápido para empezar: usuario y contraseña, sin email obligatorio ni documento. Acepta más de 20 monedas y redes, y en lugar de bono de bienvenida ofrece juegos originales sin ventaja de la casa y un 50 % de rakeback instantáneo en slots. Sus términos le permiten pedir documentos antes de cualquier retiro, sin un monto fijado, así que lo clasificamos como KYC a petición. Aún no hemos cronometrado un retiro en Duel.",
+      "Duel es rápido para empezar: usuario y contraseña, sin email obligatorio ni documento. Acepta más de 20 monedas y redes, y en lugar de bono de bienvenida ofrece juegos originales sin ventaja de la casa y un 50 % de rakeback instantáneo en slots. Sus términos le permiten pedir documentos antes de cualquier retiro, sin un monto fijado, así que lo clasificamos como KYC a petición. En nuestra prueba, el retiro llegó en menos de 3 minutos.",
     pros: [
       "Sin documento ni email para registrarte",
+      "Retiro en menos de 3 minutos en nuestra prueba",
       "Más de 20 monedas y redes, entre ellas BTC, USDT, SOL y LTC",
       "50 % de rakeback instantáneo en slots, retirable al momento",
       "Juegos originales sin ventaja de la casa",
@@ -158,6 +159,7 @@ export const casinosEs: Record<string, CasinoEs> = {
       "Sin bono de bienvenida",
       "No disponible en EE. UU., Reino Unido, España, Venezuela y otros países listados",
     ],
+    payout: "menos de 3 min",
     kycInPractice: [
       "El registro pide usuario y contraseña; el email es opcional. Sin documentos para empezar.",
       "Los términos se reservan el derecho de pedir KYC antes de procesar un retiro, sin umbral. Duel usa Checkin.com para verificar identidad y documentos.",
