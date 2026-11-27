@@ -43,7 +43,7 @@ Never pitch a site twice: check the log first. Most crypto/gambling sites quote 
 | 32 | camocryptcom.org | partners@camocryptcom.org | Free contributor programme (stated; mixed signals) | 2026-11-25 | 2026-12-01 | |
 | 33 | coinyoga.io | editor@coinyoga.io | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
 | 34 | financialsuccessmd.com | MD@FinancialSuccessMD.com | Free guest post (stated) | 2026-11-25 | 2026-12-01 | |
-| 35 | monero.observer | escapethe3ra@monero.observer | Non-commercial, news tip | 2026-11-25 | 2026-12-01 | |
+| 35 | monero.observer | escapethe3ra@monero.observer | Non-commercial, news tip | 2026-11-25 | 2026-12-01 | REPLIED 11-26: asked about Monero; offered a free Community Message. Replying with text |
 | 36 | mises.org (Mises Wire) | rwmcmaken@mises.org | Nonprofit, unpaid op-ed | 2026-11-25 | 2026-12-01 | |
 | 37 | guidetomoney.com | kevin@guidetomoney.com | Guest post, no payment either way (conditional) | 2026-11-25 | 2026-12-01 | |
 | 38 | estudiobitcoin.com | info@estudiobitcoin.com | ES, community resource site | 2026-11-25 | 2026-12-01 | |
