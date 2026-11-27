@@ -9,6 +9,7 @@ import { Caveat, VPN_NOTICE } from "@/components/Caveat";
 import { JsonLd } from "@/components/JsonLd";
 import { RelatedGuides } from "@/components/Related";
 import { breadcrumbs, faqPage, itemList } from "@/lib/schema";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { comparePairs, shortName } from "@/lib/compare";
 import { formatDate } from "@/lib/format";
@@ -19,6 +20,7 @@ export const metadata: Metadata = seo({
   title: `No KYC Casinos ${year}: No-Verification Casinos Ranked`,
   description: "No KYC crypto casinos ranked: play without ID verification, see when each casino can still ask, and how fast it pays. Checked against their terms.",
   path: "/no-kyc-casinos",
+  image: ogPath.top("all"),
   languages: { en: "/no-kyc-casinos", es: "/es/casinos-sin-kyc" },
 });
 

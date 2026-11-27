@@ -12,6 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Caveat } from "@/components/Caveat";
 import { VpnBox } from "@/components/VpnBox";
 import { faqPage, itemList } from "@/lib/schema";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { formatDate } from "@/lib/format";
 import { TopPicks } from "@/components/TopPicks";
@@ -21,7 +22,8 @@ const year = new Date().getFullYear();
 export const metadata: Metadata = seo({
   title: `Best No-KYC Crypto Casinos ${year}: Privacy Ranked | shh`,
   description: "No-KYC crypto casinos ranked by what they actually ask for: ID at sign-up, withdrawal checks, payout speed and coins. Checked against each casino's terms.",
-  path: "/", absolute: true,
+  path: "/",
+  image: ogPath.top("all"), absolute: true,
   languages: { en: "/", es: "/es" },
 });
 

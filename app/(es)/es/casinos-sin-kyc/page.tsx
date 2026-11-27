@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { allCasinos } from "@/lib/data";
 import { rank, isPublished } from "@/lib/score";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { breadcrumbs, faqPage, itemList } from "@/lib/schema";
 import { formatDateL } from "@/lib/i18n";
@@ -17,6 +18,7 @@ export const metadata: Metadata = seo({
   description:
     "Casinos cripto sin KYC: juega sin verificar tu identidad, mira cuándo puede pedirla cada casino y qué tan rápido paga. Verificado con sus términos.",
   path: "/es/casinos-sin-kyc",
+  image: ogPath.top("latam", "es"),
   locale: "es",
   languages: { en: "/no-kyc-casinos", es: "/es/casinos-sin-kyc" },
 });

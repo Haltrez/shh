@@ -11,6 +11,7 @@ import { formatDate } from "@/lib/format";
 import { site } from "@/lib/site";
 import { VpnBox } from "@/components/VpnBox";
 import { TopPicks } from "@/components/TopPicks";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { CasinoCard } from "@/components/CasinoCard";
 import { findCasino } from "@/lib/data";
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${g.title} | shh`,
     description: g.description,
     path: `/guides/${g.slug}`,
+    image: g.casino ? ogPath.casino(g.casino) : ogPath.text(g.h1),
     absolute: true,
     type: "article",
     modifiedTime: g.updated,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { EsLanding } from "@/components/EsLanding";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = seo({
   title: `Casinos Cripto Anónimos ${year}: Qué Es Posible`,
   description: "Ningún casino es totalmente anónimo, pero algunos se acercan: registro con wallet, sin documento para empezar y umbrales de KYC claros. Clasificados.",
   path: "/es/casinos-anonimos",
+  image: ogPath.top("latam", "es"),
   locale: "es",
   languages: { en: "/anonymous-casinos", es: "/es/casinos-anonimos" },
 });

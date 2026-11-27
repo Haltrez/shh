@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowUpRight, Gift } from "lucide-react";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { breadcrumbs, faqPage } from "@/lib/schema";
 import { casinoText } from "@/lib/i18n";
@@ -16,6 +17,7 @@ export const metadata: Metadata = seo({
   title: `Bonos de Casinos Cripto ${year}: Sin Código`,
   description: "Bonos de bienvenida de casinos cripto sin KYC: qué ofrece cada uno, si necesitas código y qué revisar en los términos antes de aceptarlo.",
   path: "/es/bonos",
+  image: ogPath.top("latam", "es"),
   locale: "es",
   languages: { en: "/bonus", es: "/es/bonos" },
 });

@@ -4,6 +4,7 @@ import { ArrowUpRight, Gift } from "lucide-react";
 import { bonusCasinos } from "@/lib/bonus";
 import { rank, kycLevelOf, isReportedOnly } from "@/lib/score";
 import { formatPayout } from "@/lib/format";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { breadcrumbs, faqPage } from "@/lib/schema";
 import { KycBadge } from "@/components/KycBadge";
@@ -19,6 +20,7 @@ export const metadata: Metadata = seo({
   description:
     "Every bonus at the no-KYC crypto casinos we rank: welcome offers, whether a code is needed, KYC rules and payout times. Updated with each casino check.",
   path: "/bonus",
+  image: ogPath.top("all"),
   languages: { en: "/bonus", es: "/es/bonos" },
 });
 

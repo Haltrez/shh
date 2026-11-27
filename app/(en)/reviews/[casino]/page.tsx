@@ -18,6 +18,7 @@ import { PromoCode } from "@/components/PromoCode";
 import { JsonLd } from "@/components/JsonLd";
 import { RelatedGuides, RelatedLists } from "@/components/Related";
 import { article, breadcrumbs, faqPage } from "@/lib/schema";
+import { ogPath } from "@/lib/og-path";
 import { seo, clip } from "@/lib/seo";
 import { casinoFaq } from "@/lib/casino-faq";
 import { formatPayout } from "@/lib/format";
@@ -48,6 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${c.name} Review ${new Date().getFullYear()}: ${kycWord}, Payouts & Bonus`,
       description,
       path: `/reviews/${c.slug}`,
+    image: ogPath.casino(c.slug),
       type: "article",
       modifiedTime: c.lastChecked ?? c.reported?.asOf,
       ...(casinosEs[c.slug] && published ? { languages: { en: `/reviews/${c.slug}`, es: `/es/resenas/${c.slug}` } } : {}),

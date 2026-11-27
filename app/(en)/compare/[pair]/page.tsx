@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { comparePairs, findPair, shortName } from "@/lib/compare";
 import { privacyScore, kycLevelOf, coinsOf } from "@/lib/score";
 import { formatPayout } from "@/lib/format";
+import { ogPath } from "@/lib/og-path";
 import { seo, clip } from "@/lib/seo";
 import { article, breadcrumbs, faqPage } from "@/lib/schema";
 import type { Casino } from "@/lib/types";
@@ -56,6 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${A} vs ${B}: KYC, Payouts & Bonus Compared`,
     description: clip(`${A} vs ${B}: ${verdict(p.a, p.b)} Bonuses, coins, limits and VPN rules side by side.`),
     path: `/compare/${p.slug}`,
+    image: ogPath.vs(p.slug),
     type: "article",
     modifiedTime: updated(p.a, p.b),
   });

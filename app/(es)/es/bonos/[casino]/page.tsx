@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { findCasino } from "@/lib/data";
 import { kycLevelOf, isReportedOnly } from "@/lib/score";
+import { ogPath } from "@/lib/og-path";
 import { seo, clip } from "@/lib/seo";
 import { breadcrumbs, faqPage } from "@/lib/schema";
 import { casinoText } from "@/lib/i18n";
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : `¿Tiene bono ${c.name}? Ahora no hay bono de bienvenida ni código. Qué obtienes en su lugar, las reglas de KYC y cómo registrarte.`,
     ),
     path: `/es/bonos/${c.slug}`,
+    image: ogPath.bonus(c.slug, "es"),
     type: "article",
     locale: "es",
     modifiedTime: c.lastChecked ?? c.reported?.asOf,

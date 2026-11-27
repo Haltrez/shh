@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Check, X } from "lucide-react";
 import { allCasinos, findCasino } from "@/lib/data";
 import { isPublished, privacyScore, kycLevelOf, isReportedOnly, coinsOf } from "@/lib/score";
+import { ogPath } from "@/lib/og-path";
 import { seo, clip } from "@/lib/seo";
 import { breadcrumbs, faqPage } from "@/lib/schema";
 import { casinoText, formatDateL } from "@/lib/i18n";
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${c.name}: Reseña ${new Date().getFullYear()}, KYC y Retiros`,
     description: clip(`Reseña de ${c.name}: ${tx.summary} ${tx.payout ? `Retiros en ${tx.payout}.` : ""}${tx.offer ? ` Bono: ${tx.offer}.` : ""}`),
     path: `/es/resenas/${c.slug}`,
+    image: ogPath.casino(c.slug, "es"),
     type: "article",
     locale: "es",
     modifiedTime: c.lastChecked ?? c.reported?.asOf,

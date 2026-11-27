@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { TopPicks } from "@/components/TopPicks";
 import { article, breadcrumbs, faqPage, howTo } from "@/lib/schema";
 import { formatDateL } from "@/lib/i18n";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${g.title} | shh`,
     description: g.description,
     path: `/es/guias/${g.slug}`,
+    image: g.casino ? ogPath.casino(g.casino, "es") : ogPath.text(g.h1, "es"),
     absolute: true,
     type: "article",
     locale: "es",

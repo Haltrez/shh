@@ -12,7 +12,7 @@ import { join, relative } from "node:path";
 
 const ROOT = ".next/server/app";
 const BANNED = [/100% anonymous/i, /untraceable/i, /not on gamstop/i, /casinos? that works? with vpn/i, /bypass/i];
-const DYNAMIC_OK = [/^\/go\//, /^\/api\//, /^\/indexnow\.txt$/, /^\/llms\.txt$/, /^\/data\/casinos\.json$/, /^\/\.well-known\//, /^\/sitemap\//, /^\/robots\.txt$/];
+const DYNAMIC_OK = [/^\/go\//, /^\/og\//, /^\/api\//, /^\/indexnow\.txt$/, /^\/llms\.txt$/, /^\/data\/casinos\.json$/, /^\/\.well-known\//, /^\/sitemap\//, /^\/robots\.txt$/];
 
 const files = [];
 (function walk(dir) {

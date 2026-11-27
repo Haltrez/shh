@@ -27,6 +27,8 @@ export function seo(opts: {
   /** hreflang alternates, e.g. { en: "/", es: "/es" }. */
   languages?: Record<string, string>;
   locale?: string;
+  /** Page-specific share image path (see lib/og.tsx). Defaults to the sitewide image. */
+  image?: string;
 }): Metadata {
   const ogTitle = opts.absolute ? opts.title : `${opts.title} | ${site.name}`;
   return {
@@ -43,9 +45,9 @@ export function seo(opts: {
       siteName: site.name,
       type: opts.type ?? "website",
       locale: opts.locale ?? "en",
-      images: [OG_IMAGE],
+      images: [opts.image ? { ...OG_IMAGE, url: opts.image } : OG_IMAGE],
       ...(opts.modifiedTime ? { modifiedTime: opts.modifiedTime } : {}),
     },
-    twitter: { card: "summary_large_image", title: ogTitle, description: opts.description, images: [OG_IMAGE.url] },
+    twitter: { card: "summary_large_image", title: ogTitle, description: opts.description, images: [opts.image ?? OG_IMAGE.url] },
   };
 }

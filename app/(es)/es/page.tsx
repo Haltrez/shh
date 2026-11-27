@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Lock } from "lucide-react";
 import { allCasinos } from "@/lib/data";
 import { rank, isPublished } from "@/lib/score";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { faqPage, itemList } from "@/lib/schema";
 import { CasinoCard } from "@/components/CasinoCard";
@@ -18,6 +19,7 @@ export const metadata: Metadata = seo({
   description:
     "Los mejores casinos cripto sin KYC, clasificados por lo que realmente piden: documento al registrarte, controles al retirar, velocidad y monedas.",
   path: "/es",
+  image: ogPath.top("latam", "es"),
   absolute: true,
   locale: "es",
   languages: { en: "/", es: "/es" },

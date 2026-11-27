@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogPath } from "@/lib/og-path";
 import { seo } from "@/lib/seo";
 import { EsLanding } from "@/components/EsLanding";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = seo({
   title: `Mejores Casinos Cripto ${year}: Clasificados y Probados`,
   description: "Los mejores casinos cripto clasificados por privacidad, velocidad de retiro y monedas, con las reglas de KYC de cada casino verificadas en sus términos.",
   path: "/es/mejores-casinos-cripto",
+  image: ogPath.top("latam", "es"),
   locale: "es",
   languages: { en: "/best-crypto-casinos", es: "/es/mejores-casinos-cripto" },
 });
